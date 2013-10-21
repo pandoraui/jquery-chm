@@ -34,3 +34,13 @@ jquery中文手册 自从 2011 第1.7版到现在，这期间进行了很多次�
 [<img src="https://img.alipay.com/sys/personalprod/style/mc/btn-index.png">](http://me.alipay.com/hemin123)
 
 下载使用后请保留版权，谢谢!!!
+
+
+    //关联远程分支
+    $ cd your_repo_root/repo_name
+    $ git fetch origin
+    $ git checkout gh-pages
+
+
+    //推送分支到远程
+    git push --set-upstream origin gh-pages
