@@ -1,8 +1,10 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>提交bug及获取更新</title>
+<meta charset="utf-8" />
+<title>提交bug及获取更新 | jQuery API 中文手册</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
 <link type="text/css" rel="stylesheet" href="style/style.css"  />
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/js.js"></script>
@@ -39,9 +41,18 @@ $(function(){
 	
 })
 </script>-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-44050237-1', 'hemin.cn');
+  ga('send', 'pageview');
+</script>
 </head>
 <body id="split">
-<div id="content">
+<div id="content" class="a2">
   <div rel="bugandUpdate">
     <h2> 提交bug及获取更新</h2>
     <h3> 概述</h3>
@@ -83,6 +94,7 @@ $(function(){
         <h3>捐赠</h3>
         <p>jquery中文手册 自从 2011 第1.7版到现在，这期间进行了很多次修改，因为作者相信：只要用心，哪怕一个小玩意都可以做到极致。
 若喜欢 jquery中文手册，期待小额资金捐赠以支持开源 :-) <a href="https://me.alipay.com/hemin123" target="_blank">https://me.alipay.com/hemin123</a></p>
+<a href='http://me.alipay.com/hemin123'> <img src='https://img.alipay.com/sys/personalprod/style/mc/btn-index.png' /> </a>
         <h3>版本信息： </h3>
         $Rev: 1.10.3 $ <br />
         $Author: hemin $ <br />
@@ -91,7 +103,7 @@ $(function(){
         </p>
         <h3>检查更新： </h3>
         <div id="update">
-          <button id= "checkUpdate" onclick="window.curVer='20130708';$('<script src=\'http://hemin.cn/jq/js/newUpdate.js?'+(+new Date)+'\' type=\'text/javascript\' charset=\'utf-8\'></script>').appendTo('head');" style='padding:2px 5px'>检查更新</button>
+          <button id= "checkUpdate" onclick='window.curVer="20130708";$("<script src=\"http://hemin.cn/jq/js/newUpdate.js?"+(+new Date)+"\" type=\"text/javascript\" charset=\"utf-8\"></script>").appendTo("head");' style='padding:2px 5px'>检查更新</button>
         </div>
         </p>
       </div>

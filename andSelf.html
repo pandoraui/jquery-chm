@@ -1,14 +1,25 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>andSelf()</title>
-<link type="text/css" rel="stylesheet" href="style/style.css"  />
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/js.js"></script>
+<meta charset="utf-8" />
+<title>andSelf() | jQuery API 中文手册</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css" tppabs="http://hemin.cn/jq/style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js" tppabs="http://hemin.cn/jq/js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js" tppabs="http://hemin.cn/jq/js/js.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-44050237-1', 'hemin.cn');
+  ga('send', 'pageview');
+</script>
 </head>
 <body id="split">
-<div id="content">
+<div id="content" class="a2">
   <div rel="andSelf">
     <h2><span>返回值:jQuery</span>andSelf()</h2>
     <h3><em>V1.2</em>概述</h3>
@@ -16,7 +27,7 @@
       <p>加入先前所选的加入当前元素中</p>
       <div class="longdesc">
         <p>对于筛选或查找后的元素，要加入先前所选元素时将会很有用。</p>
-        <p>从jQuery1.8开始，.andSelf()方法已经被标注过时，在jQuery1.8和更高版本中应使用.addBack()。</p>
+        <p class="outmoded">从jQuery1.8开始，.andSelf()方法已经被标注过时，在jQuery1.8和更高版本中应使用.addBack()。</p>
         <p>我们认为对于&ldquo;添加并返回&rdquo;以前的结果集合这是一个更好的名字。新方法可以接受一个可选的选择器，该选择器可以用来过滤之前集合，将它添加到当前集合并返回。$(&ldquo;section, aside&rdquo;).children(&ldquo;ul&rdquo;).addBack(&ldquo;aside&rdquo;) 会根据他们在文档中的顺序，得到section与aside下所有ul子元素，外加所有aside元素。虽然.addSelf()在1.9中仍然可以使用，我们建议您尽快修改名称。如果使用.addSelf()，jQuery Migrate插件会提出警告。</p>
       </div>
     </div>

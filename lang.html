@@ -1,18 +1,25 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>:lang(language)</title>
-<link type="text/css" rel="stylesheet" href="style/style.css"  />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
-<meta name="format-detection" content="telephone=no">
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/js.js"></script>
+<meta charset="utf-8" />
+<title>:lang(language) | jQuery API 中文手册</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css" tppabs="http://hemin.cn/jq/style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js" tppabs="http://hemin.cn/jq/js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js" tppabs="http://hemin.cn/jq/js/js.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-44050237-1', 'hemin.cn');
+  ga('send', 'pageview');
+</script>
 </head>
 <body id="split">
-<div id="content">
+<div id="content" class="a2">
   <div rel="lang">
     <h2><span>返回值:jQuery</span>:lang(language)</h2>
     <h3>概述</h3>
@@ -21,7 +28,7 @@
       <div class="longdesc">
         <p>:lang选择器,匹配有一个语言值等于所提供的语言代码，或以提供的语言代码开始，后面马上跟一个&ldquo; - &rdquo;的元素。例如，选择器$(&quot;div:lang(en)&quot;)将匹配&lt;div lang=&quot;en&quot;&gt; and &lt;div lang=&quot;en-us&quot;&gt;（和他们的后代&lt;div&gt;），但不包括&lt;div lang=&quot;fr&quot;&gt;</p>
         <p>对于HTML元素，语言值由lang属性决定，也可能由来自meta元素或HTTP头信息决定。</p>
-        <p>这种用法的进一步讨论可以在 <a href="http://www.w3.org/TR/css3-selectors/#lang-pseudo">W3C CSS规范</a>中找到。</p>
+        <p>这种用法的进一步讨论可以在 <a href="javascript:if(confirm('http://www.w3.org/TR/css3-selectors/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://www.w3.org/TR/css3-selectors/#lang-pseudo'" tppabs="http://www.w3.org/TR/css3-selectors/#lang-pseudo">W3C CSS规范</a>中找到。</p>
       </div>
     </div>
     <h3>参数</h3>

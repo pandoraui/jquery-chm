@@ -1,23 +1,63 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title></title>
-<link rel="StyleSheet" href="style/dtree.css" type="text/css" />
-<script type="text/javascript" src="js/jquery.min.js"></script>
+<meta charset="utf-8" />
+<title>搜索能看见么？ | jQuery API 中文手册</title></title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<style>
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,p,blockquote,table,th,td,img,textarea{margin:0;padding:0;}
+body{outline: 0;color:#333;text-align: left;vertical-align:baseline;font:12px/18px Verdana,Tahoma,Arial,sans-serif,"宋体";}
+h1,h2,h3,h4,h5{ font-size:12px; font-weight:normal;}
+strong{font-weight: bold;}
+img{border:none;}
+ul,ol,li{list-style: none;}
+a{ text-decoration:none;}
+
+.autocomplete-w1 { position: absolute; top: 0px; left: 0px; }
+.autocomplete { border: 1px solid #999; background: #FFF; cursor: default; text-align: left; max-height: 350px; overflow: auto; /* IE6 specific: */ _height: 350px; _margin: 0; _overflow-x: hidden; }
+    .autocomplete .selected { background: #F0F0F0; }
+    .autocomplete div { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
+    .autocomplete strong { font-weight: normal; color: #3399FF; }
+#butsoso{ width:36px; height:22px;height:24px\0; line-height:24px\0; }
+#query { padding:4px; border: 1px solid #CCC; display:inline-block;width: 130px;margin-right: 3px;}
+.dtree a,.dtree a:link,.dtree a:visited {color:rgb(64,112,170);text-decoration: none;}
+.dtree a:hover {color:white;background: rgb(79,129,189);}
+.dtree{ width:201px; border-right:1px solid #ccc; padding:5px; margin-right:5px; overflow:auto;}
+.dtree h2{ color: #4F81BD;padding:2px 5px 2px 17px; cursor:pointer; position:relative;}
+.dtree h2:after{content:"+"; position:absolute; left:5px;top:1px;}
+.dtree h2.up,.dtree li a.up{ background-color:#4F81BD; color:#FFF;}
+.dtree h2.up:after{content:"-";}
+.dtree h2:hover{ background-color:#4F81BD; color:#FFF;}
+.dtree ol{ margin:0 0 5px 15px; display:none;}
+.dtree ol li{ color:#666;}
+.dtree del{ color:#999!important;}
+.dtree > div{ margin:2px 0 0; border-bottom:1px solid #ccc;}
+.dtree sup{ color:#CC3300; font-family:icon;line-height: 8px;}
+</style>
+<!--<link rel="StyleSheet" href="style/dtree.css" type="text/css" />-->
 <script type="text/javascript" src="js/jquery.autocomplete.js"></script>
 <script type="text/javascript" src="js/dtree.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-44050237-1', 'hemin.cn');
+  ga('send', 'pageview');
+</script>
 </head>
 
 <body>
-<input type="text" name="query" id="query" placeholder="请输入关键字"/><input type="button" id="butsoso" value="搜索" />
-<p style="margin:7px 0;"><a href="javascript:void(0)" id="openAll">全部展开</a> | <a href="javascript:void(0)" id="closeAll">全部折叠 </a></p>
-<div><img src="img/base.gif">jQuery1.10.3_20130708.chm</div>
-<div><img src="img/join.gif"><img src="img/page.gif"><a href="cheatsheet.html" target="body">速查表</a></div>
+<!--<div><img src="img/base.gif">jQuery1.10.3_20130708.chm</div>
+<div><img src="img/join.gif"><img src="img/page.gif"><a href="cheatsheet.html" target="body">速查表</a></div>-->
 <div class="dtree">
+<p style="text-align:center"><input type="text" name="query" id="query" placeholder="请输入关键字"/><!--<input type="button" id="butsoso" value="搜索" />--></p>
+<p style="margin:7px 0; text-align:center"><a href="javascript:void(0)" id="openAll">全部展开</a> | <a href="javascript:void(0)" id="closeAll">全部折叠 </a> | <a href="index.html">速查表</a></p>
   <div id="core">
     <h2>核心</h2>
-    <ul>
+    <ol>
       <li><a href="jQuery_selector_context.html">jQuery([sel,[context]])</a></li>
       <li><a href="jQuery_html_ownerDocument.html">jQuery(html,[ownerDoc])</a><sup>1.8*</sup></li>
       <li><a href="jQuery_callback.html">jQuery(callback)</a></li>
@@ -38,11 +78,11 @@
       <li><a href="jQuery.fn.extend.html">jQuery.fn.extend(object)</a></li>
       <li><a href="jQuery.extend_object.html">jQuery.extend(object)</a></li>
       <li><a href="jQuery.noConflict.html" title="jQuery.noConflict([extreme])">jQuery.noConflict([ex])</a></li>
-    </ul>
+    </ol>
   </div>
   <div id="attributes">
     <h2>属性</h2>
-    <ul>
+    <ol>
       <li><a href="attr.html" title="attr(name|properties|key,value|fn)">attr(name|pro|key,val|fn)</a></li>
       <li><a href="removeAttr.html">removeAttr(name)</a></li>
       <li><a href="prop.html" title="prop(name|properties|key,value|fn)">prop(n|p|k,v|f)</a><sup>1.6+</sup></li>
@@ -53,11 +93,11 @@
       <li><a href="html.html">html([val|fn])</a></li>
       <li><a href="text.html">text([val|fn])</a></li>
       <li><a href="val.html">val([val|fn|arr])</a></li>
-    </ul>
+    </ol>
   </div>
   <div id="css">
     <h2>CSS</h2>
-    <ul>
+    <ol>
       <li><a href="css.html" title="css(name|properties|[,value|fn])">css(name|pro|[,val|fn])</a><sup>1.9*</sup></li>
       <li><a href="jQuery.cssHooks.html">jQuery.cssHooks</a></li>      
       <li><a href="offset.html">offset([coordinates])</a></li>
@@ -70,11 +110,11 @@
       <li><a href="innerWidth.html">innerWidth()</a></li>
       <li><a href="outerHeight.html">outerHeight([soptions])</a></li>
       <li><a href="outerWidth.html">outerWidth([options])</a></li>
-    </ul>
+    </ol>
   </div>
   <div id="selectors">
     <h2>选择器</h2>
-    <ul>
+    <ol>
       <li><a href="id.html">#id</a></li>
       <li><a href="element.html">element</a></li>
       <li><a href="class.html">.class</a></li>
@@ -140,11 +180,11 @@
       <li><a href="disabled.html">:disabled</a></li>
       <li><a href="checked.html">:checked</a></li>
       <li><a href="selected.html">:selected</a></li>
-    </ul>
+    </ol>
   </div>
   <div id="manipulation">
     <h2>文档处理</h2>
-    <ul>
+    <ol>
       <li><a href="append.html">append(content|fn)</a></li>
       <li><a href="appendTo.html">appendTo(content)</a></li>
       <li><a href="prepend.html">prepend(content|fn)</a></li>
@@ -163,11 +203,11 @@
       <li><a href="remove.html">remove([expr])</a></li>
       <li><a href="detach.html">detach([expr])</a></li>
       <li><a href="clone.html">clone([Even[,deepEven]])</a></li>
-    </ul>
+    </ol>
   </div>
   <div id="traversing">
     <h2>筛选</h2>
-    <ul>
+    <ol>
       <li><a href="eq.html">eq(index|-index)</a></li>
       <li><a href="first.html">first()</a></li>
       <li><a href="last.html">last()</a></li>
@@ -179,7 +219,7 @@
       <li><a href="not.html" title="not(expr|element|fn)">not(expr|ele|fn)</a></li>
       <li><a href="slice.html" title="slice(start,[end])">slice(start,[end])</a></li>
       <li><a href="children.html">children([expr])</a></li>
-      <li><del><a href="closest.html" title="closest(expr,[context]|object|element)">closest(e,[c|o|e)</a></del><sup>1.7-</sup></li>
+      <li><a href="closest.html" title="closest(expr,[context]|object|element)">closest(e|o|e)</a><sup>1.7*</sup></li>
       <li><a href="find.html" title="find(expr|object|element)">find(e|o|e)</a><sup>1.6*</sup></li>
       <li><a href="next.html">next([expr])</a></li>
       <li><a href="nextAll.html">nextall([expr])</a></li>
@@ -196,11 +236,11 @@
       <li><a href="andSelf.html">andSelf()</a></li>
       <li><a href="contents.html">contents()</a></li>
       <li><a href="end.html">end()</a></li>
-    </ul>
+    </ol>
   </div>
   <div id="events">
     <h2>事件</h2>
-    <ul>
+    <ol>
       <li><a href="ready.html">ready(fn)</a></li>
       <li><a href="on.html" title="on(events,[selector],[data],fn)">on(eve,[sel],[data],fn)</a><sup>1.7+</sup></li>
       <li><a href="off.html" title="off(events,[selector],[data],fn)">off(eve,[sel],[fn])</a><sup>1.7+</sup></li>
@@ -238,11 +278,11 @@
       <li><a href="select.html">select([[data],fn])</a></li>
       <li><a href="submit.html">submit([[data],fn])</a></li>
       <li><a href="unload.html">unload([[data],fn])</a></li>
-    </ul>
+    </ol>
   </div>
   <div id="effects">
     <h2>效果</h2>
-    <ul>
+    <ol>
       <li><a href="show.html" title="show([speed,[easing],[fn]])">show([s,[e],[fn]])</a></li>
       <li><a href="hide.html" title="hide([speed,[easing],[fn]])">hide([s,[e],[fn]])</a></li>
       <li><a href="toggle.html" title="toggle([speed],[easing],[fn])">toggle([s],[e],[fn])</a></li>
@@ -259,11 +299,11 @@
       <li><a href="finish.html" title="finish([queue])">finish([queue])</a><sup>1.9+</sup></li>
       <li><a href="jQuery.fx.off.html">jQuery.fx.off</a></li>
       <li><a href="jQuery.fx.interval.html">jQuery.fx.interval</a></li>
-    </ul>
+    </ol>
   </div>
   <div id="ajax">
     <h2>ajax</h2>
-    <ul>
+    <ol>
       <li><a href="jQuery.ajax.html">$.ajax(url,[settings])</a></li>
       <li><a href="load.html">load(url,[data],[callback])</a></li>
       <li><a href="jQuery.get.html">$.get(url,[data],[fn],[type])</a></li>
@@ -280,11 +320,11 @@
       <li><a href="jQuery.ajaxSetup.html">$.ajaxSetup([options])</a></li>
       <li><a href="serialize.html">serialize()</a></li>
       <li><a href="serializearray.html">serializearray()</a></li>
-    </ul>
+    </ol>
   </div>
   <div id="utilities">
     <h2>工具</h2>
-    <ul>
+    <ol>
       <li><a href="jQuery.support.html">$.support</a></li>
       <li><a href="jQuery.browser.html"><del>$.browser</del></a><sup>1.9-</sup></li>
       <li><a href="jQuery.browser.version.html">$.browser.version</a></li>
@@ -303,7 +343,7 @@
       <li><a href="jQuery.parseJSON.html">$.parseJSON(json)</a></li>
       <li><a href="jQuery.parseXML.html">$.parseXML(data)</a></li>
       <li><a href="jQuery.noop.html">$.noop</a>
-      <li><a href="jQuery.proxy.html">$.proxy(function,context)</a></li>
+      </li><li><a href="jQuery.proxy.html">$.proxy(function,context)</a></li>
       <li><a href="jQuery.contains.html" title="$.contains(container,contained)">$.contains(c,c)</a></li>
       <li><a href="jQuery.type.html">$.type(obj)</a></li>
       <li><a href="jQuery.isArray.html">$.isarray(obj)</a></li>
@@ -316,11 +356,11 @@
       <li><a href="jQuery.param.html">$.param(obj,[traditional])</a></li>
       <li><a href="jQuery.error.html">$.error(message)</a></li>
       <li><a href="jquery.html">$.fn.jquery</a></li>
-    </ul>
+    </ol>
   </div>
   <div id="Eventobject">
     <h2>事件对象</h2>
-    <ul>
+    <ol>
       <li><a href="event.currentTarget.html">eve.currentTarget</a></li>
       <li><a href="event.data.html">eve.data</a></li>
       <li><a href="event.delegateTarget.html">eve.delegateTarget</a><sup>1.7+</sup></li>
@@ -339,11 +379,11 @@
       <li><a href="event.timeStamp.html">eve.timeStamp</a></li>
       <li><a href="event.type.html">eve.type</a></li>
       <li><a href="event.which.html">eve.which</a></li>
-    </ul>
+    </ol>
   </div>
   <div id="Deferred">
     <h2>延迟对象</h2>
-    <ul>
+    <ol>
       <li><a href="deferred.done.html" title="deferred.done(doneCallbacks[,doneCallbacks])">def.done(d,[d])</a></li>
       <li><a href="deferred.fail.html">def.fail(failCallbacks)</a></li>
       <li><a href="deferred.isRejected.html"><del>def.isRejected()</del></a><sup>1.8-</sup></li>
@@ -360,11 +400,11 @@
       <li><a href="deferred.notifyWith.html" title="deferred.notifyWith(context,[args])">def.notifyWith(c,[a])</a><sup>1.7+</sup></li>
       <li><a href="deferred.progress.html" title="deferred.progress(progressCallbacks)">def.progress(proCal)</a><sup>1.7+</sup></li>
       <li><a href="deferred.state.html">def.state()</a><sup>1.7+</sup></li>
-    </ul>
+    </ol>
   </div>
   <div id="Callbacks">
     <h2>回调函数</h2>
-    <ul>
+    <ol>
       <li><a href="callbacks.add.html">cal.add(callbacks)</a><sup>1.7+</sup></li>
       <li><a href="callbacks.disable.html">cal.disable()</a><sup>1.7+</sup></li>
       <li><a href="callbacks.empty.html">cal.empty()</a><sup>1.7+</sup></li>
@@ -376,24 +416,24 @@
       <li><a href="callbacks.locked.html">cal.locked()</a><sup>1.7+</sup></li>
       <li><a href="callbacks.remove.html">cal.remove(callbacks)</a><sup>1.7+</sup></li>
       <li><a href="jQuery.callbacks.html">$.callbacks(flags)</a><sup>1.7+</sup></li>
-    </ul>
+    </ol>
   </div>
   <div id="about">
     <h2>关于</h2>
-    <ul>
+    <ol>
       <li><a href="about.html">关于此jQuery中文文档</a></li>
       <li><a href="bugandUpdate.html">提交bug及获取更新</a></li>
-    </ul>
+    </ol>
   </div>
   <div id="Other">
     <h2>其它</h2>
-	  <ul>        
+	  <ol>        
       	 <li><a href="cssFormat.html">CSS压缩/格式化</a></li>
          <li><a href="jsFormat.html">JS压缩/格式化</a></li>
          <li><a href="regexChe.html">正则表达式在线测试</a></li>
 	     <li><a href="regexp.html">正则表达式速查表</a></li>
          <li><a href="html5.html">HTML5速查表</a></li>
-	  </ul>
+	  </ol>
   </div>
 </div>
 </body>

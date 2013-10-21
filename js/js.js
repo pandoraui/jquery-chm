@@ -59,7 +59,7 @@ var data = {
 	id:{title:"id",type:"选择器"},
 	element:{title:"element",type:"选择器"},
 	"class":{title:"class",type:"选择器"},
-	all:{title:"*",type:"选择器"},
+	"all":{title:"*",type:"选择器"},
 	multiple:{title:"selector1,selector2,selectorN",type:"选择器"},
 	descendant:{title:"ancestor descendant",type:"选择器"},
 	child:{title:"parent > child",type:"选择器"},
@@ -72,7 +72,7 @@ var data = {
 	odd:{title:":odd",type:"选择器"},
 	eq_1:{title:":eq(index)",type:"选择器"},
 	gt:{title:":gt(index)",type:"选择器"},
-	lang:{lang:":target",type:"选择器"},
+	lang:{title:":lang",type:"选择器"},
 	last_1:{title:":last",type:"选择器"},
 	lt:{title:"lt(index)",type:"选择器"},
 	header:{title:":header",type:"选择器"},
@@ -111,7 +111,7 @@ var data = {
 	checkbox:{title:":checkbox",type:"选择器"},
 	submit_1:{title:":submit",type:"选择器"},
 	image:{title:":image",type:"选择器"},
-	reset:{title:":reset",type:"选择器"},
+	"reset":{title:":reset",type:"选择器"},
 	button:{title:":button",type:"选择器"},
 	file:{title:":file",type:"选择器"},
 	hidden_1:{title:":hidden",type:"选择器"},
@@ -142,10 +142,10 @@ var data = {
 	map:{title:"map(callback)",type:"筛选"},
 	has:{title:"has(expr|ele)",type:"筛选"},
 	not:{title:"not(expr|ele|fn)",type:"筛选"},
-	slice:{title:"slice(start, [end])",type:"筛选"},
+	"slice":{title:"slice(start, [end])",type:"筛选"},
 	children:{title:"children([expr])",type:"筛选"},
 	closest:{title:"closest(expr,[con]|obj|ele)",type:"筛选"},
-	find:{title:"find(expr|obj|ele)",type:"筛选"},
+	"find":{title:"find(expr|obj|ele)",type:"筛选"},
 	next:{title:"next([expr])",type:"筛选"},
 	nextAll:{title:"nextAll([expr])",type:"筛选"},
 	nextUntil:{title:"nextUntil([exp|ele][,fil])",type:"筛选"},
@@ -159,6 +159,7 @@ var data = {
 	siblings:{title:"siblings([expr])",type:"筛选"},
 	add:{title:"add(expr|ele|html|obj[,con])",type:"筛选"},
 	andSelf:{title:"andSelf()",type:"筛选"},
+	addBack:{title:"addBack()",type:"筛选"},
 	contents:{title:"contents()",type:"筛选"},
 	end:{title:"end()",type:"筛选"},
 	
@@ -211,12 +212,12 @@ var data = {
 	undelegate:{title:"undelegate([sel,[type],fn])",type:"事件"},
 	hover:{title:"hover([over,]out)",type:"事件"},
 	toggle:{title:"toggle(fn, fn2, [fn3, fn4, ...])",type:"事件"},
-	blur:{title:"blur([[data],fn])",type:"事件"},
+	"blur":{title:"blur([[data],fn])",type:"事件"},
 	change:{title:"change([[data],fn])",type:"事件"},
-	click:{title:"click([[data],fn])",type:"事件"},
+	"click":{title:"click([[data],fn])",type:"事件"},
 	dblclick:{title:"dblclick([[data],fn])",type:"事件"},
 	error:{title:"error([[data],fn])",type:"事件"},
-	focus:{title:"focus([[data],fn])",type:"事件"},
+	"focus":{title:"focus([[data],fn])",type:"事件"},
 	focusin:{title:"focusin([data],fn])",type:"事件"},
 	focusout:{title:"focusout([data],fn)",type:"事件"},
 	keydown:{title:"keydown([[data],fn])",type:"事件"},
@@ -230,10 +231,10 @@ var data = {
 	mouseover:{title:"mouseover([[data],fn])",type:"事件"},
 	mouseup:{title:"mouseup([[data],fn])",type:"事件"},
 	resize:{title:"resize([[data],fn])",type:"事件"},
-	scroll:{title:"scroll([[data],fn])",type:"事件"},
-	select:{title:"select([[data],fn])",type:"事件"},
-	submit:{title:"submit([[data],fn])",type:"事件"},
-	unload:{title:"unload([[data],fn])",type:"事件"},
+	"scroll":{title:"scroll([[data],fn])",type:"事件"},
+	"select":{title:"select([[data],fn])",type:"事件"},
+	"submit":{title:"submit([[data],fn])",type:"事件"},
+	"unload":{title:"unload([[data],fn])",type:"事件"},
 	
 	/*效果 14*/
 	show:{title:"show([s.[e],[fn]])",type:"效果"},
@@ -247,7 +248,7 @@ var data = {
 	fadeTo:{title:"fadeTo([[s],o,[e],[fn]])",type:"效果"},
 	fadeToggle:{title:"fadeToggle([s,[e],[fn]])",type:"效果"},
 	animate:{title:"animate(p,[s],[e],[fn])",type:"效果"},
-	stop:{title:"stop([c],[j])",type:"效果"},
+	"stop":{title:"stop([c],[j])",type:"效果"},
 	delay:{title:"delay(d,[q])",type:"效果"},
 	finish:{title:"finish([queue])",type:"效果"},
 	"jQuery.fx.off":{title:"jQuery.fx.off",type:"效果"},
@@ -255,7 +256,7 @@ var data = {
 	
 	/*Ajax 14*/
 	"jQuery.ajax":{title:"$.ajax(url,[settings])",type:"Ajax"},
-	load:{title:"load(url,[data],[callback])",type:"Ajax"},
+	"load":{title:"load(url,[data],[callback])",type:"Ajax"},
 	"jQuery.get":{title:"$.get(url,[data],[fn],[type])",type:"Ajax"},
 	"jQuery.getJSON":{title:"$.getJSON(url,[data],[fn])",type:"Ajax"},
 	"jQuery.getScript":{title:"$.getScript(url,[callback])",type:"Ajax"},
@@ -358,26 +359,71 @@ var data = {
 	about:{title:"关于jQuery API 文档",type:"关于"},
 	bugandUpdate:{title:"提交bug及获取更新",type:"关于"},
 	/*其它 2*/
-	cssFormat:{title:"CSS压缩/格式化",type:"其它"},
+/*	cssFormat:{title:"CSS压缩/格式化",type:"其它"},
 	jsFormat:{title:"JS压缩/格式化",type:"其它"},
-	regexChe:{title:"正则表达式在线测试",type:"其它"},
-	regexp:{title:"正则表达式速查表",type:"其它"},
-	html5:{title:"HTML5速查表",type:"其它"}
+	regexChe:{title:"正则表达式在线测试",type:"其它"},*/
+	regexp:{title:"正则表达式",type:"其它"}
+	//html5:{title:"HTML5速查表",type:"其它"}
 };
-var thisRelName = $("#content > div").attr("rel");//获取当前名称
+var thisRelName = $("#content.a2 > div").attr("rel");//获取当前名称
 //传入原始数据与指定数据名
 var hemin = getJson(data,thisRelName);
 
-$("#content").prepend("<div class='return'><div class='retLeft'><a class='m' href='./m.html'>首页</a><a href='./cheatsheet.html' class='pc'>首页</a>&nbsp;&gt;&nbsp;"+hemin.thisName.type +"&nbsp;&gt;&nbsp;"+hemin.thisName.title +"</div><div class='retRight'><a href='bugandUpdate.html'>反馈/更新</a></div></div>");
+$("#content").prepend("<div class='return'><div class='retLeft'><a href='index.html' class='pc' title=''>首页</a>&nbsp;&gt;&nbsp;"+hemin.thisName.type +"&nbsp;&gt;&nbsp;"+hemin.thisName.title +"</div><div class='retRight'><a href='bugandUpdate.html'>反馈/更新</a></div></div>");
 
 if(thisRelName == "jQuery_selector_context"){
 	$("#content").append("<div class='navigation'><div class='alignright'>下一篇：<a href='"+hemin.next.url+".html'>"+hemin.next.title+"</a></div></div>");
 }
- else if(thisRelName == "html5"){
+ else if(thisRelName == "regexp"){
 	$("#content").append("<div class='navigation'><div class='alignleft'>上一篇：<a href='"+hemin.prev.url+".html'>"+hemin.prev.title+"</a></div></div>");	
 }else{
 	$("#content").append("<div class='navigation'><div class='alignleft'>上一篇：<a href='"+hemin.prev.url+".html'>"+hemin.prev.title+"</a></div><div class='alignright'>下一篇：<a href='"+hemin.next.url+".html'>"+hemin.next.title+"</a></div></div>");
 }
+
+$("#content").append("<div class='close_button' title='关闭'>×</div>");
+
+$(".close_button,.retLeft .pc").click(function(){
+	$('a.ayidong',parent.document).removeClass("ayidong");	
+	$('#gdt',parent.document).removeClass("gdtovh");
+	$('#conview',parent.document).remove();
+});
+$(document).on('click',function(e){
+	//alert(e.target.nodeName);
+    if(e.target.id=='split'){
+		$('a.ayidong',parent.document).removeClass("ayidong");
+		$('#gdt',parent.document).removeClass("gdtovh");
+		$('#conview',parent.document).remove();
+	};
+	
+});
+$("#content").append("<div id='go_home' title='回到顶部'>TOP</div>");
+
+$(document).on('click','#go_home',function(event){
+	 event.preventDefault();
+	$('body,html').animate({scrollTop:0},500);
+});
+/*$(".navigation,.retRight").on('click','a', function(e) {
+	
+	if($("div").attr("id") == "right"){
+		$("#right").load($(this).attr('href'));
+	}
+	$('#iframe_over',parent.document).slideDown(800);
+	$("#conview",parent.document).delay(800).append('<iframe id=iframe_over src='+$(this).attr('href')+'></iframe>');
+
+	$('#iframe_over:eq(0)',parent.document).remove();
+	
+	window.history.pushState(null, null, $(this).attr('href'));
+	e.preventDefault();	
+	window.addEventListener('popstate', function(e) { 
+		$('#conview').remove();
+	　　　$("#right").load(location.pathname); 
+　	});
+});*/
+
+/*$(document).on("click","#go_home",function(){
+	location.href='index.html';
+});*/
+
 /*try{ 
 		var state = { 
 		title : "hemin jq_manual", 
@@ -392,6 +438,7 @@ catch(e){
 //alert(hemin.thisName.index);
 //获取数据
 //console.log("Prve:" + hemin.prev.index + "," + hemin.prev.title + "," + hemin.prev.cont + "\nNext:" + hemin.next.index + "," + hemin.next.title + "," + hemin.next.cont);
+
 });
 
 

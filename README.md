@@ -25,8 +25,8 @@ CHM版源码
 
 ## CHM制作软件
 
-[EasyCHM](http://hemin.cn/jq/downloads/EasyCHM.zip)
-[jquery.ecp](http://hemin.cn/jq/downloads/jquery.ecp)
+- [EasyCHM](http://hemin.cn/jq/downloads/EasyCHM.zip)
+- [jquery.ecp](http://hemin.cn/jq/downloads/jquery.ecp)
 
 jquery中文手册 自从 2011 第1.7版到现在，这期间进行了很多次修改，因为作者相信：只要用心，哪怕一个小玩意都可以做到极致。
 若喜欢 jquery中文手册，期待小额资金捐赠以支持开源 :-),作者:[hemin](http://hemin.cn)

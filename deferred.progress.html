@@ -1,25 +1,32 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>deferred.progress(progressCallbacks)</title>
-<link type="text/css" rel="stylesheet" href="style/style.css"  />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
-<meta name="format-detection" content="telephone=no">
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/js.js"></script>
+<meta charset="utf-8" />
+<title>deferred.progress(progressCallbacks) | jQuery API 中文手册</title>
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
+<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<link type="text/css" rel="stylesheet" href="style/style.css" tppabs="http://hemin.cn/jq/style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js" tppabs="http://hemin.cn/jq/js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js" tppabs="http://hemin.cn/jq/js/js.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-44050237-1', 'hemin.cn');
+  ga('send', 'pageview');
+</script>
 </head>
 <body id="split">
-<div id="content">
+<div id="content" class="a2">
   <div rel="deferred.progress">
     <h2><span>返回值:Deferred Object</span>deferred.progress(progressCallbacks)</h2>
     <h3>概述</h3>
     <div class="desc">
       <p> 当Deferred对象时生成进度通知时添加被访问处理程序。 </p>
       <div class="longdesc">
-        <p> 这个参数可以是一个单一的功能或功能的阵列。当递延通过调用生成的进度通知notify或notifyWith，progressCallbacks&nbsp;被访问。后来deferred.progress()返回Deferred对象。Deferred对象有方法可以链接到这一个。当递延解决或拒绝，进展回调将不再被调用。欲了解更多信息，请参阅文档<a href="http://www.css88.com/category/deferred-object/">Deferred object</a>。 </p>
+        <p> 这个参数可以是一个单一的功能或功能的阵列。当递延通过调用生成的进度通知notify或notifyWith，progressCallbacks&nbsp;被访问。后来deferred.progress()返回Deferred对象。Deferred对象有方法可以链接到这一个。当递延解决或拒绝，进展回调将不再被调用。欲了解更多信息，请参阅文档<a href="javascript:if(confirm('http://www.css88.com/category/deferred-object/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://www.css88.com/category/deferred-object/'" tppabs="http://www.css88.com/category/deferred-object/">Deferred object</a>。 </p>
       </div>
     </div>
     <h3>参数</h3>
