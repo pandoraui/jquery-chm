@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>提交bug及获取更新</title>
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+<!--<script type="text/javascript">
+$(function(){
+	$("input:button").click(function(){
+		if($("#yourname").val()==""){
+			alert("主题不能为空");
+			$("#yourname").focus();
+			return false;
+		}
+		if($("#message").val()==""){
+			alert("内容不能为空");
+			$("#message").focus();
+			return false;
+		}
+		$("#load").show();
+		//var data=$('form:first').serialize();
+		$.ajax({
+				url:"http://hemin.cn/jq_manual/email.php",
+				type:"post",
+				data:$('form:first').serialize(),
+				dataType:"html",
+				success: function(data){
+					$("#load").hide();
+					alert("提交成功!感谢你的反馈。");
+				},
+				error: function(){
+					$("#load").hide();
+					alert("提交失败!");
+				}
+		});
+	});
+	
+})
+</script>-->
+</head>
+<body id="split">
+<div id="content">
+  <div rel="bugandUpdate">
+    <h2> 提交bug及获取更新</h2>
+    <h3> 概述</h3>
+    <div class="desc">
+      <div class="longdesc">
+        <p>如果大家使用过程中发现了什么错误或有哪些不足，可以给我Email：<a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=-svOysjMzcfPvo_P0J2Rkw" style="text-decoration:none;"><img src="http://rescdn.qqmail.com/zh_CN/htmledition/images/function/qm_open/ico_mailme_11.png"/ style=" vertical-align:top"></a>，我将不胜感激。</p>
+        <!--<p style="position:relative">
+<iframe width="120" scrolling="no" height="24" frameborder="0" src="http://widget.weibo.com/relationship/followbutton.php?btn=light&amp;style=2&amp;uid=1765991567&amp;width=136&amp;height=24&amp;language=zh_cn" marginheight="0"></iframe>
+<iframe width="128" height="24" frameborder="0" marginheight="0" marginwidth="0" src="http://follow.v.t.qq.com/index.php?c=follow&amp;a=quick&amp;name=hemin007&amp;style=5&amp;t=1333869516437&amp;f=1" id="review"></iframe>
+<a target="_blank" href="http://wp.qq.com/wpa/qunwpa?idkey=05d612b44367aca6f8168c79de637b7d38377f19060eed8ff9fdcffe63ff833d"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="jQuery交流群(黑魅)" title="jQuery交流群(黑魅)"></a>
+<a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=-svOysjMzcfPvo_P0J2Rkw" style="text-decoration:none; margin-left:20px;"><img src="http://rescdn.qqmail.com/zh_CN/htmledition/images/function/qm_open/ico_mailme_02.png"/></a></p>-->
+        <!--<p style="text-align:center; font-size:14px;">【您也可以填写表单与我联系】</p>
+        <form id="formbug"  method="post">
+          <table border="0">
+            <tr>
+              <th>发件人:</th>
+              <td><input type="text" maxlength="40" size="26" id="email" name="email" />
+                您的Email（建议填写）</td>
+            </tr>
+            <tr>
+              <th>主&nbsp;&nbsp;&nbsp;题:</th>
+              <td><input type="text" maxlength="40" size="26" id="yourname" name="yourname" />
+                <span class="red">*</span></td>
+            </tr>
+            <tr>
+              <th valign="top">内&nbsp;&nbsp;&nbsp;容:</th>
+              <td><textarea name="message" id="message" cols="60" rows="7"></textarea>
+                <span class="red">*</span></td>
+            </tr>
+            <tr>
+              <th>&nbsp;</th>
+              <td><input name="add" type="hidden" value="1" />
+                <input type="button" value="提 交" name="submit" />
+                <img id="load" style="display:none;" src="img/loading.gif" width="16" height="16" /></td>
+            </tr>
+          </table>
+          <p id="res"></p>
+        </form>-->
+        <h3>捐赠</h3>
+        <p>jquery中文手册 自从 2011 第1.7版到现在，这期间进行了很多次修改，因为作者相信：只要用心，哪怕一个小玩意都可以做到极致。
+若喜欢 jquery中文手册，期待小额资金捐赠以支持开源 :-) <a href="https://me.alipay.com/hemin123" target="_blank">https://me.alipay.com/hemin123</a></p>
+        <h3>版本信息： </h3>
+        $Rev: 1.10.3 $ <br />
+        $Author: hemin $ <br />
+        $Date: 2013-07-08  18:28:01 +0800  (周一)<br />
+        $changelog: <a href="http://hemin.cn/jq/downloads/changelog.txt">changelog.txt</a>
+        </p>
+        <h3>检查更新： </h3>
+        <div id="update">
+          <button id= "checkUpdate" onclick="window.curVer='20130708';$('<script src=\'http://hemin.cn/jq/js/newUpdate.js?'+(+new Date)+'\' type=\'text/javascript\' charset=\'utf-8\'></script>').appendTo('head');" style='padding:2px 5px'>检查更新</button>
+        </div>
+        </p>
+      </div>
+    </div>
+  </div>
+  <h3 style="text-align:center;">hemin制作【hm@hemin.cn】</h3>
+</div>
+</body>
+</html>
