@@ -1,7 +1,14 @@
 jquery-chm
 ==========
 
-jQuery 在线手册
+jQuery 在线手册，感谢作者[hemin](http://hemin.cn)的辛苦工作，大家知道手册的整理实际上是很辛苦，那么多的页面，统一的设置，特别是静态页面的同步处理，疏为不易，而要保持版本上的同步更新，就更加困难重重，没有坚强毅力的人是坚持不下来的，当然大家可以提意见和反馈帮助 hemin 更快更好的完善手册，有钱出钱有力出力，也祝愿国人的前端事业进展的红红火火！
+
+[hemin]作者言：jquery中文手册 自从 2011 第1.7版到现在，这期间进行了很多次修改，因为作者相信：只要用心，哪怕一个小玩意都可以做到极致。
+若喜欢 jquery中文手册，期待小额资金捐赠以支持开源 :-),作者:[hemin](http://hemin.cn)
+
+[<img src="https://img.alipay.com/sys/personalprod/style/mc/btn-index.png">](http://me.alipay.com/hemin123)
+
+下载使用后请保留版权，谢谢!!!
 
 ## jquery中文手册下载列表
 
@@ -15,13 +22,6 @@ jQuery 在线手册
 
 - [EasyCHM](http://hemin.cn/jq/downloads/EasyCHM.zip)
 - [jquery.ecp](http://hemin.cn/jq/downloads/jquery.ecp)
-
-jquery中文手册 自从 2011 第1.7版到现在，这期间进行了很多次修改，因为作者相信：只要用心，哪怕一个小玩意都可以做到极致。
-若喜欢 jquery中文手册，期待小额资金捐赠以支持开源 :-),作者:[hemin](http://hemin.cn)
-
-[<img src="https://img.alipay.com/sys/personalprod/style/mc/btn-index.png">](http://me.alipay.com/hemin123)
-
-下载使用后请保留版权，谢谢!!!
 
 
 ### Git 分支操作
