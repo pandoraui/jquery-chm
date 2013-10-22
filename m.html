@@ -56,22 +56,22 @@ div.open ul{display:block; }
 </style> 
 <script type="text/javascript">
 $(function(){
-	var COOKIE_VAL = "hemin";
-	var $thisval=$.cookie(COOKIE_VAL);
-	if($.cookie(COOKIE_VAL)){
-		$("div").eq($thisval).addClass("open").siblings("div").removeClass("open");
-	}
-	$("div > h2").click(function(){
-		if($(this).parent("div").attr("class") == "open"){
-				$(this).parent("div").removeClass("open");
-				$.cookie(COOKIE_VAL,null,{path:'/'});
-		}else{
-				$(this).parent("div").addClass("open").siblings("div").removeClass("open");
-				var $index = $("div > h2").index(this);
-				$.cookie(COOKIE_VAL,$index,{path:'/',expires:10});
-		}
-		
-	});
+    var COOKIE_VAL = "hemin";
+    var $thisval=$.cookie(COOKIE_VAL);
+    if($.cookie(COOKIE_VAL)){
+        $("div").eq($thisval).addClass("open").siblings("div").removeClass("open");
+    }
+    $("div > h2").click(function(){
+        if($(this).parent("div").attr("class") == "open"){
+                $(this).parent("div").removeClass("open");
+                $.cookie(COOKIE_VAL,null,{path:'/'});
+        }else{
+                $(this).parent("div").addClass("open").siblings("div").removeClass("open");
+                var $index = $("div > h2").index(this);
+                $.cookie(COOKIE_VAL,$index,{path:'/',expires:10});
+        }
+        
+    });
     $.ajax({
         url: 'js/data.txt',
         dataType: 'json'
@@ -82,30 +82,30 @@ $(function(){
             });
 
         $('#query').autocomplete({
-			width:188,
+            width:188,
             lookup: countries,
             onSelect: function (suggestion) {
                 //status.html('You selected: ' + suggestion);
-				var url = suggestion+".html";
-				window.open(url,"_self");
+                var url = suggestion+".html";
+                window.open(url,"_self");
             }
         });
-		$('#query').keydown(function(e){ 
-			if(e.keyCode==13){ 
-				var soval = $("#query").val();
-				if(soval){
-					var url = "http://hemin.cn/jq_manual/"+soval+".html";
-					window.open(url,"_self");
-				}
-			} 
-		})
-		$("#butsoso").click(function(){
-			var soval = $("#query").val();
-			if(soval){
-				var url = "http://hemin.cn/jq_manual/"+soval+".html";
-				window.open(url,"_self");
-			}
-		});	
+        $('#query').keydown(function(e){ 
+            if(e.keyCode==13){ 
+                var soval = $("#query").val();
+                if(soval){
+                    var url = "http://hemin.cn/jq_manual/"+soval+".html";
+                    window.open(url,"_self");
+                }
+            } 
+        })
+        $("#butsoso").click(function(){
+            var soval = $("#query").val();
+            if(soval){
+                var url = "http://hemin.cn/jq_manual/"+soval+".html";
+                window.open(url,"_self");
+            }
+        }); 
     });
 })
 </script>
@@ -658,79 +658,79 @@ $(function(){
   </div>
 
 <div id="Eventobject">
-	  <h2>Event 对象</h2>
-	  <ul>
-	    <li><a href="event.currentTarget.html">eve.currentTarget</a></li>
-	    <li><a href="event.data.html">eve.data</a></li>
+      <h2>Event 对象</h2>
+      <ul>
+        <li><a href="event.currentTarget.html">eve.currentTarget</a></li>
+        <li><a href="event.data.html">eve.data</a></li>
         <li><a href="event.delegateTarget.html">eve.delegateTarget</a><sup>1.7+</sup></li>
-	    <li><a href="event.isDefaultPrevented.html">eve.isDefaultPrevented()</a></li>
-	    <li><a href="event.isImmediatePropagationStopped.html" title="event.isImmediatePropagationStopped">eve.isImmediatePropag...()</a></li>
-	    <li><a href="event.isPropagationStopped.html">eve.isPropagationStopped()</a></li>
-	    <li><a href="event.namespace.html">eve.namespace</a></li>
-	    <li><a href="event.pageX.html">eve.pageX</a></li>
-	    <li><a href="event.pageY.html">eve.pageY</a></li>
-	    <li><a href="event.preventDefault.html">eve.preventDefault()</a></li>
-	    <li><a href="event.relatedTarget.html">eve.relatedTarget</a></li>
+        <li><a href="event.isDefaultPrevented.html">eve.isDefaultPrevented()</a></li>
+        <li><a href="event.isImmediatePropagationStopped.html" title="event.isImmediatePropagationStopped">eve.isImmediatePropag...()</a></li>
+        <li><a href="event.isPropagationStopped.html">eve.isPropagationStopped()</a></li>
+        <li><a href="event.namespace.html">eve.namespace</a></li>
+        <li><a href="event.pageX.html">eve.pageX</a></li>
+        <li><a href="event.pageY.html">eve.pageY</a></li>
+        <li><a href="event.preventDefault.html">eve.preventDefault()</a></li>
+        <li><a href="event.relatedTarget.html">eve.relatedTarget</a></li>
         <li><a href="event.result.html">eve.result</a></li>
-	    <li><a href="event.stopImmediatePropagation.html" title="event.stopImmediatePropagation">eve.stopImmediatePro...()</a></li>
-	    <li><a href="event.stopPropagation.html">eve.stopPropagation()</a></li>
-		<li><a href="event.target.html">eve.target</a></li>
-		<li><a href="event.timeStamp.html">eve.timeStamp</a></li>
-		<li><a href="event.type.html">eve.type</a></li>
-	    <li><a href="event.which.html">eve.which</a></li>
-	  </ul>
-	</div>
+        <li><a href="event.stopImmediatePropagation.html" title="event.stopImmediatePropagation">eve.stopImmediatePro...()</a></li>
+        <li><a href="event.stopPropagation.html">eve.stopPropagation()</a></li>
+        <li><a href="event.target.html">eve.target</a></li>
+        <li><a href="event.timeStamp.html">eve.timeStamp</a></li>
+        <li><a href="event.type.html">eve.type</a></li>
+        <li><a href="event.which.html">eve.which</a></li>
+      </ul>
+    </div>
   <div id="Deferred">
-	  <h2>Deferred</h2>
-	  <ul>
-	    <li><a href="deferred.done.html" title="deferred.done(doneCallbacks[,doneCallbacks])">def.done(d,[d])</a></li>
-	    <li><a href="deferred.fail.html">def.fail(failCallbacks)</a></li>
-	    <li><del><a href="deferred.isRejected.html">def.isRejected()</a></del><sup>1.8-</sup></li>
-	    <li><del><a href="deferred.isResolved.html">def.isResolved()</a></del><sup>1.8-</sup></li>
-	    <li><a href="deferred.reject.html">def.reject(args)</a></li>
-	    <li><a href="deferred.rejectWith.html" title="deferred.rejectWith(context,[args])">def.rejectWith(c,[a])</a></li>
-	    <li><a href="deferred.resolve.html">def.resolve(args)</a></li>
-	    <li><a href="deferred.resolveWith.html" title="deferred.resolveWith(context,[args])">def.resolveWith(c,[a])</a></li>
-	    <li><a href="deferred.then.html" title="deferred.then(doneCallbacks,failCallbacks[, progressCallbacks])">def.then(d,f,[,p])</a><sup>1.7*</sup></li>
-	    <li><a href="deferred.promise.html" title="deferred.promise([type],[target])">def.promise([ty],[ta])</a><sup>1.6+</sup></li>
-	    <li><a href="deferred.pipe.html" title="deferred.pipe([doneFilter],[failFilter],[progressFilter])">def.pipe([d],[f],[p])</a><sup>1.7*</sup></li>
-	    <li><a href="deferred.always.html" title="deferred.always(alwaysCallbacks,[alwaysCallbacks])">def.always(al,[al])</a><sup>1.6+</sup></li>
+      <h2>Deferred</h2>
+      <ul>
+        <li><a href="deferred.done.html" title="deferred.done(doneCallbacks[,doneCallbacks])">def.done(d,[d])</a></li>
+        <li><a href="deferred.fail.html">def.fail(failCallbacks)</a></li>
+        <li><del><a href="deferred.isRejected.html">def.isRejected()</a></del><sup>1.8-</sup></li>
+        <li><del><a href="deferred.isResolved.html">def.isResolved()</a></del><sup>1.8-</sup></li>
+        <li><a href="deferred.reject.html">def.reject(args)</a></li>
+        <li><a href="deferred.rejectWith.html" title="deferred.rejectWith(context,[args])">def.rejectWith(c,[a])</a></li>
+        <li><a href="deferred.resolve.html">def.resolve(args)</a></li>
+        <li><a href="deferred.resolveWith.html" title="deferred.resolveWith(context,[args])">def.resolveWith(c,[a])</a></li>
+        <li><a href="deferred.then.html" title="deferred.then(doneCallbacks,failCallbacks[, progressCallbacks])">def.then(d,f,[,p])</a><sup>1.7*</sup></li>
+        <li><a href="deferred.promise.html" title="deferred.promise([type],[target])">def.promise([ty],[ta])</a><sup>1.6+</sup></li>
+        <li><a href="deferred.pipe.html" title="deferred.pipe([doneFilter],[failFilter],[progressFilter])">def.pipe([d],[f],[p])</a><sup>1.7*</sup></li>
+        <li><a href="deferred.always.html" title="deferred.always(alwaysCallbacks,[alwaysCallbacks])">def.always(al,[al])</a><sup>1.6+</sup></li>
         <li><a href="deferred.notify.html">def.notify(args)</a><sup>1.7+</sup></li>
-	    <li><a href="deferred.notifyWith.html" title="deferred.notifyWith(context,[args])">def.notifyWith(c,[a])</a><sup>1.7+</sup></li>
-	    <li><a href="deferred.progress.html" title="deferred.progress(progressCallbacks)">def.progress(proCal)</a><sup>1.7+</sup></li>
+        <li><a href="deferred.notifyWith.html" title="deferred.notifyWith(context,[args])">def.notifyWith(c,[a])</a><sup>1.7+</sup></li>
+        <li><a href="deferred.progress.html" title="deferred.progress(progressCallbacks)">def.progress(proCal)</a><sup>1.7+</sup></li>
 
-	    <li><a href="deferred.state.html">def.state()</a><sup>1.7+</sup></li>
-	  </ul>
-	</div>
+        <li><a href="deferred.state.html">def.state()</a><sup>1.7+</sup></li>
+      </ul>
+    </div>
   <div id="Callbacks">
-	  <h2>Callbacks</h2>
-	  <ul>
-	    <li><a href="callbacks.add.html">cal.add(callbacks)</a><sup>1.7+</sup></li>
-	    <li><a href="callbacks.disable.html">cal.disable()</a><sup>1.7+</sup></li>
-	    <li><a href="callbacks.empty.html">cal.empty()</a><sup>1.7+</sup></li>
-	    <li><a href="callbacks.fire.html">cal.fire(arguments)</a><sup>1.7+</sup></li>
-	    <li><a href="callbacks.fired.html">cal.fired()</a><sup>1.7+</sup></li>
-	    <li><a href="callbacks.fireWith.html" title="callbacks.fireWith([context] [, args])">cal.fireWith([c] [,a])</a><sup>1.7+</sup></li>
-	    <li><a href="callbacks.has.html">cal.has(callback)</a><sup>1.7+</sup></li>
-	    <li><a href="callbacks.lock.html">cal.lock()</a><sup>1.7+</sup></li>
-	    <li><a href="callbacks.locked.html">cal.locked()</a><sup>1.7+</sup></li>
-	    <li><a href="callbacks.remove.html">cal.remove(callbacks)</a><sup>1.7+</sup></li>
-	    <li><a href="jQuery.callbacks.html">$.callbacks(flags)</a><sup>1.7+</sup></li>
-	  </ul>
-	</div>
+      <h2>Callbacks</h2>
+      <ul>
+        <li><a href="callbacks.add.html">cal.add(callbacks)</a><sup>1.7+</sup></li>
+        <li><a href="callbacks.disable.html">cal.disable()</a><sup>1.7+</sup></li>
+        <li><a href="callbacks.empty.html">cal.empty()</a><sup>1.7+</sup></li>
+        <li><a href="callbacks.fire.html">cal.fire(arguments)</a><sup>1.7+</sup></li>
+        <li><a href="callbacks.fired.html">cal.fired()</a><sup>1.7+</sup></li>
+        <li><a href="callbacks.fireWith.html" title="callbacks.fireWith([context] [, args])">cal.fireWith([c] [,a])</a><sup>1.7+</sup></li>
+        <li><a href="callbacks.has.html">cal.has(callback)</a><sup>1.7+</sup></li>
+        <li><a href="callbacks.lock.html">cal.lock()</a><sup>1.7+</sup></li>
+        <li><a href="callbacks.locked.html">cal.locked()</a><sup>1.7+</sup></li>
+        <li><a href="callbacks.remove.html">cal.remove(callbacks)</a><sup>1.7+</sup></li>
+        <li><a href="jQuery.callbacks.html">$.callbacks(flags)</a><sup>1.7+</sup></li>
+      </ul>
+    </div>
        <div id="about">
-    	<h2>关于</h2>
-	    <ul>
-	      <li><a href="about.html">关于此jQuery中文文档</a></li>
-	      <li><a href="bugandUpdate.html">提交bug及获取更新</a></li>
-	    </ul>
+        <h2>关于</h2>
+        <ul>
+          <li><a href="about.html">关于此jQuery中文文档</a></li>
+          <li><a href="bugandUpdate.html">提交bug及获取更新</a></li>
+        </ul>
     </div>
   <div id="Other">
-	  <h2>其它</h2>
-	  <ul>
-      	<li><a href="html5.html">HTML5速查表</a></li>
-	    <li><a href="regexp.html">正则表达式速查表</a></li>
-	  </ul>
+      <h2>其它</h2>
+      <ul>
+        <li><a href="html5.html">HTML5速查表</a></li>
+        <li><a href="regexp.html">正则表达式速查表</a></li>
+      </ul>
   </div>
   <p id="footer">Copyright &copy; <a href="http://hemin.cn" target="_blank">hemin</a> 2012. All right reserved.</p>
 </body>
