@@ -1,22 +1,14 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset="utf-8" />
-<title>jQuery.when(deferreds) | jQuery API 中文手册</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery.when(deferreds)</title>
 <meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
 <meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
-<link type="text/css" rel="stylesheet" href="style/style.css" tppabs="http://hemin.cn/jq/style/style.css"  />
-<script type="text/javascript" src="js/jquery.min.js" tppabs="http://hemin.cn/jq/js/jquery.min.js"></script>
-<script type="text/javascript" src="js/js.js" tppabs="http://hemin.cn/jq/js/js.js"></script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
 
-  ga('create', 'UA-15318881-10', 'pandoraui.github.io');
-  ga('send', 'pageview');
-</script>
 </head>
 <body id="split">
 <div id="content" class="a2">
@@ -26,7 +18,7 @@
     <div class="desc">
       <p> 提供一种方法来执行一个或多个对象的回调函数，延迟对象通常表示异步事件。 </p>
       <div class="longdesc">
-        <p> 如果单一延迟传递给jQuery.when&nbsp;，它是通过这个方法和延迟对象附加的其他方法可访问绑定的回调函数返回的，如<a href="javascript:if(confirm('http://api.jquery.com/deferred.then/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://api.jquery.com/deferred.then/'" tppabs="http://api.jquery.com/deferred.then/">defered.then</a>&nbsp;。当延迟得到解决或者拒绝，通常的代码创建了原来的延迟，适当的回调将被调用。例如，jqXHR对象返回jQuery.ajax是一个延期，可以用这种方式： </p>
+        <p> 如果单一延迟传递给jQuery.when&nbsp;，它是通过这个方法和延迟对象附加的其他方法可访问绑定的回调函数返回的，如<a href="http://api.jquery.com/deferred.then/">defered.then</a>&nbsp;。当延迟得到解决或者拒绝，通常的代码创建了原来的延迟，适当的回调将被调用。例如，jqXHR对象返回jQuery.ajax是一个延期，可以用这种方式： </p>
         <pre><code>$.when( $.ajax("test.aspx") ).then(function(ajaxArgs){ 
      alert(ajaxArgs[1]); /* ajaxArgs is [ "success", statusText, jqXHR ] */
 });</code></pre>

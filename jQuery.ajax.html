@@ -1,22 +1,14 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset="utf-8" />
-<title>jQuery.ajax(url,[settings]) | jQuery API 中文手册</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery.ajax(url,[settings])</title>
 <meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
 <meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
-<link type="text/css" rel="stylesheet" href="style/style.css" tppabs="http://hemin.cn/jq/style/style.css"  />
-<script type="text/javascript" src="js/jquery.min.js" tppabs="http://hemin.cn/jq/js/jquery.min.js"></script>
-<script type="text/javascript" src="js/js.js" tppabs="http://hemin.cn/jq/js/js.js"></script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
 
-  ga('create', 'UA-15318881-10', 'pandoraui.github.io');
-  ga('send', 'pageview');
-</script>
 </head>
 <body id="split">
 <div id="content" class="a2">
@@ -45,7 +37,7 @@
         <p>'''注意'''，我们必须确保网页服务器报告的MIME类型与我们选择的dataType所匹配。比如说，XML的话，服务器端就必须声明 text/xml 或者 application/xml 来获得一致的结果。</p>
         <p>如果指定为html类型，任何内嵌的JavaScript都会在HTML作为一个字符串返回之前执行。类似的，指定script类型的话，也会先执行服务器端生成JavaScript，然后再把脚本作为一个文本数据返回。</p>
         <p>如果指定为json类型，则会把获取到的数据作为一个JavaScript对象来解析，并且把构建好的对象作为结果返回。为了实现这个目的，他首先尝试使用JSON.parse()。如果浏览器不支持，则使用一个函数来构建。JSON数据是一种能很方便通过JavaScript解析的结构化数据。如果获取的数据文件存放在远程服务器上（域名不同，也就是跨域获取数据），则需要使用jsonp类型。使用这种类型的话，会创建一个查询字符串参数 callback=? ，这个参数会加在请求的URL后面。服务器端应当在JSON数据前加上回调函数名，以便完成一个有效的JSONP请求。如果要指定回调函数的参数名来取代默认的callback，可以通过设置$.ajax()的jsonp参数。</p>
-        <p><strong>注意</strong>，JSONP是JSON格式的扩展。他要求一些服务器端的代码来检测并处理查询字符串参数。更多信息可以参阅 <a href="javascript:if(confirm('http://bob.pythonmac.org/archives/2005/12/05/remote-json-jsonp/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://bob.pythonmac.org/archives/2005/12/05/remote-json-jsonp/'" tppabs="http://bob.pythonmac.org/archives/2005/12/05/remote-json-jsonp/">最初的文章</a>。</p>
+        <p><strong>注意</strong>，JSONP是JSON格式的扩展。他要求一些服务器端的代码来检测并处理查询字符串参数。更多信息可以参阅 <a href="http://bob.pythonmac.org/archives/2005/12/05/remote-json-jsonp/">最初的文章</a>。</p>
         <p>如果指定了script或者jsonp类型，那么当从服务器接收到数据时，实际上是用了&amp;lt;script&amp;gt;标签而不是XMLHttpRequest对象。这种情况下，$.ajax()不再返回一个XMLHttpRequest对象，并且也不会传递事件处理函数，比如beforeSend。</p>
         <p><strong>发送数据到服务器</strong></p>
         <p>默认情况下，Ajax请求使用GET方法。如果要使用POST方法，可以设定type参数值。这个选项也会影响data选项中的内容如何发送到服务器。</p>
@@ -74,7 +66,7 @@
       <h4><strong>async</strong><span>Boolean</span></h4>
       <p>(默认: true) 默认设置下，所有请求均为异步请求。如果需要发送同步请求，请将此选项设置为 false。注意，同步请求将锁住浏览器，用户其它操作必须等待请求完成才可以执行。</p>
       <h4><strong>beforeSend(XHR)</strong><span>Function</span></h4>
-      <p>发送请求前可修改 XMLHttpRequest 对象的函数，如添加自定义 HTTP 头。XMLHttpRequest 对象是唯一的参数。这是一个 <a href="javascript:if(confirm('http://docs.jquery.com/Ajax_Events  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://docs.jquery.com/Ajax_Events'" tppabs="http://docs.jquery.com/Ajax_Events" title="Ajax Events">Ajax 事件</a>。如果返回false可以取消本次ajax请求。
+      <p>发送请求前可修改 XMLHttpRequest 对象的函数，如添加自定义 HTTP 头。XMLHttpRequest 对象是唯一的参数。这是一个 <a href="http://docs.jquery.com/Ajax_Events" title="Ajax Events">Ajax 事件</a>。如果返回false可以取消本次ajax请求。
       <pre>function (XMLHttpRequest) {
     this; // 调用本次AJAX请求时传递的options参数
 }</pre>
@@ -82,7 +74,7 @@
       <h4><strong>cache</strong><span>Boolean</span></h4>
       <p>(默认: true,dataType为script和jsonp时默认为false) jQuery 1.2 新功能，设置为 false 将不缓存此页面。</p>
       <h4><strong>complete(XHR, TS)</strong><span>Function</span></h4>
-      <p>请求完成后回调函数 (请求成功或失败之后均调用)。参数：  XMLHttpRequest 对象和一个描述成功请求类型的字符串。 <a href="javascript:if(confirm('http://docs.jquery.com/Ajax_Events  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://docs.jquery.com/Ajax_Events'" tppabs="http://docs.jquery.com/Ajax_Events" title="Ajax Events">Ajax 事件</a>。
+      <p>请求完成后回调函数 (请求成功或失败之后均调用)。参数：  XMLHttpRequest 对象和一个描述成功请求类型的字符串。 <a href="http://docs.jquery.com/Ajax_Events" title="Ajax Events">Ajax 事件</a>。
       <pre>function (XMLHttpRequest, textStatus) {
     this; // 调用本次AJAX请求时传递的options参数
 }</pre>
@@ -119,11 +111,11 @@
       <p>"html": 返回纯文本 HTML 信息；包含的script标签会在插入dom时执行。</p>
       <p>"script": 返回纯文本 JavaScript 代码。不会自动缓存结果。除非设置了"cache"参数。'''注意：'''在远程请求时(不在同一个域下)，所有POST请求都将转为GET请求。(因为将使用DOM的script标签来加载)</p>
       <p>"json": 返回 JSON 数据 。</p>
-      <p>"jsonp": <a href="javascript:if(confirm('http://bob.pythonmac.org/archives/2005/12/05/remote-json-jsonp/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://bob.pythonmac.org/archives/2005/12/05/remote-json-jsonp/'" tppabs="http://bob.pythonmac.org/archives/2005/12/05/remote-json-jsonp/" class="external text" title="http://bob.pythonmac.org/archives/2005/12/05/remote-json-jsonp/">JSONP</a> 格式。使用 <a href="javascript:if(confirm('http://bob.pythonmac.org/archives/2005/12/05/remote-json-jsonp/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://bob.pythonmac.org/archives/2005/12/05/remote-json-jsonp/'" tppabs="http://bob.pythonmac.org/archives/2005/12/05/remote-json-jsonp/" class="external text" title="http://bob.pythonmac.org/archives/2005/12/05/remote-json-jsonp/">JSONP</a> 形式调用函数时，如 "myurl?callback=?" jQuery 将自动替换 ? 为正确的函数名，以执行回调函数。</p>
+      <p>"jsonp": <a href="http://bob.pythonmac.org/archives/2005/12/05/remote-json-jsonp/" class="external text" title="http://bob.pythonmac.org/archives/2005/12/05/remote-json-jsonp/">JSONP</a> 格式。使用 <a href="http://bob.pythonmac.org/archives/2005/12/05/remote-json-jsonp/" class="external text" title="http://bob.pythonmac.org/archives/2005/12/05/remote-json-jsonp/">JSONP</a> 形式调用函数时，如 "myurl?callback=?" jQuery 将自动替换 ? 为正确的函数名，以执行回调函数。</p>
       <p>"text": 返回纯文本字符串</p>
       </p>
       <h4><strong>error</strong><span>Function</span></h4>
-      <p>(默认: 自动判断 (xml 或 html)) 请求失败时调用此函数。有以下三个参数：XMLHttpRequest 对象、错误信息、（可选）捕获的异常对象。如果发生了错误，错误信息（第二个参数）除了得到null之外，还可能是"timeout", "error", "notmodified" 和 "parsererror"。<a href="javascript:if(confirm('http://docs.jquery.com/Ajax_Events  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://docs.jquery.com/Ajax_Events'" tppabs="http://docs.jquery.com/Ajax_Events" title="Ajax Events">Ajax 事件</a>。
+      <p>(默认: 自动判断 (xml 或 html)) 请求失败时调用此函数。有以下三个参数：XMLHttpRequest 对象、错误信息、（可选）捕获的异常对象。如果发生了错误，错误信息（第二个参数）除了得到null之外，还可能是"timeout", "error", "notmodified" 和 "parsererror"。<a href="http://docs.jquery.com/Ajax_Events" title="Ajax Events">Ajax 事件</a>。
       <pre>function (XMLHttpRequest, textStatus, errorThrown) {
     // 通常 textStatus 和 errorThrown 之中
     // 只有一个会包含信息
@@ -131,7 +123,7 @@
 }</pre>
       </p>
       <h4><strong>global</strong><span>Boolean</span></h4>
-      <p>(默认: true) 是否触发全局 AJAX 事件。设置为 false 将不会触发全局 AJAX 事件，如 ajaxStart 或 ajaxStop 可用于控制不同的 <a href="javascript:if(confirm('http://docs.jquery.com/Ajax_Events  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://docs.jquery.com/Ajax_Events'" tppabs="http://docs.jquery.com/Ajax_Events" title="Ajax Events">Ajax 事件</a>。</p>
+      <p>(默认: true) 是否触发全局 AJAX 事件。设置为 false 将不会触发全局 AJAX 事件，如 ajaxStart 或 ajaxStop 可用于控制不同的 <a href="http://docs.jquery.com/Ajax_Events" title="Ajax Events">Ajax 事件</a>。</p>
       <h4><strong>headers</strong><span>map</span><em>V1.5</em></h4>
       <p>Default: {}</p>
       <p> 一个额外的"{键:值}"对映射到请求一起发送。此设置被设置之前beforeSend函数被调用;因此，消息头中的值设置可以在覆盖beforeSend函数范围内的任何设置。</p>
@@ -162,7 +154,7 @@
 });</pre>
       </p>
       <h4><strong>success(data, textStatus, jqXHR)</strong><span>Function,Array</span></h4>
-      <p>请求成功后的回调函数。参数：由服务器返回，并根据dataType参数进行处理后的数据；描述状态的字符串。还有 jqXHR（在jQuery 1.4.x的中，XMLHttpRequest） 对象 。在jQuery 1.5， 成功设置可以接受一个函数数组。每个函数将被依次调用。 <a href="javascript:if(confirm('http://docs.jquery.com/Ajax_Events  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://docs.jquery.com/Ajax_Events'" tppabs="http://docs.jquery.com/Ajax_Events" title="Ajax Events">Ajax 事件</a>。
+      <p>请求成功后的回调函数。参数：由服务器返回，并根据dataType参数进行处理后的数据；描述状态的字符串。还有 jqXHR（在jQuery 1.4.x的中，XMLHttpRequest） 对象 。在jQuery 1.5， 成功设置可以接受一个函数数组。每个函数将被依次调用。 <a href="http://docs.jquery.com/Ajax_Events" title="Ajax Events">Ajax 事件</a>。
       <pre>function (data, textStatus) {
     // data 可能是 xmlDoc, jsonObj, html, text, 等等...
     this; // 调用本次AJAX请求时传递的options参数

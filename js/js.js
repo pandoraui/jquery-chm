@@ -99,7 +99,9 @@ var data = {
 	firstOfType:{title:":first-of-type",type:"选择器"},	
 	lastChild:{title:":last-child",type:"选择器"},
 	lastOfType:{title:":last-of-type",type:"选择器"},
-    nthChild:{title:":nth-child()",type:"选择器"},	
+	nthChild:{title:":nth-child()",type:"选择器"},
+	nthLastChild:{title:":nth-last-child()",type:"选择器"},
+	nthLastOfType:{title:":nth-last-of-type()",type:"选择器"},
 	nthOfType:{title:":nth-of-type()",type:"选择器"},
 	onlyChild:{title:":only-child",type:"选择器"},
 	onlyOfType:{title:":only-of-type",type:"选择器"},
@@ -369,7 +371,7 @@ var thisRelName = $("#content.a2 > div").attr("rel");//获取当前名称
 //传入原始数据与指定数据名
 var hemin = getJson(data,thisRelName);
 
-$("#content").prepend("<div class='return'><div class='retLeft'><a href='index.html' class='pc' title=''>首页</a>&nbsp;&gt;&nbsp;"+hemin.thisName.type +"&nbsp;&gt;&nbsp;"+hemin.thisName.title +"</div><div class='retRight'><a href='bugandUpdate.html'>反馈/更新</a></div></div>");
+$("#content").prepend("<div class='return'><div class='retLeft'><a href='cheatsheet.html' class='pc' title=''>首页</a>&nbsp;&gt;&nbsp;"+hemin.thisName.type +"&nbsp;&gt;&nbsp;"+hemin.thisName.title +"</div><div class='retRight'><a href='bugandUpdate.html'>反馈/更新</a></div></div>");
 
 if(thisRelName == "jQuery_selector_context"){
 	$("#content").append("<div class='navigation'><div class='alignright'>下一篇：<a href='"+hemin.next.url+".html'>"+hemin.next.title+"</a></div></div>");
@@ -380,28 +382,38 @@ if(thisRelName == "jQuery_selector_context"){
 	$("#content").append("<div class='navigation'><div class='alignleft'>上一篇：<a href='"+hemin.prev.url+".html'>"+hemin.prev.title+"</a></div><div class='alignright'>下一篇：<a href='"+hemin.next.url+".html'>"+hemin.next.title+"</a></div></div>");
 }
 
-$("#content").append("<div class='close_button' title='关闭'>×</div>");
+//CHM不需要回到顶部
+if(!/^mk:$/i.test(location.protocol)){
+	$("#content").append("<a id='go_home' title='回到首页' href='cheatsheet.html' >首页</a><div id='go_top' title='回到顶部'>顶部</div>");
 
-$(".close_button,.retLeft .pc").click(function(){
-	$('a.ayidong',parent.document).removeClass("ayidong");	
-	$('#gdt',parent.document).removeClass("gdtovh");
-	$('#conview',parent.document).remove();
-});
-$(document).on('click',function(e){
-	//alert(e.target.nodeName);
-    if(e.target.id=='split'){
-		$('a.ayidong',parent.document).removeClass("ayidong");
-		$('#gdt',parent.document).removeClass("gdtovh");
-		$('#conview',parent.document).remove();
-	};
+	var this_height = $("body").height();
+	$('#J_right',window.parent.document).height(this_height+10);
 	
-});
-$("#content").append("<div id='go_home' title='回到顶部'>TOP</div>");
+	$(document).on('click','#go_top',function(event){
+		event.preventDefault();
+		$('body,html',window.parent.document).animate({scrollTop:0},500);
+	});
 
-$(document).on('click','#go_home',function(event){
-	 event.preventDefault();
-	$('body,html').animate({scrollTop:0},500);
-});
+	$(document).on('click','a',function(){
+		var t_href = $(this).attr("href");
+		window.parent.history.pushState(null, null, t_href);
+		$(".dtree li a.up",window.parent.document).removeClass("up");
+		$(".dtree ol",window.parent.document).hide();
+		$(".dtree h2",window.parent.document).removeClass("up");
+		
+		$('.dtree li a[href="'+t_href+'"]',window.parent.document).parents("ol").show();
+		$('.dtree li a[href="'+t_href+'"]',window.parent.document).parents("ol").siblings("h2").addClass("up");
+		$('.dtree li a[href="'+t_href+'"]',window.parent.document).addClass("up");
+		
+		//return false;
+	});
+
+	if($("body",window.parent.document).attr("id") != "gdt"){
+		$(".pc,#go_home").attr("href","index.html");
+	}
+
+	$("#show_donate_list").load("http://hemin.cn/jq/downloads/index.html #J_donate_list");
+}
 /*$(".navigation,.retRight").on('click','a', function(e) {
 	
 	if($("div").attr("id") == "right"){

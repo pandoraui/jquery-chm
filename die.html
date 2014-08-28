@@ -1,22 +1,14 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset="utf-8" />
-<title>die(type,[fn]) | jQuery API 中文手册</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>die(type,[fn])</title>
 <meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
 <meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
-<link type="text/css" rel="stylesheet" href="style/style.css" tppabs="http://hemin.cn/jq/style/style.css"  />
-<script type="text/javascript" src="js/jquery.min.js" tppabs="http://hemin.cn/jq/js/jquery.min.js"></script>
-<script type="text/javascript" src="js/js.js" tppabs="http://hemin.cn/jq/js/js.js"></script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
 
-  ga('create', 'UA-15318881-10', 'pandoraui.github.io');
-  ga('send', 'pageview');
-</script>
 </head>
 <body id="split">
 <div id="content" class="a2">
@@ -30,7 +22,7 @@
         <p>你可以解除用live注册的自定义事件。</p>
         <p>如果提供了type参数，那么会移除对应的live事件。</p>
         <p>如果也指定了第二个参数function,则只移出指定的事件处理函数。</p>
-        <p class="optional"> <strong>从 jQuery 1.7 开始</strong>，不再建议使用 .die() (以及它的互补方法 .live())。请使用 <a href="off.html" tppabs="http://hemin.cn/jq/off.html"> .off()</a> 来代替，用于移除通过 <a href="on.html" tppabs="http://hemin.cn/jq/on.html"> .on()</a> 绑定的事件处理。 </p>
+        <p class="optional"> <strong>从 jQuery 1.7 开始</strong>，不再建议使用 .die() (以及它的互补方法 .live())。请使用 <a href="off.html"> .off()</a> 来代替，用于移除通过 <a href="on.html"> .on()</a> 绑定的事件处理。 </p>
         <p> <strong>注意:</strong> 为了保证 .die() 能正确工作，所使用的选择器必须与初始化 .live() 时所使用的选择器保持一致。 </p>
       </div>
     </div>
