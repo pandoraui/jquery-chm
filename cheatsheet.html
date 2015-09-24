@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>jQuery 1.11.1 速查表 | jQuery API 中文手册</title>
+<title>jQuery 1.11.3 速查表 | jQuery API 中文手册</title>
 <meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
 <meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
 <link type="image/x-icon" href="img/favicon.ico" rel="shortcut icon">
@@ -33,7 +33,7 @@ del,del a{ color:#999!important;}
 #content.a1 h1 > span{ float:left;}
 #content.a1 em{ font-style:normal;}
 
-@media only screen and (min-width: 150px) and (max-width:378px){
+/*@media only screen and (min-width: 150px) and (max-width:378px){
 	#content.a1 h1,#content.a1 #footer{width:206px;}
 	#content.a1 h1 em{ display:none;}
 	#content.a1 > div{ height:auto;}
@@ -63,7 +63,7 @@ del,del a{ color:#999!important;}
 	#content.a1 h1,#content.a1 #footer{width:1038px;}
 	#content.a1 .col-6{ width:auto; height:auto;}
 	#content.a1 .col-6 > div{ float:left; width: 206px; margin-right: 2px;}
-}
+}*/
 .llq{ width:720px; font-family:"黑体"; position:absolute; top:0; left:50%; margin-left:-360px; line-height:50px; text-align:center; font-size:30px; background-color:#FEFFC5; color:#7A7A7A;}
 .llq a{ color:#FF555D; font-weight:bold;}
 .llq a:hover{ background-color:FF555D; color:#FEFFC5;}
@@ -73,27 +73,43 @@ del,del a{ color:#999!important;}
 <script type="text/javascript">
 $(document).ready(function() {
 	$("#content").on('click','li a', function(e) {
-		var t_href = $(this).attr("href");
-		window.parent.history.pushState(null, null, t_href);
-		
-		$(".dtree li a.up",window.parent.document).removeClass("up");
-		$(".dtree ol",window.parent.document).hide();
-		$(".dtree h2",window.parent.document).removeClass("up");
-		
-		$('.dtree li a[href="'+t_href+'"]',window.parent.document).parents("ol").show();
-		$('.dtree li a[href="'+t_href+'"]',window.parent.document).parents("ol").siblings("h2").addClass("up");
-		$('.dtree li a[href="'+t_href+'"]',window.parent.document).addClass("up");
 		$('body,html',window.parent.document).scrollTop(0);
 	});
 	var this_height = $("body").height();
 	$('#J_right',window.parent.document).height(this_height);
+	
+	if(1062 <= $(window).width() && $(window).width()<= 1268){
+		$("#content.a1 h1,#content.a1 #footer").css({"width":"1038px"});
+		$("#content.a1 .col-6").css({"width":"auto","height":"auto"});
+	}
+	if(856 <= $(window).width() && $(window).width()<= 1064){
+		$("#content.a1 h1,#content.a1 #footer").css({"width":"830px"});
+		$("#content.a1 .col-6,#content.a1 .col-5").css({"width":"auto","overflow":"visible","width":"auto","height":"auto"});
+		$("#content.a1 .col-6 > div,#content.a1 .col-5 > div").css({"float":"left","width":"206px","margin-right":"2px"});
+	}
+	if(648 <= $(window).width() && $(window).width()<= 858){
+		$("#content.a1 h1,#content.a1 #footer").css({"width":"622px"});
+		$("#content.a1 .col-6,#content.a1 .col-5,#content.a1 .col-4").css({"height":"auto"});
+		$("#content.a1 .col-6 > div,#content.a1 .col-5 > div,#content.a1 .col-4 > div").css({"float":"left","width":"206px","margin-right":"2px"});
+	}
+	if(442 <= $(window).width() && $(window).width()<= 650){
+		$("#content.a1 h1,#content.a1 #footer").css({"width":"414px"});
+		$("#content.a1 h1 em").css({"display":"none"});
+		$("#content.a1 > div").css({"height":"auto"});
+		$("#content.a1 > div > div").css({"float":"left","width":"206px","margin-right":"2px"});
+	}
+	if(150 <= $(window).width() && $(window).width()<= 378){
+		$("#content.a1 h1,#content.a1 #footer").css({"width":"206px"});
+		$("#content.a1 h1 em").css({"display":"none"});
+		$("#content.a1 > div").css({"height":"auto"});
+		$("#content.a1 > div > div").css({"float":"left","width":"206px","margin-right":"2px"});
+	}	
 });
 </script>
 </head>
 <body>
-<!--[if IE 6]><div class="llq">换个浏览器吧，IE6太落后了，用<a href="https://www.google.com/intl/zh-CN/chrome/browser/" target="_blank">谷歌</a>或<a href="http://firefox.com.cn/">火狐</a>浏览吧！不然我会神神滴BS你哦。</div><![endif]-->
 <div id="content" class="a1">
-  <h1><span><em><a href="cheatsheet.html" title="点击在线浏览">在线手册</a> | <a href="downloads.html" title="CHM版下载">CHM版</a> | <a href="downloads.html" title="源码下载">源码</a>&nbsp;&nbsp;&nbsp;&nbsp;jQuery 1.11.1 速查表&nbsp;&nbsp;--</em>作者：<a href="http://hemin.cn/blog/" target="_blank">hemin</a></span><a id="fk" href="bugandUpdate.html">反馈/更新</a></h1>
+  <h1><span><em><a href="cheatsheet.html" title="点击在线浏览">在线手册</a> | <a href="downloads.html" title="CHM版下载">CHM版</a> | <a href="downloads.html" title="源码下载">源码</a>&nbsp;&nbsp;&nbsp;&nbsp;jQuery 1.11.3 速查表&nbsp;&nbsp;--</em>作者：<a href="http://hemin.cn/blog/" target="_blank">hemin</a></span><a id="fk" href="bugandUpdate.html">反馈/更新</a></h1>
   <div class="col-1">
     <div id="core">
       <h2>核心</h2>
@@ -604,7 +620,7 @@ $(document).ready(function() {
             <li><a href="jQuery.makeArray.html">$.makeArray(obj)</a></li>
             <li><a href="jQuery.map.html">$.map(arr|obj,callback)</a></li>
             <li><a href="jQuery.inArray.html">$.inArray(val,arr,[from])</a></li>
-            <li><a href="jQuery.toarray.html">$.toArray()</a></li>
+            <li><a href="jQuery.toArray.html">$.toArray()</a></li>
             <li><a href="jQuery.merge.html">$.merge(first,second)</a></li>
             <li><a href="jQuery.unique.html">$.unique(array)</a></li>
             <li><a href="jQuery.parseJSON.html">$.parseJSON(json)</a></li>
