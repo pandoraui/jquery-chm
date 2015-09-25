@@ -1,24 +1,24 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>jQuery.sub() | jQuery API 中文手册</title>
 <meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
-<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
-<link type="text/css" rel="stylesheet" href="style/style.css" tppabs="http://hemin.cn/jq/style/style.css"  />
-<script type="text/javascript" src="js/jquery.min.js" tppabs="http://hemin.cn/jq/js/jquery.min.js"></script>
-<script type="text/javascript" src="js/js.js" tppabs="http://hemin.cn/jq/js/js.js"></script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-15318881-10', 'pandoraui.github.io');
-  ga('send', 'pageview');
-</script>
+<meta name="description" content="可创建一个新的jQuery副本，不影响原有的jQuery对像。 - jQuery API 中文手册">
+<meta name="keywords" content="jquery,chm,手册,在线,api" />
+<link type="image/x-icon" href="img/favicon.ico" rel="shortcut icon">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
 </head>
 <body id="split">
+<div id='left' class='dtree'>
+  <p style="text-align:center">
+    <input type="text" name="query" id="query" placeholder="请输入关键字"/>
+    <!--<input type="button" id="butsoso" value="搜索" />--></p>
+  <p style="margin:7px 0; text-align:center"><a href="javascript:void(0)" id="openAll">全部展开</a> | <a href="javascript:void(0)" id="closeAll">全部折叠 </a> | <a href="index.html">速查表</a></p>
+	<div id="menu">
+    
+    </div>
+</div>
 <div id="content" class="a2">
   <div rel="jQuery.sub">
     <h2><span>返回值:jQuery</span>jQuery.sub() </h2>
@@ -28,7 +28,7 @@
       <div class="longdesc">
         <p>有两个具体使用jQuery.sub（）创建案例。首先是提供完全没有破坏jQuery原有一切的方法，另一个用于帮助做jQuery插件封装和基本命名空间。</p>
         <p>请注意，jQuery.sub（）不会做任何特殊的隔离 - 这不是它的意图。所有关于jQuery的sub'd版本的方法将仍然指向原来的jQuery。（绑定和触发仍将通过主jQuery的事件，数据将通过主绑定的元素的jQuery，Ajax的查询和活动将通过主jQuery的运行，等等）。</p>
-        <p>请注意，如果你正在寻找使用这个开发插件，应首先<em>认真</em>考虑使用一些类似jQuery UI widget工厂，这两个状态和插件管理子方法。&nbsp;<a href="javascript:if(confirm('http://blog.nemikor.com/2010/05/15/building-stateful-jquery-plugins/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://blog.nemikor.com/2010/05/15/building-stateful-jquery-plugins/'" tppabs="http://blog.nemikor.com/2010/05/15/building-stateful-jquery-plugins/">使用jQuery UI widget的一些例子</a>建立一个插件。</p>
+        <p>请注意，如果你正在寻找使用这个开发插件，应首先<em>认真</em>考虑使用一些类似jQuery UI widget工厂，这两个状态和插件管理子方法。&nbsp;<a href="http://blog.nemikor.com/2010/05/15/building-stateful-jquery-plugins/">使用jQuery UI widget的一些例子</a>建立一个插件。</p>
         <p>这种方法的具体使用情况下可以通过一些例子最好的描述。</p>
         <p class="outmoded">该方法是在jQuery 1.5中引入的，但是被证明不是很有用，将被移到jQuery 1.9兼容性插件中。</p>
       </div>
@@ -116,4 +116,8 @@ $(document).ready(function() {
   </div>
 </div>
 </body>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.autocomplete.js"></script>
+<script type="text/javascript" src="js/dtree.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
 </html>

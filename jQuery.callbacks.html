@@ -1,24 +1,24 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>jQuery.callbacks(flags) | jQuery API ä¸­æ–‡æ‰‹å†Œ</title>
 <meta name="author" content="jQuery ä¸­æ–‡æ‰‹å†Œ - hemin.cn/jq/">
-<meta name="description" content="jQueryä¸­æ–‡æ‰‹å†Œ(åœ¨çº¿ç‰ˆ),ä½œè€…:hemin,åœ¨çº¿æ‰‹å†Œ:hemin.cn/jq/,ä¸‹è½½:hemin.cn/jq/downloads/">
-<link type="text/css" rel="stylesheet" href="style/style.css" tppabs="http://hemin.cn/jq/style/style.css"  />
-<script type="text/javascript" src="js/jquery.min.js" tppabs="http://hemin.cn/jq/js/jquery.min.js"></script>
-<script type="text/javascript" src="js/js.js" tppabs="http://hemin.cn/jq/js/js.js"></script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-15318881-10', 'pandoraui.github.io');
-  ga('send', 'pageview');
-</script>
+<meta name="description" content="ä¸€ä¸ªå¤šç”¨é€”çš„å›è°ƒåˆ—è¡¨å¯¹è±¡ï¼Œæä¾›äº†å¼ºå¤§çš„çš„æ–¹å¼æ¥ç®¡ç†å›è°ƒå‡½æ•°åˆ—è¡¨ã€‚ - jQuery API ä¸­æ–‡æ‰‹å†Œ">
+<meta name="keywords" content="jquery,chm,æ‰‹å†Œ,åœ¨çº¿,api" />
+<link type="image/x-icon" href="img/favicon.ico" rel="shortcut icon">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
 </head>
 <body id="split">
+<div id='left' class='dtree'>
+  <p style="text-align:center">
+    <input type="text" name="query" id="query" placeholder="è¯·è¾“å…¥å…³é”®å­—"/>
+    <!--<input type="button" id="butsoso" value="æœç´¢" />--></p>
+  <p style="margin:7px 0; text-align:center"><a href="javascript:void(0)" id="openAll">å…¨éƒ¨å±•å¼€</a> | <a href="javascript:void(0)" id="closeAll">å…¨éƒ¨æŠ˜å  </a> | <a href="index.html">é€ŸæŸ¥è¡¨</a></p>
+	<div id="menu">
+    
+    </div>
+</div>
 <div id="content" class="a2">
   <div rel="jQuery.callbacks">
     <h2><span>è¿”å›å€¼:jQuery</span>jQuery.callbacks(flags)</h2>
@@ -27,7 +27,7 @@
       <p> ä¸€ä¸ªå¤šç”¨é€”çš„å›è°ƒåˆ—è¡¨å¯¹è±¡ï¼Œæä¾›äº†å¼ºå¤§çš„çš„æ–¹å¼æ¥ç®¡ç†å›è°ƒå‡½æ•°åˆ—è¡¨ã€‚ </p>
       <div class="longdesc">
         <p>$.Callbacks()çš„å†…éƒ¨æä¾›äº†jQueryçš„$.ajax()&nbsp;å’Œ&nbsp;$.Deferred()&nbsp;åŸºæœ¬åŠŸèƒ½ç»„ä»¶ã€‚å®ƒå¯ä»¥ç”¨æ¥ä½œä¸ºç±»ä¼¼åŸºç¡€å®šä¹‰çš„æ–°ç»„ä»¶çš„åŠŸèƒ½ã€‚</p>
-        <p>$.Callbacks()&nbsp;æ”¯æŒçš„æ–¹æ³•ï¼ŒåŒ…æ‹¬&nbsp;<a href="javascript:if(confirm('http://www.css88.com/callbacks.add/  \n\nÎÄ¼ş²¢Î´ÒÀ Teleport Pro È¡»Ø£¬ÒòÎª ËüµÄÓò»òÂ·¾¶³¬¹ı¿ªÊ¼ÍøÖ·ÖĞÉèÖÃµÄ·¶Î§¡£  \n\nÄãÒª´Ó·şÎñÆ÷ÉÏ´ò¿ªËüÂğ£¿'))window.location='http://www.css88.com/callbacks.add/'" tppabs="http://www.css88.com/callbacks.add/">callbacks.add()</a>,<a href="javascript:if(confirm('http://www.css88.com/callbacks.remove/  \n\nÎÄ¼ş²¢Î´ÒÀ Teleport Pro È¡»Ø£¬ÒòÎª ËüµÄÓò»òÂ·¾¶³¬¹ı¿ªÊ¼ÍøÖ·ÖĞÉèÖÃµÄ·¶Î§¡£  \n\nÄãÒª´Ó·şÎñÆ÷ÉÏ´ò¿ªËüÂğ£¿'))window.location='http://www.css88.com/callbacks.remove/'" tppabs="http://www.css88.com/callbacks.remove/">callbacks.remove()</a>,&nbsp;<a href="javascript:if(confirm('http://www.css88.com/callbacks.fire/  \n\nÎÄ¼ş²¢Î´ÒÀ Teleport Pro È¡»Ø£¬ÒòÎª ËüµÄÓò»òÂ·¾¶³¬¹ı¿ªÊ¼ÍøÖ·ÖĞÉèÖÃµÄ·¶Î§¡£  \n\nÄãÒª´Ó·şÎñÆ÷ÉÏ´ò¿ªËüÂğ£¿'))window.location='http://www.css88.com/callbacks.fire/'" tppabs="http://www.css88.com/callbacks.fire/">callbacks.fire()</a>&nbsp;and&nbsp;<a href="javascript:if(confirm('http://www.css88.com/callbacks.disable/  \n\nÎÄ¼ş²¢Î´ÒÀ Teleport Pro È¡»Ø£¬ÒòÎª ËüµÄÓò»òÂ·¾¶³¬¹ı¿ªÊ¼ÍøÖ·ÖĞÉèÖÃµÄ·¶Î§¡£  \n\nÄãÒª´Ó·şÎñÆ÷ÉÏ´ò¿ªËüÂğ£¿'))window.location='http://www.css88.com/callbacks.disable/'" tppabs="http://www.css88.com/callbacks.disable/">callbacks.disable()</a>.</p>
+        <p>$.Callbacks()&nbsp;æ”¯æŒçš„æ–¹æ³•ï¼ŒåŒ…æ‹¬&nbsp;<a href="callbacks.add.html">callbacks.add()</a>,<a href="callbacks.remove.html">callbacks.remove()</a>,&nbsp;<a href="callbacks.fire.html">callbacks.fire()</a>&nbsp;and&nbsp;<a href="callbacks.disable.html">callbacks.disable()</a>.</p>
       </div>
     </div>
     <h3>å‚æ•°</h3>
@@ -131,7 +131,7 @@ foo
 bar
 fn2 says:bar
 foobar
-*//code></pre>
+*/</code></pre>
       <p>&nbsp;</p>
       <p><strong>$.Callbacks( 'stopOnFalse' ):</strong></p>
       <pre><code>function fn1( value ){
@@ -270,4 +270,8 @@ dfd.resolve( "its been published!" );</code></pre>
   </div>
 </div>
 </body>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.autocomplete.js"></script>
+<script type="text/javascript" src="js/dtree.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
 </html>

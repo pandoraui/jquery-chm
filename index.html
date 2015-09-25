@@ -1,455 +1,706 @@
-<!DOCTYPE html>
-<html manifest="manifest.appcache">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>jquery 在线手册 | jQuery API 中文手册</title>
-<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/"
+<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
 <meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
 <meta name="keywords" content="jquery,chm,手册,在线,api" />
-<link type="image/x-icon" href="img/favicon.ico" tppabs="http://hemin.cn/jq/img/favicon.ico" rel="shortcut icon">
-<link type="text/css" rel="stylesheet" href="style/style.css" tppabs="http://hemin.cn/jq/style/style.css"  />
-<script type="text/javascript" src="js/jquery.min.js" tppabs="http://hemin.cn/jq/js/jquery.min.js"></script>
-<script type="text/javascript" src="js/jquery.autocomplete.js" tppabs="http://hemin.cn/jq/js/jquery.autocomplete.js"></script>
-<script type="text/javascript" src="js/dtree.js" tppabs="http://hemin.cn/jq/js/dtree.js"></script>
-<script type="text/javascript">
-$(document).ready(function() {
-		//$.getScript("js/jquery.autocomplete.js");
-	//$.getScript("js/dtree.js");
-	//$('#left').load('__left.html .dtree');
-	$('#right').load("cheatsheet.html #content");
-	$("#left,#right").on('click','li a', function(e) {				
-		var offset = $(this).offset();
-		$(this).css({"top":offset.top,"left":offset.left}).addClass("ayidong").animate({left:$(document).width()/2-390,top:90},300);
-		$("#gdt").append('<div id=conview><div class=background></div><iframe id='+'iframe_over'+' src='+$(this).attr('href')+'></iframe></div>');
-		$("#conview").delay(300).fadeIn("slow");
-		$("#gdt").addClass("gdtovh");
-		window.history.pushState(null, null, $(this).attr('href'));
-		e.preventDefault();
-		$("#iframe_over").css("top",$(document).scrollTop());
-		window.addEventListener('popstate', function(e) { 
-			$('#conview').remove();
-	　　　　$("#right").load(location.pathname); 
-	 　　});
-		return false;
-	});
-	
-/*	$(document).on("click",".close_button",function(){
-		//$("#conview").hide();
-		alert("111111111");
-	});*/
-/*	function anchorClick(link) {
-　　　　var linkSplit = link.split('/').pop();
-alert(linkSplit);
-　　　　$.get(linkSplit, function(data) {
-　　　　　　//$("right").html(data);
-　　　　});
-　　}
-	window.addEventListener('popstate', function(e) {
-		anchorClick(location.pathname);
-		//$('#right').load(location.pathname+' #content');
-		//alert(location.pathname);
-		//$.getScript("js/js.js");
-	});*/
-})
-</script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+<link type="image/x-icon" href="img/favicon.ico" rel="shortcut icon">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<style type="text/css">
+@media (max-width:1440px){
+	#content.a1 h1,#content.a1 #footer{width:1038px;}
+	#content.a1 .col-6{ width:auto; height:auto;}
+	#content.a1 .col-6 > div{ float:left; width: 206px; margin-right: 2px;}
+}
+@media (max-width:1268px){
+	#content.a1 h1,#content.a1 #footer{width:830px;}
+	#content.a1 .col-6,#content.a1 .col-5{ float:none; overflow:visible; width:auto;height:auto;}
+	#content.a1 .col-6 > div,#content.a1 .col-5 > div{ float:left; width: 206px; margin-right: 2px;}
+}
+@media (max-width:1064px){
+	#content.a1 h1,#content.a1 #footer{width:622px;}
+	#content.a1 .col-6,#content.a1 .col-5,#content.a1 .col-4{ height:auto;}
+	#content.a1 .col-6 > div,#content.a1 .col-5 > div,#content.a1 .col-4 > div{ float:left; width: 206px; margin-right: 2px;}
+}
+@media (max-width:858px){
+	#content.a1 h1,#content.a1 #footer{width:414px;}
+	#content.a1 h1 em{ display:none;}
+	#content.a1 > div{ height:auto;}
+	#content.a1 > div > div{ float:left; width: 206px; margin-right: 2px;}
+}
+@media (max-width:650px){
+	#content.a1 h1,#content.a1 #footer{width:206px;}
+	#content.a1 h1 em{ display:none;}
+	#content.a1 > div{ height:auto;}
+	#content.a1 > div > div{ float:left; width: 206px; margin-right: 2px;}
+}
+.llq{ width:720px; font-family:"黑体"; position:absolute; top:0; left:50%; margin-left:-360px; line-height:50px; text-align:center; font-size:30px; background-color:#FEFFC5; color:#7A7A7A;}
+.llq a{ color:#FF555D; font-weight:bold;}
+.llq a:hover{ background-color:FF555D; color:#FEFFC5;}
 
-  ga('create', 'UA-15318881-10', 'pandoraui.github.io');
-  ga('send', 'pageview');
-</script>
+</style>
 </head>
+
 <body id="gdt">
-<!--[if IE]><div class="llq">换个浏览器吧，IE太落后了，用<a href="https://www.google.com/intl/zh-CN/chrome/browser/" target="_blank">谷歌</a>或<a href="http://firefox.com.cn/">火狐</a>浏览吧！不然我会神神滴BS你哦。</div><![endif]-->
-<div id='left'>
-<div class="dtree">
-<p style="text-align:center"><input type="text" name="query" id="query" placeholder="请输入关键字"/><!--<input type="button" id="butsoso" value="搜索" />--></p>
-<p style="margin:7px 0; text-align:center"><a href="javascript:void(0)" id="openAll">全部展开</a> | <a href="javascript:void(0)" id="closeAll">全部折叠 </a> | <a href="index.html" tppabs="http://hemin.cn/jq/index.html">速查表</a></p>
-  <div id="core">
-    <h2>核心</h2>
-    <ol>
-      <li><a href="jQuery_selector_context.html" tppabs="http://hemin.cn/jq/jQuery_selector_context.html">jQuery([sel,[context]])</a></li>
-      <li><a href="jQuery_html_ownerDocument.html" tppabs="http://hemin.cn/jq/jQuery_html_ownerDocument.html">jQuery(html,[ownerDoc])</a><sup>1.8*</sup></li>
-      <li><a href="jQuery_callback.html" tppabs="http://hemin.cn/jq/jQuery_callback.html">jQuery(callback)</a></li>
-      <li><a href="jQuery.holdReady.html" tppabs="http://hemin.cn/jq/jQuery.holdReady.html">jQuery.holdReady(hold)</a><sup>1.6+</sup></li>
-      <li><a href="each.html" tppabs="http://hemin.cn/jq/each.html">each(callback)</a></li>
-      <li><a href="size.html" tppabs="http://hemin.cn/jq/size.html">size()</a></li>
-      <li><a href="length.html" tppabs="http://hemin.cn/jq/length.html">length</a></li>
-      <li><a href="selector.html" tppabs="http://hemin.cn/jq/selector.html">selector</a></li>
-      <li><a href="context.html" tppabs="http://hemin.cn/jq/context.html">context</a></li>
-      <li><a href="get.html" tppabs="http://hemin.cn/jq/get.html">get([index])</a></li>
-      <li><a href="index_1.html" tppabs="http://hemin.cn/jq/index_1.html">index([selector|element])</a></li>
-      <li><a href="data.html" tppabs="http://hemin.cn/jq/data.html">data([key],[value])</a></li>
-      <li><a href="removeData.html" tppabs="http://hemin.cn/jq/removeData.html">removeData([name|list])</a><sup>1.7*</sup></li>
-      <li><a href="jQuery.data.html" tppabs="http://hemin.cn/jq/jQuery.data.html"><del>$.data(ele,[key],[val])</del></a><sup>1.8-</sup></li>
-      <li><a href="queue.html" tppabs="http://hemin.cn/jq/queue.html" title="queue(element,[queueName])">queue(e,[q])</a></li>
-      <li><a href="dequeue.html" tppabs="http://hemin.cn/jq/dequeue.html" title="dequeue([queueName])">dequeue([queueName])</a></li>
-      <li><a href="clearQueue.html" tppabs="http://hemin.cn/jq/clearQueue.html" title="clearQueue([queueName])">clearQueue([queueName])</a></li>
-      <li><a href="jQuery.fn.extend.html" tppabs="http://hemin.cn/jq/jQuery.fn.extend.html">jQuery.fn.extend(object)</a></li>
-      <li><a href="jQuery.extend_object.html" tppabs="http://hemin.cn/jq/jQuery.extend_object.html">jQuery.extend(object)</a></li>
-      <li><a href="jQuery.noConflict.html" tppabs="http://hemin.cn/jq/jQuery.noConflict.html" title="jQuery.noConflict([extreme])">jQuery.noConflict([ex])</a></li>
-    </ol>
-  </div>
-  <div id="attributes">
-    <h2>属性</h2>
-    <ol>
-      <li><a href="attr.html" tppabs="http://hemin.cn/jq/attr.html" title="attr(name|properties|key,value|fn)">attr(name|pro|key,val|fn)</a></li>
-      <li><a href="removeAttr.html" tppabs="http://hemin.cn/jq/removeAttr.html">removeAttr(name)</a></li>
-      <li><a href="prop.html" tppabs="http://hemin.cn/jq/prop.html" title="prop(name|properties|key,value|fn)">prop(n|p|k,v|f)</a><sup>1.6+</sup></li>
-      <li><a href="removeProp.html" tppabs="http://hemin.cn/jq/removeProp.html">removeProp(name)</a><sup>1.6+</sup></li>
-      <li><a href="addClass.html" tppabs="http://hemin.cn/jq/addClass.html">addClass(class|fn)</a></li>
-      <li><a href="removeClass.html" tppabs="http://hemin.cn/jq/removeClass.html">removeClass([class|fn])</a></li>
-      <li><a href="toggleClass.html" tppabs="http://hemin.cn/jq/toggleClass.html">toggleClass(class|fn[,sw])</a></li>
-      <li><a href="html.html" tppabs="http://hemin.cn/jq/html.html">html([val|fn])</a></li>
-      <li><a href="text.html" tppabs="http://hemin.cn/jq/text.html">text([val|fn])</a></li>
-      <li><a href="val.html" tppabs="http://hemin.cn/jq/val.html">val([val|fn|arr])</a></li>
-    </ol>
-  </div>
-  <div id="css">
-    <h2>CSS</h2>
-    <ol>
-      <li><a href="css.html" tppabs="http://hemin.cn/jq/css.html" title="css(name|properties|[,value|fn])">css(name|pro|[,val|fn])</a><sup>1.9*</sup></li>
-      <li><a href="jQuery.cssHooks.html" tppabs="http://hemin.cn/jq/jQuery.cssHooks.html">jQuery.cssHooks</a></li>      
-      <li><a href="offset.html" tppabs="http://hemin.cn/jq/offset.html">offset([coordinates])</a></li>
-      <li><a href="position.html" tppabs="http://hemin.cn/jq/position.html">position()</a></li>
-      <li><a href="scrollTop.html" tppabs="http://hemin.cn/jq/scrollTop.html">scrollTop([val])</a></li>
-      <li><a href="scrollLeft.html" tppabs="http://hemin.cn/jq/scrollLeft.html">scrollLeft([val])</a></li>
-      <li><a href="height.html" tppabs="http://hemin.cn/jq/height.html">heigh([val|fn])</a></li>
-      <li><a href="width.html" tppabs="http://hemin.cn/jq/width.html">width([val|fn])</a></li>
-      <li><a href="innerHeight.html" tppabs="http://hemin.cn/jq/innerHeight.html">innerHeight()</a></li>
-      <li><a href="innerWidth.html" tppabs="http://hemin.cn/jq/innerWidth.html">innerWidth()</a></li>
-      <li><a href="outerHeight.html" tppabs="http://hemin.cn/jq/outerHeight.html">outerHeight([soptions])</a></li>
-      <li><a href="outerWidth.html" tppabs="http://hemin.cn/jq/outerWidth.html">outerWidth([options])</a></li>
-    </ol>
-  </div>
-  <div id="selectors">
-    <h2>选择器</h2>
-    <ol>
-      <li><a href="id.html" tppabs="http://hemin.cn/jq/id.html">#id</a></li>
-      <li><a href="element.html" tppabs="http://hemin.cn/jq/element.html">element</a></li>
-      <li><a href="class.html" tppabs="http://hemin.cn/jq/class.html">.class</a></li>
-      <li><a href="all.html" tppabs="http://hemin.cn/jq/all.html">*</a></li>
-      <li><a href="multiple.html" tppabs="http://hemin.cn/jq/multiple.html">selector1,selector2,selectorN</a></li>
-      <li><a href="descendant.html" tppabs="http://hemin.cn/jq/descendant.html">ancestor descendant</a></li>
-      <li><a href="child.html" tppabs="http://hemin.cn/jq/child.html">parent &gt;  child</a></li>
-      <li><a href="next_1.html" tppabs="http://hemin.cn/jq/next_1.html">prev + next</a></li>
-      <li><a href="siblings_1.html" tppabs="http://hemin.cn/jq/siblings_1.html">prev ~ siblings</a></li>
-      
-          <li><a href="first_1.html" tppabs="http://hemin.cn/jq/first_1.html">:first</a></li>
-          <li><a href="not_1.html" tppabs="http://hemin.cn/jq/not_1.html">:not(selector)</a></li>
-          <li><a href="even.html" tppabs="http://hemin.cn/jq/even.html">:even</a></li>
-          <li><a href="odd.html" tppabs="http://hemin.cn/jq/odd.html">:odd</a></li>
-          <li><a href="eq_1.html" tppabs="http://hemin.cn/jq/eq_1.html">:eq(index)</a></li>
-          <li><a href="gt.html" tppabs="http://hemin.cn/jq/gt.html">:gt(index)</a></li>
-          <li><a href="lang.html" tppabs="http://hemin.cn/jq/lang.html">:lang</a><sup>1.9+</sup></li>
-          <li><a href="last_1.html" tppabs="http://hemin.cn/jq/last_1.html">:last</a></li>
-          <li><a href="lt.html" tppabs="http://hemin.cn/jq/lt.html">:lt(index)</a></li>
-          <li><a href="header.html" tppabs="http://hemin.cn/jq/header.html">:header</a></li>
-          <li><a href="animated.html" tppabs="http://hemin.cn/jq/animated.html">:animated</a></li>
-          <li><a href="focus_1.html" tppabs="http://hemin.cn/jq/focus_1.html">:focus</a><sup>1.6+</sup></li>
-          <li><a href="root.html" tppabs="http://hemin.cn/jq/root.html">:root</a><sup>1.9+</sup></li>
-          <li><a href="target.html" tppabs="http://hemin.cn/jq/target.html">:target</a><sup>1.9+</sup></li>  
-      
-      <li><a href="contains.html" tppabs="http://hemin.cn/jq/contains.html">:contains(text)</a></li>
-      <li><a href="empty_1.html" tppabs="http://hemin.cn/jq/empty_1.html">:empty</a></li>
-      <li><a href="has_1.html" tppabs="http://hemin.cn/jq/has_1.html">:has(selector)</a></li>
-      <li><a href="parent_1.html" tppabs="http://hemin.cn/jq/parent_1.html">:parent</a></li>
-      <li><a href="hidden_1.html" tppabs="http://hemin.cn/jq/hidden_1.html">:hidden</a></li>
-      <li><a href="visible.html" tppabs="http://hemin.cn/jq/visible.html">:visible</a></li>
-      <li><a href="attributeHas.html" tppabs="http://hemin.cn/jq/attributeHas.html">[attribute]</a></li>
-      <li><a href="attributeEquals.html" tppabs="http://hemin.cn/jq/attributeEquals.html">[attribute=value]</a></li>
-      <li><a href="attributeNotEqual.html" tppabs="http://hemin.cn/jq/attributeNotEqual.html">[attribute!=value]</a></li>
-      <li><a href="attributeStartsWith.html" tppabs="http://hemin.cn/jq/attributeStartsWith.html">[attribute^=value]</a></li>
-      <li><a href="attributeEndsWith.html" tppabs="http://hemin.cn/jq/attributeEndsWith.html">[attribute$=value]</a></li>
-      <li><a href="attributeContains.html" tppabs="http://hemin.cn/jq/attributeContains.html">[attribute*=value]</a></li>
-      <li><a href="attributeMultiple.html" tppabs="http://hemin.cn/jq/attributeMultiple.html">[attrSel1][attrSel2][attrSelN]</a></li>
-      
-          <li><a href="firstChild.html" tppabs="http://hemin.cn/jq/firstChild.html">:first-child</a></li>
-          <li><a href="firstOfType.html" tppabs="http://hemin.cn/jq/firstOfType.html">:first-of-type</a><sup>1.9+</sup></li>
-          <li><a href="lastChild.html" tppabs="http://hemin.cn/jq/lastChild.html">:last-child</a></li>
-          <li><a href="lastOfType.html" tppabs="http://hemin.cn/jq/lastOfType.html">:last-of-type</a><sup>1.9+</sup></li>
-          <li><a href="nthChild.html" tppabs="http://hemin.cn/jq/nthChild.html">:nth-child</a></li>
-          <li><a href=":nthLastChild.html">:nth-last-child()</a><sup>1.9+</sup></li>
-          <li><a href="nthLastOfType.html" tppabs="http://hemin.cn/jq/nthLastOfType.html">:nth-last-of-type()</a><sup>1.9+</sup></li>
-          <li><a href="nthOfType.html" tppabs="http://hemin.cn/jq/nthOfType.html">:nth-of-type()</a><sup>1.9+</sup></li>
-          <li><a href="onlyChild.html" tppabs="http://hemin.cn/jq/onlyChild.html">:only-child</a></li>
-          <li><a href="onlyOfType.html" tppabs="http://hemin.cn/jq/onlyOfType.html">:only-of-type</a><sup>1.9+</sup></li>
-      
-      <li><a href="input.html" tppabs="http://hemin.cn/jq/input.html">:input</a></li>
-      <li><a href="text_1.html" tppabs="http://hemin.cn/jq/text_1.html">:text</a></li>
-      <li><a href="password.html" tppabs="http://hemin.cn/jq/password.html">:password</a></li>
-      <li><a href="radio.html" tppabs="http://hemin.cn/jq/radio.html">:radio</a></li>
-      <li><a href="checkbox.html" tppabs="http://hemin.cn/jq/checkbox.html">:checkbox</a></li>
-      <li><a href="submit_1.html" tppabs="http://hemin.cn/jq/submit_1.html">:submit</a></li>
-      <li><a href="image.html" tppabs="http://hemin.cn/jq/image.html">:image</a></li>
-      <li><a href="reset.html" tppabs="http://hemin.cn/jq/reset.html">:reset</a></li>
-      <li><a href="button.html" tppabs="http://hemin.cn/jq/button.html">:button</a></li>
-      <li><a href="file.html" tppabs="http://hemin.cn/jq/file.html">:file</a></li>
-      <li><a href="hidden_1.html" tppabs="http://hemin.cn/jq/hidden_1.html">:hidden</a></li>
-      <li><a href="enabled.html" tppabs="http://hemin.cn/jq/enabled.html">:enabled</a></li>
-      <li><a href="disabled.html" tppabs="http://hemin.cn/jq/disabled.html">:disabled</a></li>
-      <li><a href="checked.html" tppabs="http://hemin.cn/jq/checked.html">:checked</a></li>
-      <li><a href="selected.html" tppabs="http://hemin.cn/jq/selected.html">:selected</a></li>
-    </ol>
-  </div>
-  <div id="manipulation">
-    <h2>文档处理</h2>
-    <ol>
-      <li><a href="append.html" tppabs="http://hemin.cn/jq/append.html">append(content|fn)</a></li>
-      <li><a href="appendTo.html" tppabs="http://hemin.cn/jq/appendTo.html">appendTo(content)</a></li>
-      <li><a href="prepend.html" tppabs="http://hemin.cn/jq/prepend.html">prepend(content|fn)</a></li>
-      <li><a href="prependTo.html" tppabs="http://hemin.cn/jq/prependTo.html">prependTo(content)</a></li>
-      <li><a href="after.html" tppabs="http://hemin.cn/jq/after.html">after(content|fn)</a></li>
-      <li><a href="before.html" tppabs="http://hemin.cn/jq/before.html">before(content|fn)</a></li>
-      <li><a href="insertAfter.html" tppabs="http://hemin.cn/jq/insertAfter.html">insertAfter(content)</a></li>
-      <li><a href="insertBefore.html" tppabs="http://hemin.cn/jq/insertBefore.html">insertBefore(content)</a></li>
-      <li><a href="wrap.html" tppabs="http://hemin.cn/jq/wrap.html" title="wrap(html|element|fn)">wrap(html|ele|fn)</a></li>
-      <li><a href="unwrap.html" tppabs="http://hemin.cn/jq/unwrap.html">unwrap()</a></li>
-      <li><a href="wrapAll.html" tppabs="http://hemin.cn/jq/wrapAll.html" title="wrapall(html|element)">wrapall(html|ele)</a></li>
-      <li><a href="wrapInner.html" tppabs="http://hemin.cn/jq/wrapInner.html" title="wrapInner(html|element|fn)">wrapInner(html|ele|fn)</a></li>
-      <li><a href="replaceWith.html" tppabs="http://hemin.cn/jq/replaceWith.html">replaceWith(content|fn)</a></li>
-      <li><a href="replaceAll.html" tppabs="http://hemin.cn/jq/replaceAll.html">replaceAll(selector)</a></li>
-      <li><a href="empty.html" tppabs="http://hemin.cn/jq/empty.html">empty()</a></li>
-      <li><a href="remove.html" tppabs="http://hemin.cn/jq/remove.html">remove([expr])</a></li>
-      <li><a href="detach.html" tppabs="http://hemin.cn/jq/detach.html">detach([expr])</a></li>
-      <li><a href="clone.html" tppabs="http://hemin.cn/jq/clone.html">clone([Even[,deepEven]])</a></li>
-    </ol>
-  </div>
-  <div id="traversing">
-    <h2>筛选</h2>
-    <ol>
-      <li><a href="eq.html" tppabs="http://hemin.cn/jq/eq.html">eq(index|-index)</a></li>
-      <li><a href="first.html" tppabs="http://hemin.cn/jq/first.html">first()</a></li>
-      <li><a href="last.html" tppabs="http://hemin.cn/jq/last.html">last()</a></li>
-      <li><a href="hasClass.html" tppabs="http://hemin.cn/jq/hasClass.html">hasClass(class)</a></li>
-      <li><a href="filter.html" tppabs="http://hemin.cn/jq/filter.html" title="filter(expr|object|element|fn)">filter(expr|obj|ele|fn)</a></li>
-      <li><a href="is.html" tppabs="http://hemin.cn/jq/is.html" title="is(expr|object|element|fn)">is(expr|obj|ele|fn)</a><sup>1.6*</sup></li>
-      <li><a href="map.html" tppabs="http://hemin.cn/jq/map.html">map(callback)</a></li>
-      <li><a href="has.html" tppabs="http://hemin.cn/jq/has.html" title="has(expr|element)">has(expr|ele)</a></li>
-      <li><a href="not.html" tppabs="http://hemin.cn/jq/not.html" title="not(expr|element|fn)">not(expr|ele|fn)</a></li>
-      <li><a href="slice.html" tppabs="http://hemin.cn/jq/slice.html" title="slice(start,[end])">slice(start,[end])</a></li>
-      <li><a href="children.html" tppabs="http://hemin.cn/jq/children.html">children([expr])</a></li>
-      <li><a href="closest.html" tppabs="http://hemin.cn/jq/closest.html" title="closest(expr,[context]|object|element)">closest(e|o|e)</a><sup>1.7*</sup></li>
-      <li><a href="find.html" tppabs="http://hemin.cn/jq/find.html" title="find(expr|object|element)">find(e|o|e)</a><sup>1.6*</sup></li>
-      <li><a href="next.html" tppabs="http://hemin.cn/jq/next.html">next([expr])</a></li>
-      <li><a href="nextAll.html" tppabs="http://hemin.cn/jq/nextAll.html">nextall([expr])</a></li>
-      <li><a href="nextUntil.html" tppabs="http://hemin.cn/jq/nextUntil.html" title="nextUntil([expr|element][,filter])">nextUntil([e|e][,f])</a><sup>1.6*</sup></li>
-      <li><a href="offsetParent.html" tppabs="http://hemin.cn/jq/offsetParent.html">offsetParent()</a></li>
-      <li><a href="parent.html" tppabs="http://hemin.cn/jq/parent.html">parent([expr])</a></li>
-      <li><a href="parents.html" tppabs="http://hemin.cn/jq/parents.html">parents([expr])</a></li>
-      <li><a href="parentsUntil.html" tppabs="http://hemin.cn/jq/parentsUntil.html" title="parentsUntil([expr|element][,filter])">parentsUntil([e|e][,f])</a><sup>1.6*</sup></li>
-      <li><a href="prev.html" tppabs="http://hemin.cn/jq/prev.html">prev([expr])</a></li>
-      <li><a href="prevAll.html" tppabs="http://hemin.cn/jq/prevAll.html">prevall([expr])</a></li>
-      <li><a href="prevUntil.html" tppabs="http://hemin.cn/jq/prevUntil.html" title="prevUntil([expr|element][,filter])">prevUntil([e|e][,f])</a><sup>1.6*</sup></li>
-      <li><a href="siblings.html" tppabs="http://hemin.cn/jq/siblings.html">siblings([expr])</a></li>
-      <li><a href="add.html" tppabs="http://hemin.cn/jq/add.html" title="add(expr|element|html|object[,context])">add(e|e|h|o[,c])</a></li>
-      <li><a href="andSelf.html" tppabs="http://hemin.cn/jq/andSelf.html">andSelf()</a></li>
-      <li><a href="contents.html" tppabs="http://hemin.cn/jq/contents.html">contents()</a></li>
-      <li><a href="end.html" tppabs="http://hemin.cn/jq/end.html">end()</a></li>
-    </ol>
-  </div>
-  <div id="events">
-    <h2>事件</h2>
-    <ol>
-      <li><a href="ready.html" tppabs="http://hemin.cn/jq/ready.html">ready(fn)</a></li>
-      <li><a href="on.html" tppabs="http://hemin.cn/jq/on.html" title="on(events,[selector],[data],fn)">on(eve,[sel],[data],fn)</a><sup>1.7+</sup></li>
-      <li><a href="off.html" tppabs="http://hemin.cn/jq/off.html" title="off(events,[selector],[data],fn)">off(eve,[sel],[fn])</a><sup>1.7+</sup></li>
-      <li><a href="bind.html" tppabs="http://hemin.cn/jq/bind.html">bind(type,[data],fn)</a></li>
-      <li><a href="one.html" tppabs="http://hemin.cn/jq/one.html">one(type,[data],fn)</a></li>
-      <li><a href="trigger.html" tppabs="http://hemin.cn/jq/trigger.html">trigger(type,[data])</a></li>
-      <li><a href="triggerHandler.html" tppabs="http://hemin.cn/jq/triggerHandler.html">triggerHandler(type, [data])</a></li>
-      <li><a href="unbind.html" tppabs="http://hemin.cn/jq/unbind.html" title="unbind(type,[data|fn])">unbind(t,[d|f])</a></li>
-      <li><del><a href="live.html" tppabs="http://hemin.cn/jq/live.html">live(type,[data],fn)</a></del><sup>1.7-</sup></li>
-      <li><del><a href="die.html" tppabs="http://hemin.cn/jq/die.html">die(type,[fn])</a></del><sup>1.7-</sup></li>
-      <li><a href="delegate.html" tppabs="http://hemin.cn/jq/delegate.html" title="delegate(selector,[type],[data],fn)">delegate(s,[t],[d],fn)</a></li>
-      <li><a href="undelegate.html" tppabs="http://hemin.cn/jq/undelegate.html" title="undelegate([selector,[type],fn])">undelegate([s,[t],fn])</a><sup>1.6*</sup></li>
-      <li><a href="hover.html" tppabs="http://hemin.cn/jq/hover.html">hover([over,]out)</a></li>
-      <li><a href="toggle.html" tppabs="http://hemin.cn/jq/toggle.html">toggle(fn, fn2, [fn3, fn4, ...])</a></li>
-      <li><a href="blur.html" tppabs="http://hemin.cn/jq/blur.html">blur([[data],fn])</a></li>
-      <li><a href="change.html" tppabs="http://hemin.cn/jq/change.html">change([[data],fn])</a></li>
-      <li><a href="click.html" tppabs="http://hemin.cn/jq/click.html">click([[data],fn])</a></li>
-      <li><a href="dblclick.html" tppabs="http://hemin.cn/jq/dblclick.html">dblclick([[data],fn])</a></li>
-      <li><a href="error.html" tppabs="http://hemin.cn/jq/error.html">error([[data],fn])</a></li>
-      <li><a href="focus.html" tppabs="http://hemin.cn/jq/focus.html">focus([[data],fn])</a></li>
-      <li><a href="focusin.html" tppabs="http://hemin.cn/jq/focusin.html">focusin([data],fn)</a></li>
-      <li><a href="focusout.html" tppabs="http://hemin.cn/jq/focusout.html">focusout([data],fn)</a></li>
-      <li><a href="keydown.html" tppabs="http://hemin.cn/jq/keydown.html">keydown([[data],fn])</a></li>
-      <li><a href="keypress.html" tppabs="http://hemin.cn/jq/keypress.html">keypress([[data],fn])</a></li>
-      <li><a href="keyup.html" tppabs="http://hemin.cn/jq/keyup.html">keyup([[data],fn])</a></li>
-      <li><a href="mousedown.html" tppabs="http://hemin.cn/jq/mousedown.html">mousedown([[data],fn])</a></li>
-      <li><a href="mouseenter.html" tppabs="http://hemin.cn/jq/mouseenter.html">mouseenter([[data],fn])</a></li>
-      <li><a href="mouseleave.html" tppabs="http://hemin.cn/jq/mouseleave.html">mouseleave([[data],fn])</a></li>
-      <li><a href="mousemove.html" tppabs="http://hemin.cn/jq/mousemove.html">mousemove([[data],fn])</a></li>
-      <li><a href="mouseout.html" tppabs="http://hemin.cn/jq/mouseout.html">mouseout([[data],fn])</a></li>
-      <li><a href="mouseover.html" tppabs="http://hemin.cn/jq/mouseover.html">mouseover([[data],fn])</a></li>
-      <li><a href="mouseup.html" tppabs="http://hemin.cn/jq/mouseup.html">mouseup([[data],fn])</a></li>
-      <li><a href="resize.html" tppabs="http://hemin.cn/jq/resize.html">resize([[data],fn])</a></li>
-      <li><a href="scroll.html" tppabs="http://hemin.cn/jq/scroll.html">scroll([[data],fn])</a></li>
-      <li><a href="select.html" tppabs="http://hemin.cn/jq/select.html">select([[data],fn])</a></li>
-      <li><a href="submit.html" tppabs="http://hemin.cn/jq/submit.html">submit([[data],fn])</a></li>
-      <li><a href="unload.html" tppabs="http://hemin.cn/jq/unload.html">unload([[data],fn])</a></li>
-    </ol>
-  </div>
-  <div id="effects">
-    <h2>效果</h2>
-    <ol>
-      <li><a href="show.html" tppabs="http://hemin.cn/jq/show.html" title="show([speed,[easing],[fn]])">show([s,[e],[fn]])</a></li>
-      <li><a href="hide.html" tppabs="http://hemin.cn/jq/hide.html" title="hide([speed,[easing],[fn]])">hide([s,[e],[fn]])</a></li>
-      <li><a href="toggle.html" tppabs="http://hemin.cn/jq/toggle.html" title="toggle([speed],[easing],[fn])">toggle([s],[e],[fn])</a></li>
-      <li><a href="slideDown.html" tppabs="http://hemin.cn/jq/slideDown.html" title="slideDown([speed],[easing],[fn])">slideDown([s],[e],[fn])</a></li>
-      <li><a href="slideUp.html" tppabs="http://hemin.cn/jq/slideUp.html" title="slideUp([speed,[easing],[fn]])">slideUp([s,[e],[fn]])</a></li>
-      <li><a href="slideToggle.html" tppabs="http://hemin.cn/jq/slideToggle.html" title="slideToggle([speed],[easing],[fn])">slideToggle([s],[e],[fn])</a></li>
-      <li><a href="fadeIn.html" tppabs="http://hemin.cn/jq/fadeIn.html" title="fadeIn([speed],[easing],[fn])">fadeIn([s],[e],[fn])</a></li>
-      <li><a href="fadeOut.html" tppabs="http://hemin.cn/jq/fadeOut.html" title="fadeOut([speed],[easing],[fn])">fadeOut([s],[e],[fn])</a></li>
-      <li><a href="fadeTo.html" tppabs="http://hemin.cn/jq/fadeTo.html" title="fadeTo([[speed],opacity,[easing],[fn]])">fadeTo([[s],o,[e],[fn]])</a></li>
-      <li><a href="fadeToggle.html" tppabs="http://hemin.cn/jq/fadeToggle.html" title="fadeToggle([speed,[easing],[fn]])">fadeToggle([s,[e],[fn]])</a></li>
-      <li><a href="animate.html" tppabs="http://hemin.cn/jq/animate.html" title="animate(params,[speed],[easing],[fn])">animate(p,[s],[e],[fn])</a><sup>1.8*</sup></li>
-      <li><a href="stop.html" tppabs="http://hemin.cn/jq/stop.html" title="stop([clearQueue],[jumpToEnd])">stop([c],[j])</a><sup>1.7*</sup></li>
-      <li><a href="delay.html" tppabs="http://hemin.cn/jq/delay.html" title="delay(duration,[queueName])">delay(d,[q])</a></li>
-      <li><a href="finish.html" tppabs="http://hemin.cn/jq/finish.html" title="finish([queue])">finish([queue])</a><sup>1.9+</sup></li>
-      <li><a href="jQuery.fx.off.html" tppabs="http://hemin.cn/jq/jQuery.fx.off.html">jQuery.fx.off</a></li>
-      <li><a href="jQuery.fx.interval.html" tppabs="http://hemin.cn/jq/jQuery.fx.interval.html">jQuery.fx.interval</a></li>
-    </ol>
-  </div>
-  <div id="ajax">
-    <h2>ajax</h2>
-    <ol>
-      <li><a href="jQuery.ajax.html" tppabs="http://hemin.cn/jq/jQuery.ajax.html">$.ajax(url,[settings])</a></li>
-      <li><a href="load.html" tppabs="http://hemin.cn/jq/load.html">load(url,[data],[callback])</a></li>
-      <li><a href="jQuery.get.html" tppabs="http://hemin.cn/jq/jQuery.get.html">$.get(url,[data],[fn],[type])</a></li>
-      <li><a href="jQuery.getJSON.html" tppabs="http://hemin.cn/jq/jQuery.getJSON.html">$.getJSON(url,[data],[fn])</a></li>
-      <li><a href="jQuery.getScript.html" tppabs="http://hemin.cn/jq/jQuery.getScript.html">$.getScript(url,[callback])</a></li>
-      <li><a href="jQuery.post.html" tppabs="http://hemin.cn/jq/jQuery.post.html">$.post(url,[data],[fn],[type])</a></li>
-      <li><a href="ajaxComplete.html" tppabs="http://hemin.cn/jq/ajaxComplete.html">ajaxComplete(callback)</a></li>
-      <li><a href="ajaxError.html" tppabs="http://hemin.cn/jq/ajaxError.html">ajaxError(callback)</a></li>
-      <li><a href="ajaxSend.html" tppabs="http://hemin.cn/jq/ajaxSend.html">ajaxSend(callback)</a></li>
-      <li><a href="ajaxStart.html" tppabs="http://hemin.cn/jq/ajaxStart.html">ajaxStart(callback)</a></li>
-      <li><a href="ajaxStop.html" tppabs="http://hemin.cn/jq/ajaxStop.html">ajaxStop(callback)</a></li>
-      <li><a href="ajaxSuccess.html" tppabs="http://hemin.cn/jq/ajaxSuccess.html">ajaxSuccess(callback)</a></li>
-      <li><a href="jQuery.ajaxPrefilter.html" tppabs="http://hemin.cn/jq/jQuery.ajaxPrefilter.html">$.ajaxPrefilter([type],fn)</a></li>
-      <li><a href="jQuery.ajaxSetup.html" tppabs="http://hemin.cn/jq/jQuery.ajaxSetup.html">$.ajaxSetup([options])</a></li>
-      <li><a href="serialize.html" tppabs="http://hemin.cn/jq/serialize.html">serialize()</a></li>
-      <li><a href="serializearray.html" tppabs="http://hemin.cn/jq/serializearray.html">serializearray()</a></li>
-    </ol>
-  </div>
-  <div id="utilities">
-    <h2>工具</h2>
-    <ol>
-      <li><a href="jQuery.support.html" tppabs="http://hemin.cn/jq/jQuery.support.html">$.support</a></li>
-      <li><a href="jQuery.browser.html" tppabs="http://hemin.cn/jq/jQuery.browser.html"><del>$.browser</del></a><sup>1.9-</sup></li>
-      <li><a href="jQuery.browser.version.html" tppabs="http://hemin.cn/jq/jQuery.browser.version.html">$.browser.version</a></li>
-      <li><del><a href="jQuery.boxModel.html" tppabs="http://hemin.cn/jq/jQuery.boxModel.html">$.boxModel</a></del></li>
-      <li><a href="jQuery.each.html" tppabs="http://hemin.cn/jq/jQuery.each.html">$.each(object,[callback])</a></li>
-      <li><a href="jQuery.extend.html" tppabs="http://hemin.cn/jq/jQuery.extend.html">$.extend([d],tgt,obj1,[objN])</a></li>
-      <li><a href="jQuery.grep.html" tppabs="http://hemin.cn/jq/jQuery.grep.html">$.grep(array,fn,[invert])</a></li>
-      <li><a href="jQuery.sub.html" tppabs="http://hemin.cn/jq/jQuery.sub.html"><del>$.sub()</del></a><sup>1.9-</sup></li>
-      <li><a href="jQuery.when.html" tppabs="http://hemin.cn/jq/jQuery.when.html">$.when(deferreds)</a></li>
-      <li><a href="jQuery.makeArray.html" tppabs="http://hemin.cn/jq/jQuery.makeArray.html">$.makearray(obj)</a></li>
-      <li><a href="jQuery.map.html" tppabs="http://hemin.cn/jq/jQuery.map.html">$.map(arr|obj,callback)</a><sup>1.6*</sup></li>
-      <li><a href="jQuery.inArray.html" tppabs="http://hemin.cn/jq/jQuery.inArray.html">$.inarray(val,arr,[from])</a></li>
-      <li><a href="jQuery.toarray.html" tppabs="http://hemin.cn/jq/jQuery.toarray.html">$.toarray()</a></li>
-      <li><a href="jQuery.merge.html" tppabs="http://hemin.cn/jq/jQuery.merge.html">$.merge(first,second)</a></li>
-      <li><a href="jQuery.unique.html" tppabs="http://hemin.cn/jq/jQuery.unique.html">$.unique(array)</a></li>
-      <li><a href="jQuery.parseJSON.html" tppabs="http://hemin.cn/jq/jQuery.parseJSON.html">$.parseJSON(json)</a></li>
-      <li><a href="jQuery.parseXML.html" tppabs="http://hemin.cn/jq/jQuery.parseXML.html">$.parseXML(data)</a></li>
-      <li><a href="jQuery.noop.html" tppabs="http://hemin.cn/jq/jQuery.noop.html">$.noop</a>
-      </li><li><a href="jQuery.proxy.html" tppabs="http://hemin.cn/jq/jQuery.proxy.html">$.proxy(function,context)</a></li>
-      <li><a href="jQuery.contains.html" tppabs="http://hemin.cn/jq/jQuery.contains.html" title="$.contains(container,contained)">$.contains(c,c)</a></li>
-      <li><a href="jQuery.type.html" tppabs="http://hemin.cn/jq/jQuery.type.html">$.type(obj)</a></li>
-      <li><a href="jQuery.isArray.html" tppabs="http://hemin.cn/jq/jQuery.isArray.html">$.isarray(obj)</a></li>
-      <li><a href="jQuery.isFunction.html" tppabs="http://hemin.cn/jq/jQuery.isFunction.html">$.isFunction(obj)</a></li>
-      <li><a href="jQuery.isEmptyObject.html" tppabs="http://hemin.cn/jq/jQuery.isEmptyObject.html">$.isEmptyObject(obj)</a></li>
-      <li><a href="jQuery.isPlainObject.html" tppabs="http://hemin.cn/jq/jQuery.isPlainObject.html">$.isPlainObject(obj)</a></li>
-      <li><a href="jQuery.isWindow.html" tppabs="http://hemin.cn/jq/jQuery.isWindow.html">$.isWindow(obj)</a></li>
-      <li><a href="jQuery.isNumeric.html" tppabs="http://hemin.cn/jq/jQuery.isNumeric.html">$.isNumeric(value)</a><sup>1.7+</sup></li>
-      <li><a href="jQuery.trim.html" tppabs="http://hemin.cn/jq/jQuery.trim.html">$.trim(str)</a></li>
-      <li><a href="jQuery.param.html" tppabs="http://hemin.cn/jq/jQuery.param.html">$.param(obj,[traditional])</a></li>
-      <li><a href="jQuery.error.html" tppabs="http://hemin.cn/jq/jQuery.error.html">$.error(message)</a></li>
-      <li><a href="jquery.html" tppabs="http://hemin.cn/jq/jquery.html">$.fn.jquery</a></li>
-    </ol>
-  </div>
-  <div id="Eventobject">
-    <h2>事件对象</h2>
-    <ol>
-      <li><a href="event.currentTarget.html" tppabs="http://hemin.cn/jq/event.currentTarget.html">eve.currentTarget</a></li>
-      <li><a href="event.data.html" tppabs="http://hemin.cn/jq/event.data.html">eve.data</a></li>
-      <li><a href="event.delegateTarget.html" tppabs="http://hemin.cn/jq/event.delegateTarget.html">eve.delegateTarget</a><sup>1.7+</sup></li>
-      <li><a href="event.isDefaultPrevented.html" tppabs="http://hemin.cn/jq/event.isDefaultPrevented.html">eve.isDefaultPrevented()</a></li>
-      <li><a href="event.isImmediatePropagationStopped.html" tppabs="http://hemin.cn/jq/event.isImmediatePropagationStopped.html" title="event.isImmediatePropagationStopped">eve.isImmediatePropag...()</a></li>
-      <li><a href="event.isPropagationStopped.html" tppabs="http://hemin.cn/jq/event.isPropagationStopped.html">eve.isPropagationStopped()</a></li>
-      <li><a href="event.namespace.html" tppabs="http://hemin.cn/jq/event.namespace.html">eve.namespace</a></li>
-      <li><a href="event.pageX.html" tppabs="http://hemin.cn/jq/event.pageX.html">eve.pageX</a></li>
-      <li><a href="event.pageY.html" tppabs="http://hemin.cn/jq/event.pageY.html">eve.pageY</a></li>
-      <li><a href="event.preventDefault.html" tppabs="http://hemin.cn/jq/event.preventDefault.html">eve.preventDefault()</a></li>
-      <li><a href="event.relatedTarget.html" tppabs="http://hemin.cn/jq/event.relatedTarget.html">eve.relatedTarget</a></li>
-      <li><a href="event.result.html" tppabs="http://hemin.cn/jq/event.result.html">eve.result</a></li>
-      <li><a href="event.stopImmediatePropagation.html" tppabs="http://hemin.cn/jq/event.stopImmediatePropagation.html" title="event.stopImmediatePropagation">eve.stopImmediatePro...()</a></li>
-      <li><a href="event.stopPropagation.html" tppabs="http://hemin.cn/jq/event.stopPropagation.html">eve.stopPropagation()</a></li>
-      <li><a href="event.target.html" tppabs="http://hemin.cn/jq/event.target.html">eve.target</a></li>
-      <li><a href="event.timeStamp.html" tppabs="http://hemin.cn/jq/event.timeStamp.html">eve.timeStamp</a></li>
-      <li><a href="event.type.html" tppabs="http://hemin.cn/jq/event.type.html">eve.type</a></li>
-      <li><a href="event.which.html" tppabs="http://hemin.cn/jq/event.which.html">eve.which</a></li>
-    </ol>
-  </div>
-  <div id="Deferred">
-    <h2>延迟对象</h2>
-    <ol>
-      <li><a href="deferred.done.html" tppabs="http://hemin.cn/jq/deferred.done.html" title="deferred.done(doneCallbacks[,doneCallbacks])">def.done(d,[d])</a></li>
-      <li><a href="deferred.fail.html" tppabs="http://hemin.cn/jq/deferred.fail.html">def.fail(failCallbacks)</a></li>
-      <li><a href="deferred.isRejected.html" tppabs="http://hemin.cn/jq/deferred.isRejected.html"><del>def.isRejected()</del></a><sup>1.7-</sup></li>
-      <li><a href="deferred.isResolved.html" tppabs="http://hemin.cn/jq/deferred.isResolved.html"><del>def.isResolved()</del></a><sup>1.7-</sup></li>
-      <li><a href="deferred.reject.html" tppabs="http://hemin.cn/jq/deferred.reject.html">def.reject(args)</a></li>
-      <li><a href="deferred.rejectWith.html" tppabs="http://hemin.cn/jq/deferred.rejectWith.html" title="deferred.rejectWith(context,[args])">def.rejectWith(c,[a])</a></li>
-      <li><a href="deferred.resolve.html" tppabs="http://hemin.cn/jq/deferred.resolve.html">def.resolve(args)</a></li>
-      <li><a href="deferred.resolveWith.html" tppabs="http://hemin.cn/jq/deferred.resolveWith.html" title="deferred.resolveWith(context,[args])">def.resolveWith(c,[a])</a></li>
-      <li><a href="deferred.then.html" tppabs="http://hemin.cn/jq/deferred.then.html" title="deferred.then(doneCallbacks,failCallbacks[, progressCallbacks])">def.then(d[,f][,p])</a><sup>1.8*</sup></li>
-      <li><a href="deferred.promise.html" tppabs="http://hemin.cn/jq/deferred.promise.html" title="deferred.promise([type],[target])">def.promise([ty],[ta])</a><sup>1.6+</sup></li>
-      <li><del><a href="deferred.pipe.html" tppabs="http://hemin.cn/jq/deferred.pipe.html" title="deferred.pipe([doneFilter],[failFilter],[progressFilter])">def.pipe([d],[f],[p])</a></del><sup>1.8-</sup></li>
-      <li><a href="deferred.always.html" tppabs="http://hemin.cn/jq/deferred.always.html" title="deferred.always(alwaysCallbacks,[alwaysCallbacks])">def.always(al,[al])</a><sup>1.6+</sup></li>
-      <li><a href="deferred.notify.html" tppabs="http://hemin.cn/jq/deferred.notify.html">def.notify(args)</a><sup>1.7+</sup></li>
-      <li><a href="deferred.notifyWith.html" tppabs="http://hemin.cn/jq/deferred.notifyWith.html" title="deferred.notifyWith(context,[args])">def.notifyWith(c,[a])</a><sup>1.7+</sup></li>
-      <li><a href="deferred.progress.html" tppabs="http://hemin.cn/jq/deferred.progress.html" title="deferred.progress(progressCallbacks)">def.progress(proCal)</a><sup>1.7+</sup></li>
-      <li><a href="deferred.state.html" tppabs="http://hemin.cn/jq/deferred.state.html">def.state()</a><sup>1.7+</sup></li>
-    </ol>
-  </div>
-  <div id="Callbacks">
-    <h2>回调函数</h2>
-    <ol>
-      <li><a href="callbacks.add.html" tppabs="http://hemin.cn/jq/callbacks.add.html">cal.add(callbacks)</a><sup>1.7+</sup></li>
-      <li><a href="callbacks.disable.html" tppabs="http://hemin.cn/jq/callbacks.disable.html">cal.disable()</a><sup>1.7+</sup></li>
-      <li><a href="callbacks.empty.html" tppabs="http://hemin.cn/jq/callbacks.empty.html">cal.empty()</a><sup>1.7+</sup></li>
-      <li><a href="callbacks.fire.html" tppabs="http://hemin.cn/jq/callbacks.fire.html">cal.fire(arguments)</a><sup>1.7+</sup></li>
-      <li><a href="callbacks.fired.html" tppabs="http://hemin.cn/jq/callbacks.fired.html">cal.fired()</a><sup>1.7+</sup></li>
-      <li><a href="callbacks.fireWith.html" tppabs="http://hemin.cn/jq/callbacks.fireWith.html" title="callbacks.fireWith([context] [, args])">cal.fireWith([c] [,a])</a><sup>1.7+</sup></li>
-      <li><a href="callbacks.has.html" tppabs="http://hemin.cn/jq/callbacks.has.html">cal.has(callback)</a><sup>1.7+</sup></li>
-      <li><a href="callbacks.lock.html" tppabs="http://hemin.cn/jq/callbacks.lock.html">cal.lock()</a><sup>1.7+</sup></li>
-      <li><a href="callbacks.locked.html" tppabs="http://hemin.cn/jq/callbacks.locked.html">cal.locked()</a><sup>1.7+</sup></li>
-      <li><a href="callbacks.remove.html" tppabs="http://hemin.cn/jq/callbacks.remove.html">cal.remove(callbacks)</a><sup>1.7+</sup></li>
-      <li><a href="jQuery.callbacks.html" tppabs="http://hemin.cn/jq/jQuery.callbacks.html">$.callbacks(flags)</a><sup>1.7+</sup></li>
-    </ol>
-  </div>
-  <div id="about">
-    <h2>关于</h2>
-    <ol>
-      <li><a href="about.html" tppabs="http://hemin.cn/jq/about.html">关于此jQuery中文文档</a></li>
-      <li><a href="bugandUpdate.html" tppabs="http://hemin.cn/jq/bugandUpdate.html">提交bug及获取更新</a></li>
-    </ol>
-  </div>
-  <div id="Other">
-    <h2>其它</h2>
-	  <ol>        
-      	<!-- <li><a href="cssFormat.html">CSS压缩/格式化</a></li>
-         <li><a href="jsFormat.html">JS压缩/格式化</a></li>
-         <li><a href="regexChe.html">正则表达式在线测试</a></li>-->
-	     <li><a href="regexp.html" tppabs="http://hemin.cn/jq/regexp.html">正则表达式</a></li>
-         <!--<li><a href="html5.html">HTML5速查表</a></li>-->
-	  </ol>
-  </div>
+<div id='left' class='dtree'>
+  <p style="text-align:center">
+    <input type="text" name="query" id="query" placeholder="请输入关键字"/>
+    <!--<input type="button" id="butsoso" value="搜索" />--></p>
+  <p style="margin:7px 0; text-align:center"><a href="javascript:void(0)" id="openAll">全部展开</a> | <a href="javascript:void(0)" id="closeAll">全部折叠 </a> | <a href="index.html">速查表</a></p>
+	<div id="menu">
+    
+    </div>
 </div>
+<div id="content" class="a1">
+  <h1><a href="cheatsheet.html" title="点击在线浏览">在线手册</a> | <a href="downloads.html" title="CHM版下载" >CHM版</a> | <a href="http://hemin.cn/css/" title="CSS手册(测试)">CSS手册(测试)</a>&nbsp;&nbsp;&nbsp;&nbsp;jQuery 1.11.3 速查表&nbsp;&nbsp;--</em>作者：<a href="http://hemin.cn/blog/" target="_blank">hemin</a></span><a id="fk" href='bugandUpdate.html'>反馈/更新</a></h1>
+  <div class="col-1">
+    <div id="core">
+      <h2>核心</h2>
+      <ul>
+        <li>
+          <h3>jQuery 核心函数</h3>
+          <ul>
+            <li><a href="jQuery_selector_context.html">jQuery([sel,[context]])</a>
+            <li><a href="jQuery_html_ownerDocument.html">jQuery(html,[ownerDoc])</a><sup>1.8*</sup></li>
+            <li><a href="jQuery_callback.html">jQuery(callback)</a></li>
+            <li><a href="jQuery.holdReady.html">jQuery.holdReady(hold)</a></li>
+          </ul>
+        </li>
+        <li>
+          <h3>jQuery 对象访问</h3>
+          <ul>
+            <li><a href="each.html">each(callback)</a></li>
+            <li><a href="size.html">size()</a></li>
+            <li><a href="length.html">length</a></li>
+            <li><a href="selector.html">selector</a></li>
+            <li><a href="context.html">context</a></li>
+            <li><a href="get.html">get([index])</a></li>
+            <li><a href="index_1.html">index([selector|element])</a></li>
+          </ul>
+        </li>
+        <li>
+          <h3>数据缓存</h3>
+          <ul>
+            <li><a href="data.html">data([key],[value])</a></li>
+            <li><a href="removeData.html">removeData([name|list])</a><sup>1.7*</sup></li>
+            <li><del><a href="jQuery.data.html">$.data(ele,[key],[val])</a></del><sup>1.8-</sup></li>
+          </ul>
+        </li>
+        <li>
+          <h3>队列控制</h3>
+          <ul>
+            <li><a href="queue.html" title="queue(element,[queueName])">queue(e,[q])</a></li>
+            <li><a href="dequeue.html" title="dequeue([queueName])">dequeue([queueName])</a></li>
+            <li><a href="clearQueue.html" title="clearQueue([queueName])">clearQueue([queueName])</a></li>
+          </ul>
+        </li>
+        <li>
+          <h3>插件机制</h3>
+          <ul>
+            <li><a href="jQuery.fn.extend.html">jQuery.fn.extend(object)</a></li>
+            <li><a href="jQuery.extend_object.html">jQuery.extend(object)</a></li>
+          </ul>
+        </li>
+        <li>
+          <h3>多库共存</h3>
+          <ul>
+            <li><a href="jQuery.noConflict.html" title="jQuery.noConflict([extreme])">jQuery.noConflict([ex])</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div id="attributes">
+      <h2>属性</h2>
+      <ul>
+        <li>
+          <h3>属性</h3>
+          <ul>
+            <li><a href="attr.html" title="attr(name|properties|key,value|fn)">attr(name|pro|key,val|fn)</a></li>
+            <li><a href="removeAttr.html">removeAttr(name)</a></li>
+            <li><a href="prop.html" title="prop(name|properties|key,value|fn)">prop(n|p|k,v|f)</a></li>
+            <li><a href="removeProp.html">removeProp(name)</a></li>
+          </ul>
+        </li>
+        <li>
+          <h3>CSS 类</h3>
+          <ul>
+            <li><a href="addClass.html">addClass(class|fn)</a></li>
+            <li><a href="removeClass.html">removeClass([class|fn])</a></li>
+            <li><a href="toggleClass.html">toggleClass(class|fn[,sw])</a></li>
+          </ul>
+        </li>
+        <li>
+          <h3>HTML代码/文本/值</h3>
+          <ul>
+            <li><a href="html.html">html([val|fn])</a></li>
+            <li><a href="text.html">text([val|fn])</a></li>
+            <li><a href="val.html">val([val|fn|arr])</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div id="css">
+      <h2>CSS</h2>
+      <ul>
+        <li>
+          <h3>CSS</h3>
+          <ul>
+            <li><a href="css.html" title="css(name|properties|[,value|fn])">css(name|pro|[,val|fn])</a><sup>1.9*</sup></li>
+            <li><a href="jQuery.cssHooks.html">jQuery.cssHooks</a></li>
+          </ul>
+        </li>
+        <li>
+          <h3>位置</h3>
+          <ul>
+            <li><a href="offset.html">offset([coordinates])</a></li>
+            <li><a href="position.html">position()</a></li>
+            <li><a href="scrollTop.html">scrollTop([val])</a></li>
+            <li><a href="scrollLeft.html">scrollLeft([val])</a></li>
+          </ul>
+        </li>
+        <li>
+          <h3>尺寸</h3>
+          <ul>
+            <li><a href="height.html">height([val|fn])</a></li>
+            <li><a href="width.html">width([val|fn])</a></li>
+            <li><a href="innerHeight.html">innerHeight()</a></li>
+            <li><a href="innerWidth.html">innerWidth()</a></li>
+            <li><a href="outerHeight.html">outerHeight([soptions])</a></li>
+            <li><a href="outerWidth.html">outerWidth([options])</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-2">
+    <div id="selectors">
+      <h2>选择器</h2>
+      <ul>
+        <li>
+          <h3>基本</h3>
+          <ul>
+            <li><a href="id.html">#id</a></li>
+            <li><a href="element.html">element</a></li>
+            <li><a href="class.html">.class</a></li>
+            <li><a href="all.html">*</a></li>
+            <li><a href="multiple.html">selector1,selector2,selectorN</a></li>
+          </ul>
+        </li>
+        <li>
+          <h3>层级</h3>
+          <ul>
+            <li><a href="descendant.html">ancestor descendant</a></li>
+            <li><a href="child.html">parent &gt;  child</a></li>
+            <li><a href="next_1.html">prev + next</a></li>
+            <li><a href="siblings_1.html">prev ~ siblings</a></li>
+          </ul>
+        </li>
+        <li>
+          <h3>基本</h3>
+          <ul>
+            <li><a href="first_1.html">:first</a></li>
+            <li><a href="not_1.html">:not(selector)</a></li>
+            <li><a href="even.html">:even</a></li>
+            <li><a href="odd.html">:odd</a></li>
+            <li><a href="eq_1.html">:eq(index)</a></li>
+            <li><a href="gt.html">:gt(index)</a></li>
+            <li><a href="lang.html">:lang</a><sup>1.9+</sup></li>
+            <li><a href="last_1.html">:last</a></li>
+            <li><a href="lt.html">:lt(index)</a></li>
+            <li><a href="header.html">:header</a></li>
+            <li><a href="animated.html">:animated</a></li>
+            <li><a href="focus_1.html">:focus</a></li>
+            <li><a href="root.html">:root</a><sup>1.9+</sup></li>
+            <li><a href="target.html">:target</a><sup>1.9+</sup></li>
+          </ul>
+        </li>
+        <li>
+          <h3>内容</h3>
+          <ul>
+            <li><a href="contains.html">:contains(text)</a></li>
+            <li><a href="empty_1.html">:empty</a></li>
+            <li><a href="has_1.html">:has(selector)</a></li>
+            <li><a href="parent_1.html">:parent</a></li>
+          </ul>
+        </li>
+        <li>
+          <h3>可见性</h3>
+          <ul>
+            <li><a href="hidden_1.html">:hidden</a></li>
+            <li><a href="visible.html">:visible</a></li>
+          </ul>
+        </li>
+        <li>
+          <h3>属性</h3>
+          <ul>
+            <li><a href="attributeHas.html">[attribute]</a></li>
+            <li><a href="attributeEquals.html">[attribute=value]</a></li>
+            <li><a href="attributeNotEqual.html">[attribute!=value]</a></li>
+            <li><a href="attributeStartsWith.html">[attribute^=value]</a></li>
+            <li><a href="attributeEndsWith.html">[attribute$=value]</a></li>
+            <li><a href="attributeContains.html">[attribute*=value]</a></li>
+            <li><a href="attributeMultiple.html">[attrSel1][attrSel2][attrSelN]</a></li>
+          </ul>
+        </li>
+        <li>
+          <h3>子元素</h3>
+          <ul>
+            <li><a href="firstChild.html">:first-child</a></li>
+            <li><a href="firstOfType.html">:first-of-type</a><sup>1.9+</sup></li>
+            <li><a href="lastChild.html">:last-child</a></li>
+            <li><a href="lastOfType.html">:last-of-type</a><sup>1.9+</sup></li>
+            <li><a href="nthChild.html">:nth-child</a></li>
+            <li><a href="nthLastChild.html">:nth-last-child()</a><sup>1.9+</sup></li>
+            <li><a href="nthLastOfType.html">:nth-last-of-type()</a><sup>1.9+</sup></li>
+            <li><a href="nthOfType.html">:nth-of-type()</a><sup>1.9+</sup></li>
+            <li><a href="onlyChild.html">:only-child</a></li>
+            <li><a href="onlyOfType.html">:only-of-type</a><sup>1.9+</sup></li>
+          </ul>
+        </li>
+        <li>
+          <h3>表单</h3>
+          <ul>
+            <li><a href="input.html">:input</a></li>
+            <li><a href="text_1.html">:text</a></li>
+            <li><a href="password.html">:password</a></li>
+            <li><a href="radio.html">:radio</a></li>
+            <li><a href="checkbox.html">:checkbox</a></li>
+            <li><a href="submit_1.html">:submit</a></li>
+            <li><a href="image.html">:image</a></li>
+            <li><a href="reset.html">:reset</a></li>
+            <li><a href="button.html">:button</a></li>
+            <li><a href="file.html">:file</a></li>
+            <li><a href="hidden_1.html">:hidden</a></li>
+          </ul>
+        </li>
+        <li>
+          <h3>表单对象属性</h3>
+          <ul>
+            <li><a href="enabled.html">:enabled</a></li>
+            <li><a href="disabled.html">:disabled</a></li>
+            <li><a href="checked.html">:checked</a></li>
+            <li><a href="selected.html">:selected</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-3">
+    <div id="manipulation">
+      <h2>文档处理</h2>
+      <ul>
+        <li>
+          <h3>内部插入</h3>
+          <ul>
+            <li><a href="append.html">append(content|fn)</a></li>
+            <li><a href="appendTo.html">appendTo(content)</a></li>
+            <li><a href="prepend.html">prepend(content|fn)</a></li>
+            <li><a href="prependTo.html">prependTo(content)</a></li>
+          </ul>
+        </li>
+        <li>
+          <h3>外部插入</h3>
+          <ul>
+            <li><a href="after.html">after(content|fn)</a></li>
+            <li><a href="before.html">before(content|fn)</a></li>
+            <li><a href="insertAfter.html">insertAfter(content)</a></li>
+            <li><a href="insertBefore.html">insertBefore(content)</a></li>
+          </ul>
+        </li>
+        <li>
+          <h3>包裹</h3>
+          <ul>
+            <li><a href="wrap.html" title="wrap(html|element|fn)">wrap(html|ele|fn)</a></li>
+            <li><a href="unwrap.html">unwrap()</a></li>
+            <li><a href="wrapAll.html" title="wrapall(html|element)">wrapAll(html|ele)</a></li>
+            <li><a href="wrapInner.html" title="wrapInner(html|element|fn)">wrapInner(html|ele|fn)</a></li>
+          </ul>
+        </li>
+        <li>
+          <h3>替换</h3>
+          <ul>
+            <li><a href="replaceWith.html">replaceWith(content|fn)</a></li>
+            <li><a href="replaceAll.html">replaceAll(selector)</a></li>
+          </ul>
+        </li>
+        <li>
+          <h3>删除</h3>
+          <ul>
+            <li><a href="empty.html">empty()</a></li>
+            <li><a href="remove.html">remove([expr])</a></li>
+            <li><a href="detach.html">detach([expr])</a></li>
+          </ul>
+        </li>
+        <li>
+          <h3>复制</h3>
+          <ul>
+            <li><a href="clone.html">clone([Even[,deepEven]])</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div id="traversing">
+      <h2>筛选</h2>
+      <ul>
+        <li>
+          <h3>过滤</h3>
+          <ul>
+            <li><a href="eq.html">eq(index|-index)</a></li>
+            <li><a href="first.html">first()</a></li>
+            <li><a href="last.html">last()</a></li>
+            <li><a href="hasClass.html">hasClass(class)</a></li>
+            <li><a href="filter.html" title="filter(expr|object|element|fn)">filter(expr|obj|ele|fn)</a></li>
+            <li><a href="is.html" title="is(expr|object|element|fn)">is(expr|obj|ele|fn)</a></li>
+            <li><a href="map.html">map(callback)</a></li>
+            <li><a href="has.html" title="has(expr|element)">has(expr|ele)</a></li>
+            <li><a href="not.html" title="not(expr|element|fn)">not(expr|ele|fn)</a></li>
+            <li><a href="slice.html" title="slice(start,[end])">slice(start,[end])</a></li>
+          </ul>
+        </li>
+        <li>
+          <h3>查找</h3>
+          <ul>
+            <li><a href="children.html">children([expr])</a></li>
+            <li><a href="closest.html" title="closest(expr,[context]|object|element)">closest(e|o|e)</a><sup>1.7*</sup></li>
+            <li><a href="find.html" title="find(expr|object|element)">find(e|o|e)</a></li>
+            <li><a href="next.html">next([expr])</a></li>
+            <li><a href="nextAll.html">nextall([expr])</a></li>
+            <li><a href="nextUntil.html" title="nextUntil([expr|element][,filter])">nextUntil([e|e][,f])</a></li>
+            <li><a href="offsetParent.html">offsetParent()</a></li>
+            <li><a href="parent.html">parent([expr])</a></li>
+            <li><a href="parents.html">parents([expr])</a></li>
+            <li><a href="parentsUntil.html" title="parentsUntil([expr|element][,filter])">parentsUntil([e|e][,f])</a></li>
+            <li><a href="prev.html">prev([expr])</a></li>
+            <li><a href="prevAll.html">prevall([expr])</a></li>
+            <li><a href="prevUntil.html" title="prevUntil([expr|element][,filter])">prevUntil([e|e][,f])</a></li>
+            <li><a href="siblings.html">siblings([expr])</a></li>
+          </ul>
+        </li>
+        <li>
+          <h3>串联</h3>
+          <ul>
+            <li><a href="add.html" title="add(expr|element|html|object[,context])">add(e|e|h|o[,c])</a><sup>1.9*</sup></li>
+            <li><del><a href="andSelf.html">andSelf()</a></del><sup>1.8-</sup></li>
+            <li><a href="addBack.html">addBack()</a><sup>1.9+</sup></li>
+            <li><a href="contents.html">contents()</a></li>
+            <li><a href="end.html">end()</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-4">
+    <div id="events">
+      <h2>事件</h2>
+      <ul>
+        <li>
+          <h3>页面载入</h3>
+          <ul>
+            <li><a href="ready.html">ready(fn)</a></li>
+          </ul>
+        </li>
+        <li>
+          <h3>事件处理</h3>
+          <ul>
+            <li><a href="on.html" title="on(events,[selector],[data],fn)">on(eve,[sel],[data],fn)</a><sup>1.7+</sup></li>
+            <li><a href="off.html" title="off(events,[selector],[data],fn)">off(eve,[sel],[fn])</a><sup>1.7+</sup></li>
+            <li><a href="bind.html">bind(type,[data],fn)</a></li>
+            <li><a href="one.html">one(type,[data],fn)</a></li>
+            <li><a href="trigger.html">trigger(type,[data])</a></li>
+            <li><a href="triggerHandler.html">triggerHandler(type, [data])</a></li>
+            <li><a href="unbind.html" title="unbind(type,[data|fn])">unbind(t,[d|f])</a></li>
+          </ul>
+        </li>
+        <li>
+          <h3>事件委派</h3>
+          <ul>
+            <li><del><a href="live.html">live(type,[data],fn)</a></del><sup>1.7-</sup></li>
+            <li><del><a href="die.html">die(type,[fn])</a></del><sup>1.7-</sup></li>
+            <li><a href="delegate.html" title="delegate(selector,[type],[data],fn)">delegate(s,[t],[d],fn)</a></li>
+            <li><a href="undelegate.html" title="undelegate([selector,[type],fn])">undelegate([s,[t],fn])</a></li>
+          </ul>
+        </li>
+        <li>
+          <h3>事件切换</h3>
+          <ul>
+            <li><a href="hover.html">hover([over,]out)</a></li>
+            <li><del><a href="toggle.html">toggle([spe],[eas],[fn])</a></del><sup>1.9-</sup></li>
+          </ul>
+        </li>
+        <li>
+          <h3>事件</h3>
+          <ul>
+            <li><a href="blur.html">blur([[data],fn])</a></li>
+            <li><a href="change.html">change([[data],fn])</a></li>
+            <li><a href="click.html">click([[data],fn])</a></li>
+            <li><a href="dblclick.html">dblclick([[data],fn])</a></li>
+            <li><a href="error.html">error([[data],fn])</a></li>
+            <li><a href="focus.html">focus([[data],fn])</a></li>
+            <li><a href="focusin.html">focusin([data],fn)</a></li>
+            <li><a href="focusout.html">focusout([data],fn)</a></li>
+            <li><a href="keydown.html">keydown([[data],fn])</a></li>
+            <li><a href="keypress.html">keypress([[data],fn])</a></li>
+            <li><a href="keyup.html">keyup([[data],fn])</a></li>
+            <li><a href="mousedown.html">mousedown([[data],fn])</a></li>
+            <li><a href="mouseenter.html">mouseenter([[data],fn])</a></li>
+            <li><a href="mouseleave.html">mouseleave([[data],fn])</a></li>
+            <li><a href="mousemove.html">mousemove([[data],fn])</a></li>
+            <li><a href="mouseout.html">mouseout([[data],fn])</a></li>
+            <li><a href="mouseover.html">mouseover([[data],fn])</a></li>
+            <li><a href="mouseup.html">mouseup([[data],fn])</a></li>
+            <li><a href="resize.html">resize([[data],fn])</a></li>
+            <li><a href="scroll.html">scroll([[data],fn])</a></li>
+            <li><a href="select.html">select([[data],fn])</a></li>
+            <li><a href="submit.html">submit([[data],fn])</a></li>
+            <li><a href="unload.html">unload([[data],fn])</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div id="effects">
+      <h2>效果</h2>
+      <ul>
+        <li>
+          <h3>基本</h3>
+          <ul>
+            <li><a href="show.html" title="show([speed,[easing],[fn]])">show([s,[e],[fn]])</a></li>
+            <li><a href="hide.html" title="hide([speed,[easing],[fn]])">hide([s,[e],[fn]])</a></li>
+          </ul>
+        </li>
+        <li>
+          <h3>滑动</h3>
+          <ul>
+            <li><a href="slideDown.html" title="slideDown([speed],[easing],[fn])">slideDown([s],[e],[fn])</a></li>
+            <li><a href="slideUp.html" title="slideUp([speed,[easing],[fn]])">slideUp([s,[e],[fn]])</a></li>
+            <li><a href="slideToggle.html" title="slideToggle([speed],[easing],[fn])">slideToggle([s],[e],[fn])</a></li>
+          </ul>
+        </li>
+        <li>
+          <h3>淡入淡出</h3>
+          <ul>
+            <li><a href="fadeIn.html" title="fadeIn([speed],[easing],[fn])">fadeIn([s],[e],[fn])</a></li>
+            <li><a href="fadeOut.html" title="fadeOut([speed],[easing],[fn])">fadeOut([s],[e],[fn])</a></li>
+            <li><a href="fadeTo.html" title="fadeTo([[speed],opacity,[easing],[fn]])">fadeTo([[s],o,[e],[fn]])</a></li>
+            <li><a href="fadeToggle.html" title="fadeToggle([speed,[easing],[fn]])">fadeToggle([s,[e],[fn]])</a></li>
+          </ul>
+        </li>
+        <li>
+          <h3>自定义</h3>
+          <ul>
+            <li><a href="animate.html" title="animate(params,[speed],[easing],[fn])">animate(p,[s],[e],[fn])</a><sup>1.8*</sup></li>
+            <li><a href="stop.html" title="stop([clearQueue],[jumpToEnd])">stop([c],[j])</a><sup>1.7*</sup></li>
+            <li><a href="delay.html" title="delay(duration,[queueName])">delay(d,[q])</a></li>
+            <li><a href="finish.html" title="finish([queue])">finish([queue])</a><sup>1.9+</sup></li>
+          </ul>
+        <li>
+          <h3>设置</h3>
+          <ul>
+            <li><a href="jQuery.fx.off.html">jQuery.fx.off</a></li>
+            <li><a 
+    href="jQuery.fx.interval.html">jQuery.fx.interval</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-5">
+    <div id="ajax" >
+      <h2>ajax</h2>
+      <ul>
+        <li>
+          <h3>ajax 请求</h3>
+          <ul>
+            <li><a href="jQuery.ajax.html">$.ajax(url,[settings])</a></li>
+            <li><a href="load.html">load(url,[data],[callback])</a></li>
+            <li><a href="jQuery.get.html">$.get(url,[data],[fn],[type])</a></li>
+            <li><a href="jQuery.getJSON.html">$.getJSON(url,[data],[fn])</a></li>
+            <li><a href="jQuery.getScript.html">$.getScript(url,[callback])</a></li>
+            <li><a href="jQuery.post.html">$.post(url,[data],[fn],[type])</a></li>
+          </ul>
+        </li>
+        <li>
+          <h3>ajax 事件</h3>
+          <ul>
+            <li><a href="ajaxComplete.html">ajaxComplete(callback)</a></li>
+            <li><a href="ajaxError.html">ajaxError(callback)</a></li>
+            <li><a href="ajaxSend.html">ajaxSend(callback)</a></li>
+            <li><a href="ajaxStart.html">ajaxStart(callback)</a></li>
+            <li><a href="ajaxStop.html">ajaxStop(callback)</a></li>
+            <li><a href="ajaxSuccess.html">ajaxSuccess(callback)</a></li>
+          </ul>
+        </li>
+        <li>
+          <h3>其它</h3>
+          <ul>
+            <li><a href="jQuery.ajaxPrefilter.html">$.ajaxPrefilter([type],fn)</a></li>
+            <li><a href="jQuery.ajaxSetup.html">$.ajaxSetup([options])</a></li>
+            <li><a href="serialize.html">serialize()</a></li>
+            <li><a href="serializearray.html">serializearray()</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div id="utilities" >
+      <h2>工具</h2>
+      <ul>
+        <li>
+          <h3>浏览器及特性检测</h3>
+          <ul>
+            <li><a href="jQuery.support.html">$.support</a></li>
+            <li><del><a href="jQuery.browser.html">$.browser</a></del><sup>1.9-</sup></li>
+            <li><a href="jQuery.browser.version.html">$.browser.version</a></li>
+            <li><del><a href="jQuery.boxModel.html">$.boxModel</a></del></li>
+          </ul>
+        </li>
+        <li>
+          <h3>数组和对象操作</h3>
+          <ul>
+            <li><a href="jQuery.each.html">$.each(object,[callback])</a></li>
+            <li><a href="jQuery.extend.html">$.extend([d],tgt,obj1,[objN])</a></li>
+            <li><a href="jQuery.grep.html">$.grep(array,fn,[invert])</a></li>
+            <li><del><a href="jQuery.sub.html">$.sub()</a></del><sup>1.9-</sup></li>
+            <li><a href="jQuery.when.html">$.when(deferreds)</a></li>
+            <li><a href="jQuery.makeArray.html">$.makeArray(obj)</a></li>
+            <li><a href="jQuery.map.html">$.map(arr|obj,callback)</a></li>
+            <li><a href="jQuery.inArray.html">$.inArray(val,arr,[from])</a></li>
+            <li><a href="jQuery.toArray.html">$.toArray()</a></li>
+            <li><a href="jQuery.merge.html">$.merge(first,second)</a></li>
+            <li><a href="jQuery.unique.html">$.unique(array)</a></li>
+            <li><a href="jQuery.parseJSON.html">$.parseJSON(json)</a></li>
+            <li><a href="jQuery.parseXML.html">$.parseXML(data)</a></li>
+          </ul>
+        </li>
+        <li>
+          <h3>函数操作</h3>
+          <ul>
+            <li><a href="jQuery.noop.html">$.noop</a>
+            <li><a href="jQuery.proxy.html">$.proxy(function,context)</a></li>
+          </ul>
+        <li>
+          <h3>测试操作</h3>
+          <ul>
+            <li><a href="jQuery.contains.html" title="$.contains(container,contained)">$.contains(c,c)</a></li>
+            <li><a href="jQuery.type.html">$.type(obj)</a></li>
+            <li><a href="jQuery.isArray.html">$.isarray(obj)</a></li>
+            <li><a href="jQuery.isFunction.html">$.isFunction(obj)</a></li>
+            <li><a href="jQuery.isEmptyObject.html">$.isEmptyObject(obj)</a></li>
+            <li><a href="jQuery.isPlainObject.html">$.isPlainObject(obj)</a></li>
+            <li><a href="jQuery.isWindow.html">$.isWindow(obj)</a></li>
+            <li><a href="jQuery.isNumeric.html">$.isNumeric(value)</a><sup>1.7+</sup></li>
+          </ul>
+        </li>
+        <li>
+          <h3>字符串操作</h3>
+          <ul>
+            <li><a href="jQuery.trim.html">$.trim(str)</a></li>
+          </ul>
+        </li>
+        <li>
+          <h3>URL</h3>
+          <ul>
+            <li><a href="jQuery.param.html">$.param(obj,[traditional])</a></li>
+          </ul>
+        </li>
+        <li>
+          <h3>插件编写</h3>
+          <ul>
+            <li><a href="jQuery.error.html">$.error(message)</a></li>
+            <li><a href="jquery.html">$.fn.jquery</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-6">
+    <div id="Eventobject" >
+      <h2>事件对象</h2>
+      <ul>
+        <li><a href="event.currentTarget.html">eve.currentTarget</a></li>
+        <li><a href="event.data.html">eve.data</a></li>
+        <li><a href="event.delegateTarget.html">eve.delegateTarget</a><sup>1.7+</sup></li>
+        <li><a href="event.isDefaultPrevented.html">eve.isDefaultPrevented()</a></li>
+        <li><a href="event.isImmediatePropagationStopped.html" title="event.isImmediatePropagationStopped">eve.isImmediatePropag...()</a></li>
+        <li><a href="event.isPropagationStopped.html">eve.isPropagationStopped()</a></li>
+        <li><a href="event.namespace.html">eve.namespace</a></li>
+        <li><a href="event.pageX.html">eve.pageX</a></li>
+        <li><a href="event.pageY.html">eve.pageY</a></li>
+        <li><a href="event.preventDefault.html">eve.preventDefault()</a></li>
+        <li><a href="event.relatedTarget.html">eve.relatedTarget</a></li>
+        <li><a href="event.result.html">eve.result</a></li>
+        <li><a href="event.stopImmediatePropagation.html" title="event.stopImmediatePropagation">eve.stopImmediatePro...()</a></li>
+        <li><a href="event.stopPropagation.html">eve.stopPropagation()</a></li>
+        <li><a href="event.target.html">eve.target</a></li>
+        <li><a href="event.timeStamp.html">eve.timeStamp</a></li>
+        <li><a href="event.type.html">eve.type</a></li>
+        <li><a href="event.which.html">eve.which</a></li>
+      </ul>
+    </div>
+    <div id="Deferred" >
+      <h2>延迟对象</h2>
+      <ul>
+        <li><a href="deferred.done.html" title="deferred.done(doneCallbacks[,doneCallbacks])">def.done(d,[d])</a></li>
+        <li><a href="deferred.fail.html">def.fail(failCallbacks)</a></li>
+        <li><del><a href="deferred.isRejected.html">def.isRejected()</a></del><sup>1.7-</sup></li>
+        <li><del><a href="deferred.isResolved.html">def.isResolved()</a></del><sup>1.7-</sup></li>
+        <li><a href="deferred.reject.html">def.reject(args)</a></li>
+        <li><a href="deferred.rejectWith.html" title="deferred.rejectWith(context,[args])">def.rejectWith(c,[a])</a></li>
+        <li><a href="deferred.resolve.html">def.resolve(args)</a></li>
+        <li><a href="deferred.resolveWith.html" title="deferred.resolveWith(context,[args])">def.resolveWith(c,[a])</a></li>
+        <li><del><a href="deferred.then.html" title="deferred.then(doneCallbacks,failCallbacks[, progressCallbacks])">def.then(d[,f][,p])</a></del><sup>1.8*</sup></li>
+        <li><a href="deferred.promise.html" title="deferred.promise([type],[target])">def.promise([ty],[ta])</a></li>
+        <li><del><a href="deferred.pipe.html" title="deferred.pipe([doneFilter],[failFilter],[progressFilter])">def.pipe([d],[f],[p])</a></del><sup>1.8-</sup></li>
+        <li><a href="deferred.always.html" title="deferred.always(alwaysCallbacks,[alwaysCallbacks])">def.always(al,[al])</a></li>
+        <li><a href="deferred.notify.html">def.notify(args)</a><sup>1.7+</sup></li>
+        <li><a href="deferred.notifyWith.html" title="deferred.notifyWith(context,[args])">def.notifyWith(c,[a])</a><sup>1.7+</sup></li>
+        <li><a href="deferred.progress.html" title="deferred.progress(progressCallbacks)">def.progress(proCal)</a><sup>1.7+</sup></li>
+        <li><a href="deferred.state.html">def.state()</a><sup>1.7+</sup></li>
+      </ul>
+    </div>
+    <div id="Callbacks" >
+      <h2>回调函数</h2>
+      <ul>
+        <li><a href="callbacks.add.html">cal.add(callbacks)</a><sup>1.7+</sup></li>
+        <li><a href="callbacks.disable.html">cal.disable()</a><sup>1.7+</sup></li>
+        <li><a href="callbacks.empty.html">cal.empty()</a><sup>1.7+</sup></li>
+        <li><a href="callbacks.fire.html">cal.fire(arguments)</a><sup>1.7+</sup></li>
+        <li><a href="callbacks.fired.html">cal.fired()</a><sup>1.7+</sup></li>
+        <li><a href="callbacks.fireWith.html" title="callbacks.fireWith([context] [, args])">cal.fireWith([c] [,a])</a><sup>1.7+</sup></li>
+        <li><a href="callbacks.has.html">cal.has(callback)</a><sup>1.7+</sup></li>
+        <li><a href="callbacks.lock.html">cal.lock()</a><sup>1.7+</sup></li>
+        <li><a href="callbacks.locked.html">cal.locked()</a><sup>1.7+</sup></li>
+        <li><a href="callbacks.remove.html">cal.remove(callbacks)</a><sup>1.7+</sup></li>
+        <li><a href="jQuery.callbacks.html">$.callbacks(flags)</a><sup>1.7+</sup></li>
+      </ul>
+    </div>
+    <div id="about" >
+      <h2>关于</h2>
+      <ul>
+        <li><a href="about.html">关于此jQuery中文文档</a></li>
+        <li><a href="bugandUpdate.html">提交bug及获取更新</a></li>
+      </ul>
+    </div>
+    <div id="Other" >
+      <h2>其它</h2>
+      <ul>
+        <!--<li><a href="cssFormat.html">CSS压缩/格式化</a></li>
+        <li><a href="jsFormat.html">JS压缩/格式化</a></li>
+        <li><a href="regexChe.html">正则表达式在线测试</a></li>-->
+        <li><a href="regexp.html">正则表达式</a></li>
+       <!-- <li><a href="html5.html">HTML5速查表</a></li>-->
+      </ul>
+    </div>
+  </div>
+  <p id="footer">Copyright &copy; <a href="http://hemin.cn" target="_blank">hemin</a> 2012-2015. All right reserved.</p>
 </div>
-<div id='right'></div>
 </body>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.autocomplete.js"></script>
+<script type="text/javascript" src="js/dtree.js"></script>
+<script>
+$(function () {
+	$("#menu").load("__left.html");
+});
+</script>
 </html>

@@ -1,60 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8" />
-<title>搜索能看见么？ | jQuery API 中文手册</title></title>
-<meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
-<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
-<style>
-body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,p,blockquote,table,th,td,img,textarea{margin:0;padding:0;}
-body{outline: 0;color:#333;text-align: left;vertical-align:baseline;font:12px/18px Verdana,Tahoma,Arial,sans-serif,"宋体";}
-h1,h2,h3,h4,h5{ font-size:12px; font-weight:normal;}
-strong{font-weight: bold;}
-img{border:none;}
-ul,ol,li{list-style: none;}
-a{ text-decoration:none;}
-
-.autocomplete-w1 { position: absolute; top: 0px; left: 0px; }
-.autocomplete { border: 1px solid #999; background: #FFF; cursor: default; text-align: left; max-height: 350px; overflow: auto; /* IE6 specific: */ _height: 350px; _margin: 0; _overflow-x: hidden; }
-    .autocomplete .selected { background: #F0F0F0; }
-    .autocomplete div { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
-    .autocomplete strong { font-weight: normal; color: #3399FF; }
-#butsoso{ width:36px; height:22px;height:24px\0; line-height:24px\0; }
-#query { padding:4px; border: 1px solid #CCC; display:inline-block;width: 130px;margin-right: 3px;}
-.dtree a,.dtree a:link,.dtree a:visited {color:rgb(64,112,170);text-decoration: none;}
-.dtree a:hover {color:white;background: rgb(79,129,189);}
-.dtree{ width:201px; border-right:1px solid #ccc; padding:5px; margin-right:5px; overflow:auto;}
-.dtree h2{ color: #4F81BD;padding:2px 5px 2px 17px; cursor:pointer; position:relative;}
-.dtree h2:after{content:"+"; position:absolute; left:5px;top:1px;}
-.dtree h2.up,.dtree li a.up{ background-color:#4F81BD; color:#FFF;}
-.dtree h2.up:after{content:"-";}
-.dtree h2:hover{ background-color:#4F81BD; color:#FFF;}
-.dtree ol{ margin:0 0 5px 15px; display:none;}
-.dtree ol li{ color:#666;}
-.dtree del{ color:#999!important;}
-.dtree > div{ margin:2px 0 0; border-bottom:1px solid #ccc;}
-.dtree sup{ color:#CC3300; font-family:icon;line-height: 8px;}
-</style>
-<!--<link rel="StyleSheet" href="style/dtree.css" type="text/css" />-->
-<script type="text/javascript" src="js/jquery.autocomplete.js"></script>
-<script type="text/javascript" src="js/dtree.js"></script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-15318881-10', 'pandoraui.github.io');
-  ga('send', 'pageview');
-</script>
-</head>
-
-<body>
-<!--<div><img src="img/base.gif">jQuery1.10.3_20130708.chm</div>
-<div><img src="img/join.gif"><img src="img/page.gif"><a href="cheatsheet.html" target="body">速查表</a></div>-->
-<div class="dtree">
-<p style="text-align:center"><input type="text" name="query" id="query" placeholder="请输入关键字"/><!--<input type="button" id="butsoso" value="搜索" />--></p>
-<p style="margin:7px 0; text-align:center"><a href="javascript:void(0)" id="openAll">全部展开</a> | <a href="javascript:void(0)" id="closeAll">全部折叠 </a> | <a href="index.html">速查表</a></p>
   <div id="core">
     <h2>核心</h2>
     <ol>
@@ -99,7 +42,7 @@ a{ text-decoration:none;}
     <h2>CSS</h2>
     <ol>
       <li><a href="css.html" title="css(name|properties|[,value|fn])">css(name|pro|[,val|fn])</a><sup>1.9*</sup></li>
-      <li><a href="jQuery.cssHooks.html">jQuery.cssHooks</a></li>      
+      <li><a href="jQuery.cssHooks.html">jQuery.cssHooks</a></li>
       <li><a href="offset.html">offset([coordinates])</a></li>
       <li><a href="position.html">position()</a></li>
       <li><a href="scrollTop.html">scrollTop([val])</a></li>
@@ -124,22 +67,20 @@ a{ text-decoration:none;}
       <li><a href="child.html">parent &gt;  child</a></li>
       <li><a href="next_1.html">prev + next</a></li>
       <li><a href="siblings_1.html">prev ~ siblings</a></li>
-      
-          <li><a href="first_1.html">:first</a></li>
-          <li><a href="not_1.html">:not(selector)</a></li>
-          <li><a href="even.html">:even</a></li>
-          <li><a href="odd.html">:odd</a></li>
-          <li><a href="eq_1.html">:eq(index)</a></li>
-          <li><a href="gt.html">:gt(index)</a></li>
-          <li><a href="lang.html">:lang</a><sup>1.9+</sup></li>
-          <li><a href="last_1.html">:last</a></li>
-          <li><a href="lt.html">:lt(index)</a></li>
-          <li><a href="header.html">:header</a></li>
-          <li><a href="animated.html">:animated</a></li>
-          <li><a href="focus_1.html">:focus</a><sup>1.6+</sup></li>
-          <li><a href="root.html">:root</a><sup>1.9+</sup></li>
-          <li><a href="target.html">:target</a><sup>1.9+</sup></li>  
-      
+      <li><a href="first_1.html">:first</a></li>
+      <li><a href="not_1.html">:not(selector)</a></li>
+      <li><a href="even.html">:even</a></li>
+      <li><a href="odd.html">:odd</a></li>
+      <li><a href="eq_1.html">:eq(index)</a></li>
+      <li><a href="gt.html">:gt(index)</a></li>
+      <li><a href="lang.html">:lang</a><sup>1.9+</sup></li>
+      <li><a href="last_1.html">:last</a></li>
+      <li><a href="lt.html">:lt(index)</a></li>
+      <li><a href="header.html">:header</a></li>
+      <li><a href="animated.html">:animated</a></li>
+      <li><a href="focus_1.html">:focus</a><sup>1.6+</sup></li>
+      <li><a href="root.html">:root</a><sup>1.9+</sup></li>
+      <li><a href="target.html">:target</a><sup>1.9+</sup></li>
       <li><a href="contains.html">:contains(text)</a></li>
       <li><a href="empty_1.html">:empty</a></li>
       <li><a href="has_1.html">:has(selector)</a></li>
@@ -153,18 +94,16 @@ a{ text-decoration:none;}
       <li><a href="attributeEndsWith.html">[attribute$=value]</a></li>
       <li><a href="attributeContains.html">[attribute*=value]</a></li>
       <li><a href="attributeMultiple.html">[attrSel1][attrSel2][attrSelN]</a></li>
-      
-          <li><a href="firstChild.html">:first-child</a></li>
-          <li><a href="firstOfType.html">:first-of-type</a><sup>1.9+</sup></li>
-          <li><a href="lastChild.html">:last-child</a></li>
-          <li><a href="lastOfType.html">:last-of-type</a><sup>1.9+</sup></li>
-          <li><a href="nthChild.html">:nth-child</a></li>
-          <li><a href=":nthLastChild.html">:nth-last-child()</a><sup>1.9+</sup></li>
-          <li><a href="nthLastOfType.html">:nth-last-of-type()</a><sup>1.9+</sup></li>
-          <li><a href="nthOfType.html">:nth-of-type()</a><sup>1.9+</sup></li>
-          <li><a href="onlyChild.html">:only-child</a></li>
-          <li><a href="onlyOfType.html">:only-of-type</a><sup>1.9+</sup></li>
-      
+      <li><a href="firstChild.html">:first-child</a></li>
+      <li><a href="firstOfType.html">:first-of-type</a><sup>1.9+</sup></li>
+      <li><a href="lastChild.html">:last-child</a></li>
+      <li><a href="lastOfType.html">:last-of-type</a><sup>1.9+</sup></li>
+      <li><a href="nthChild.html">:nth-child</a></li>
+      <li><a href="nthLastChild.html">:nth-last-child()</a><sup>1.9+</sup></li>
+      <li><a href="nthLastOfType.html">:nth-last-of-type()</a><sup>1.9+</sup></li>
+      <li><a href="nthOfType.html">:nth-of-type()</a><sup>1.9+</sup></li>
+      <li><a href="onlyChild.html">:only-child</a></li>
+      <li><a href="onlyOfType.html">:only-of-type</a><sup>1.9+</sup></li>
       <li><a href="input.html">:input</a></li>
       <li><a href="text_1.html">:text</a></li>
       <li><a href="password.html">:password</a></li>
@@ -254,7 +193,7 @@ a{ text-decoration:none;}
       <li><a href="delegate.html" title="delegate(selector,[type],[data],fn)">delegate(s,[t],[d],fn)</a></li>
       <li><a href="undelegate.html" title="undelegate([selector,[type],fn])">undelegate([s,[t],fn])</a><sup>1.6*</sup></li>
       <li><a href="hover.html">hover([over,]out)</a></li>
-      <li><a href="toggle.html">toggle(fn, fn2, [fn3, fn4, ...])</a></li>
+      <li><del><a href="toggle.html">toggle(fn, fn2, [fn3, fn4, ...])</a><sup>1.9-</sup></del></li>
       <li><a href="blur.html">blur([[data],fn])</a></li>
       <li><a href="change.html">change([[data],fn])</a></li>
       <li><a href="click.html">click([[data],fn])</a></li>
@@ -285,7 +224,6 @@ a{ text-decoration:none;}
     <ol>
       <li><a href="show.html" title="show([speed,[easing],[fn]])">show([s,[e],[fn]])</a></li>
       <li><a href="hide.html" title="hide([speed,[easing],[fn]])">hide([s,[e],[fn]])</a></li>
-      <li><a href="toggle.html" title="toggle([speed],[easing],[fn])">toggle([s],[e],[fn])</a></li>
       <li><a href="slideDown.html" title="slideDown([speed],[easing],[fn])">slideDown([s],[e],[fn])</a></li>
       <li><a href="slideUp.html" title="slideUp([speed,[easing],[fn]])">slideUp([s,[e],[fn]])</a></li>
       <li><a href="slideToggle.html" title="slideToggle([speed],[easing],[fn])">slideToggle([s],[e],[fn])</a></li>
@@ -337,13 +275,13 @@ a{ text-decoration:none;}
       <li><a href="jQuery.makeArray.html">$.makearray(obj)</a></li>
       <li><a href="jQuery.map.html">$.map(arr|obj,callback)</a><sup>1.6*</sup></li>
       <li><a href="jQuery.inArray.html">$.inarray(val,arr,[from])</a></li>
-      <li><a href="jQuery.toarray.html">$.toarray()</a></li>
+      <li><a href="jQuery.toArray.html">$.toarray()</a></li>
       <li><a href="jQuery.merge.html">$.merge(first,second)</a></li>
       <li><a href="jQuery.unique.html">$.unique(array)</a></li>
       <li><a href="jQuery.parseJSON.html">$.parseJSON(json)</a></li>
       <li><a href="jQuery.parseXML.html">$.parseXML(data)</a></li>
-      <li><a href="jQuery.noop.html">$.noop</a>
-      </li><li><a href="jQuery.proxy.html">$.proxy(function,context)</a></li>
+      <li><a href="jQuery.noop.html">$.noop</a> </li>
+      <li><a href="jQuery.proxy.html">$.proxy(function,context)</a></li>
       <li><a href="jQuery.contains.html" title="$.contains(container,contained)">$.contains(c,c)</a></li>
       <li><a href="jQuery.type.html">$.type(obj)</a></li>
       <li><a href="jQuery.isArray.html">$.isarray(obj)</a></li>
@@ -386,15 +324,15 @@ a{ text-decoration:none;}
     <ol>
       <li><a href="deferred.done.html" title="deferred.done(doneCallbacks[,doneCallbacks])">def.done(d,[d])</a></li>
       <li><a href="deferred.fail.html">def.fail(failCallbacks)</a></li>
-      <li><a href="deferred.isRejected.html"><del>def.isRejected()</del></a><sup>1.8-</sup></li>
-      <li><a href="deferred.isResolved.html"><del>def.isResolved()</del></a><sup>1.8-</sup></li>
+      <li><a href="deferred.isRejected.html"><del>def.isRejected()</del></a><sup>1.7-</sup></li>
+      <li><a href="deferred.isResolved.html"><del>def.isResolved()</del></a><sup>1.7-</sup></li>
       <li><a href="deferred.reject.html">def.reject(args)</a></li>
       <li><a href="deferred.rejectWith.html" title="deferred.rejectWith(context,[args])">def.rejectWith(c,[a])</a></li>
       <li><a href="deferred.resolve.html">def.resolve(args)</a></li>
       <li><a href="deferred.resolveWith.html" title="deferred.resolveWith(context,[args])">def.resolveWith(c,[a])</a></li>
-      <li><a href="deferred.then.html" title="deferred.then(doneCallbacks,failCallbacks[, progressCallbacks])">def.then(d,f,[,p])</a><sup>1.7*</sup></li>
+      <li><a href="deferred.then.html" title="deferred.then(doneCallbacks,failCallbacks[, progressCallbacks])">def.then(d[,f][,p])</a><sup>1.8*</sup></li>
       <li><a href="deferred.promise.html" title="deferred.promise([type],[target])">def.promise([ty],[ta])</a><sup>1.6+</sup></li>
-      <li><a href="deferred.pipe.html" title="deferred.pipe([doneFilter],[failFilter],[progressFilter])">def.pipe([d],[f],[p])</a><sup>1.7*</sup></li>
+      <li><del><a href="deferred.pipe.html" title="deferred.pipe([doneFilter],[failFilter],[progressFilter])">def.pipe([d],[f],[p])</a></del><sup>1.8-</sup></li>
       <li><a href="deferred.always.html" title="deferred.always(alwaysCallbacks,[alwaysCallbacks])">def.always(al,[al])</a><sup>1.6+</sup></li>
       <li><a href="deferred.notify.html">def.notify(args)</a><sup>1.7+</sup></li>
       <li><a href="deferred.notifyWith.html" title="deferred.notifyWith(context,[args])">def.notifyWith(c,[a])</a><sup>1.7+</sup></li>
@@ -427,14 +365,20 @@ a{ text-decoration:none;}
   </div>
   <div id="Other">
     <h2>其它</h2>
-	  <ol>        
-      	 <li><a href="cssFormat.html">CSS压缩/格式化</a></li>
+    <ol>
+      
+      <!-- <li><a href="cssFormat.html">CSS压缩/格式化</a></li>
+
          <li><a href="jsFormat.html">JS压缩/格式化</a></li>
-         <li><a href="regexChe.html">正则表达式在线测试</a></li>
-	     <li><a href="regexp.html">正则表达式速查表</a></li>
-         <li><a href="html5.html">HTML5速查表</a></li>
-	  </ol>
+
+         <li><a href="regexChe.html">正则表达式在线测试</a></li>-->
+      
+      <li><a href="regexp.html">正则表达式</a></li>
+      
+      <!--<li><a href="html5.html">HTML5速查表</a></li>-->
+      
+    </ol>
   </div>
-</div>
-</body>
-</html>
+  <p class="jzsm">jquery中文手册 自从 2011 第1.7版到现在，这期间进行了很多次修改，因为作者相信：只要用心，哪怕一个小玩意都可以做到极致。 若喜欢 jquery中文手册，期待小额资金捐赠以支持开源 :-)<!--<a class="juanzeng" href='http://me.alipay.com/hemin123' target="_blank"><img src='http://hemin.cn/jq/img/alipay.png' /></a>--></p>
+  <div class="juanzeng"><img src="img/zfb.png" width="164" height="164" alt="支付宝二维码" />支付宝捐赠二维码<br />
+    账户名：min***@qq.com</div>

@@ -1,24 +1,24 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>deferred.pipe([doneFilter],[failFilter],[progressFilter] ) | jQuery API 中文手册</title>
 <meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
-<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
-<link type="text/css" rel="stylesheet" href="style/style.css" tppabs="http://hemin.cn/jq/style/style.css"  />
-<script type="text/javascript" src="js/jquery.min.js" tppabs="http://hemin.cn/jq/js/jquery.min.js"></script>
-<script type="text/javascript" src="js/js.js" tppabs="http://hemin.cn/jq/js/js.js"></script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-15318881-10', 'pandoraui.github.io');
-  ga('send', 'pageview');
-</script>
+<meta name="description" content="筛选器和/或链Deferreds的实用程序方法。deferred.pipe()方法返回一个新的promise，该过滤器通过一个函数有关的递延状态和价值。该doneFilter和failFilter原递延过滤功能的解决/拒绝的状态和价值。这些过滤器函数可以返回一个新的值被传递给管道承诺的done()或fail()的回调，或者他们可以返回另一个观察对象（推迟，承诺等），将通过它的解决/拒绝状态和价值，以保证管道的回调。如果使用的是过滤功能null ，或不指定，则管道的承诺将得到解决或原驳回值具有相同。 - jQuery API 中文手册">
+<meta name="keywords" content="jquery,chm,手册,在线,api" />
+<link type="image/x-icon" href="img/favicon.ico" rel="shortcut icon">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
 </head>
 <body id="split">
+<div id='left' class='dtree'>
+  <p style="text-align:center">
+    <input type="text" name="query" id="query" placeholder="请输入关键字"/>
+    <!--<input type="button" id="butsoso" value="搜索" />--></p>
+  <p style="margin:7px 0; text-align:center"><a href="javascript:void(0)" id="openAll">全部展开</a> | <a href="javascript:void(0)" id="closeAll">全部折叠 </a> | <a href="index.html">速查表</a></p>
+	<div id="menu">
+    
+    </div>
+</div>
 <div id="content" class="a2">
   <div rel="deferred.pipe">
     <h2><span>返回值:Deferred Object</span>deferred.pipe([doneFilter],[failFilter],[progressFilter])</h2>
@@ -83,4 +83,8 @@ chained.done(function( data ) {
   </div>
 </div>
 </body>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.autocomplete.js"></script>
+<script type="text/javascript" src="js/dtree.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
 </html>

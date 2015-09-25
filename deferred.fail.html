@@ -1,24 +1,24 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>deferred.fail(failCallbacks[,failCallbacks]) | jQuery API 中文手册</title>
 <meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
-<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
-<link type="text/css" rel="stylesheet" href="style/style.css" tppabs="http://hemin.cn/jq/style/style.css"  />
-<script type="text/javascript" src="js/jquery.min.js" tppabs="http://hemin.cn/jq/js/jquery.min.js"></script>
-<script type="text/javascript" src="js/js.js" tppabs="http://hemin.cn/jq/js/js.js"></script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-15318881-10', 'pandoraui.github.io');
-  ga('send', 'pageview');
-</script>
+<meta name="description" content="当延迟失败时调用一个函数或者数组函数。该参数可以是一个函数或一个函数的数组。当延迟失败时，doneCallbacks被调用。回调执行是依照他们添加的顺序。一旦deferred.fail()返回延迟对象，延迟对象的其它方法也可以链接到了这里，包括增加.done()方法。当延迟解决，doneCallbacks执行使用参数提供给<a href="deferred.reject.html">resolve</a>或<a href="deferred.rejectWith.html">resolveWith</a>方法依照添加的顺序调用。有关详细信息，请参阅<a href="http://api.jquery.com/category/deferred-object/">Deferred object</a> 。 - jQuery API 中文手册">
+<meta name="keywords" content="jquery,chm,手册,在线,api" />
+<link type="image/x-icon" href="img/favicon.ico" rel="shortcut icon">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
 </head>
 <body id="split">
+<div id='left' class='dtree'>
+  <p style="text-align:center">
+    <input type="text" name="query" id="query" placeholder="请输入关键字"/>
+    <!--<input type="button" id="butsoso" value="搜索" />--></p>
+  <p style="margin:7px 0; text-align:center"><a href="javascript:void(0)" id="openAll">全部展开</a> | <a href="javascript:void(0)" id="closeAll">全部折叠 </a> | <a href="index.html">速查表</a></p>
+	<div id="menu">
+    
+    </div>
+</div>
 <div id="content" class="a2">
   <div rel="deferred.fail">
     <h2><span>返回值:Deferred Object</span>deferred.fail(failCallbacks[,failCallbacks])</h2>
@@ -26,7 +26,7 @@
     <div class="desc">
       <p>当延迟失败时调用一个函数或者数组函数.。</p>
       <div class="longdesc">
-        <p>该参数可以是一个函数或一个函数的数组。当延迟失败时，doneCallbacks被调用。回调执行是依照他们添加的顺序。一旦deferred.fail()返回延迟对象，延迟对象的其它方法也可以链接到了这里，包括增加.done()方法。当延迟解决，doneCallbacks执行使用参数提供给<a href="deferred.reject.html" tppabs="http://hemin.cn/jq/deferred.reject.html">resolve</a>或<a href="deferred.rejectWith.html" tppabs="http://hemin.cn/jq/deferred.rejectWith.html">resolveWith</a>方法依照添加的顺序调用。有关详细信息，请参阅<a href="javascript:if(confirm('http://api.jquery.com/category/deferred-object/  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://api.jquery.com/category/deferred-object/'" tppabs="http://api.jquery.com/category/deferred-object/">Deferred object</a> 。</p>
+        <p>该参数可以是一个函数或一个函数的数组。当延迟失败时，doneCallbacks被调用。回调执行是依照他们添加的顺序。一旦deferred.fail()返回延迟对象，延迟对象的其它方法也可以链接到了这里，包括增加.done()方法。当延迟解决，doneCallbacks执行使用参数提供给<a href="deferred.reject.html">resolve</a>或<a href="deferred.rejectWith.html">resolveWith</a>方法依照添加的顺序调用。有关详细信息，请参阅<a href="http://api.jquery.com/category/deferred-object/">Deferred object</a> 。</p>
       </div>
     </div>
     <h3>参数</h3>
@@ -49,4 +49,8 @@
   </div>
 </div>
 </body>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.autocomplete.js"></script>
+<script type="text/javascript" src="js/dtree.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
 </html>

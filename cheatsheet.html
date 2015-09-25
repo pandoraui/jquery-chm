@@ -1,108 +1,58 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset="utf-8" />
-<title>jQuery 1.10.3 速查表 | jQuery API 中文手册</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery 1.11.3 速查表 | jQuery API 中文手册</title>
 <meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
 <meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
 <link type="image/x-icon" href="img/favicon.ico" rel="shortcut icon">
 <style type="text/css">
-
-#content.a1 h1,#content.a1 h2,#content.a1 h3,#content.a1 ul,#content.a1 li {font-size: 12px;font-weight: normal;padding:0;margin:0;list-style:none;font-family:Verdana, Tahoma, arial, sans-serif, "宋体";line-height: 16px;}
-#content.a1 h1 {overflow:hidden;zoom:1;}
-#content.a1 h2 {background: rgb(79,129,189);color:#eee;padding: 2px 5px;}
-#content.a1 h3 {color: #666;padding-top: 2px;}
-#content.a1 ul {margin:0 0 5px 10px;}
-#content.a1 ul ul {margin:0 0 0 10px;}
-#content.a1 > div{float:left;width: 206px;overflow:hidden;margin-right: 2px; height: 1168px; }
-#content.a1 a,#content.a1 a:link,#content.a1 a:visited {color:rgb(64,112,170);text-decoration: none;}
-#content.a1 a:hover {color:white;background: rgb(79,129,189);}
-#content.a1 > div > div:hover{background:rgb(232,238,247);}
-#book {clear:both;width:988px;}
-#h_ad2 {font-size:12px;}
-#content.a1 ul li ul li{color: #4070AA;}
-#content.a1 sup{ color:#CC3300; font-family:icon;line-height: 8px;}
-
-#content.a1 #fk{color:#900; float:right;}
-#content.a1 #fk:hover{ color:#FFF; background-color:#900;}
-#content.a1 #footer{clear:both; margin:0; background-color:#4F81BD; text-align:center;color: #FFFFFF;padding: 5px 0; font-family: Verdana;font-size: 12px;}
-#content.a1 #footer a{ color:#CCC;}
-#content.a1 #footer a:hover{ background-color:#fff; color:#4F81BD;}
-#content.a1 del a{ color:#999!important;}
-#content.a1 h1,#content.a1 #footer{width:1246px;}
-#content.a1 h1 > span{ float:left;}
-#content.a1 em{ font-style:normal;}
-
-@media only screen and (min-width: 1268px) and (max-width:1476px){
+@media (max-width:1440px){
 	#content.a1 h1,#content.a1 #footer{width:1038px;}
 	#content.a1 .col-6{ width:auto; height:auto;}
 	#content.a1 .col-6 > div{ float:left; width: 206px; margin-right: 2px;}
 }
-@media only screen and (min-width: 1062px) and (max-width:1270px){
+@media (max-width:1268px){
 	#content.a1 h1,#content.a1 #footer{width:830px;}
 	#content.a1 .col-6,#content.a1 .col-5{ float:none; overflow:visible; width:auto;height:auto;}
 	#content.a1 .col-6 > div,#content.a1 .col-5 > div{ float:left; width: 206px; margin-right: 2px;}
 }
-@media only screen and (min-width: 856px) and (max-width:1064px){
+@media (max-width:1064px){
 	#content.a1 h1,#content.a1 #footer{width:622px;}
 	#content.a1 .col-6,#content.a1 .col-5,#content.a1 .col-4{ height:auto;}
 	#content.a1 .col-6 > div,#content.a1 .col-5 > div,#content.a1 .col-4 > div{ float:left; width: 206px; margin-right: 2px;}
 }
-@media only screen and (min-width: 648px) and (max-width:858px){
+@media (max-width:858px){
 	#content.a1 h1,#content.a1 #footer{width:414px;}
 	#content.a1 h1 em{ display:none;}
 	#content.a1 > div{ height:auto;}
 	#content.a1 > div > div{ float:left; width: 206px; margin-right: 2px;}
 }
-@media only screen and (min-width: 442px) and (max-width:650px){
+@media (max-width:650px){
 	#content.a1 h1,#content.a1 #footer{width:206px;}
 	#content.a1 h1 em{ display:none;}
 	#content.a1 > div{ height:auto;}
 	#content.a1 > div > div{ float:left; width: 206px; margin-right: 2px;}
 }
+.llq{ width:720px; font-family:"黑体"; position:absolute; top:0; left:50%; margin-left:-360px; line-height:50px; text-align:center; font-size:30px; background-color:#FEFFC5; color:#7A7A7A;}
+.llq a{ color:#FF555D; font-weight:bold;}
+.llq a:hover{ background-color:FF555D; color:#FEFFC5;}
 
-
-/*@media only screen and (min-width: 1042px) and (max-width:1248px){
-	#content.a1 h1,#content.a1 #footer{width:1038px;}
-	#content.a1 .col-6{ width:auto; height:auto;}
-	#content.a1 .col-6 > div{ float:left; width: 206px; margin-right: 2px;}
-}
-@media only screen and (min-width: 834px) and (max-width:1042px){
-	#content.a1 h1,#content.a1 #footer{width:830px;}
-	#content.a1 .col-6,#content.a1 .col-5{ float:none; overflow:visible; width:auto;height:auto;}
-	#content.a1 .col-6 > div,#content.a1 .col-5 > div{ float:left; width: 206px; margin-right: 2px;}
-}
-@media only screen and (min-width: 622px) and (max-width:834px){
-	#content.a1 h1,#content.a1 #footer{width:622px;}
-	#content.a1 .col-6,#content.a1 .col-5,#content.a1 .col-4{ height:auto;}
-	#content.a1 .col-6 > div,#content.a1 .col-5 > div,#content.a1 .col-4 > div{ float:left; width: 206px; margin-right: 2px;}
-}
-@media only screen and (min-width: 378px) and (max-width:606px){
-	#content.a1 h1,#content.a1 #footer{width:414px;}
-	#content.a1 h1 em{ display:none;}
-	#content.a1 > div{ height:auto;}
-	#content.a1 > div > div{ float:left; width: 206px; margin-right: 2px;}
-}
-@media only screen and (min-width: 150px) and (max-width:378px){
-	#content.a1 h1,#content.a1 #footer{width:206px;}
-	#content.a1 h1 em{ display:none;}
-	#content.a1 > div{ height:auto;}
-	#content.a1 > div > div{ float:left; width: 206px; margin-right: 2px;}
-}*/
 </style>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-15318881-10', 'pandoraui.github.io');
-  ga('send', 'pageview');
-</script>
 </head>
-<body>
+
+<body id="gdt">
+<div id='left' class='dtree'>
+  <p style="text-align:center">
+    <input type="text" name="query" id="query" placeholder="请输入关键字"/>
+    <!--<input type="button" id="butsoso" value="搜索" />--></p>
+  <p style="margin:7px 0; text-align:center"><a href="javascript:void(0)" id="openAll">全部展开</a> | <a href="javascript:void(0)" id="closeAll">全部折叠 </a> | <a href="index.html">速查表</a></p>
+	<div id="menu">
+    
+    </div>
+</div>
 <div id="content" class="a1">
-  <h1><span><em><a href="http://hemin.cn/jq/" target="_blank" title="点击在线浏览">在线手册</a> | <a href="http://hemin.cn/jq/downloads/" title="CHM版下载" target="_blank">CHM版</a> | <a href="http://hemin.cn/jq/downloads/" title="源码下载" target="_blank">源码</a><!--<a href="http://hemin.cn/jq_manual/" target="_blank" title="点击在线浏览">在线手册</a> | <a href="http://hemin.cn/jq_manual/downloads/jQuery1.10.3_20121215.chm" target="_blank" title="点击直接下载">CHM版</a> | <a href="javascript:void(0)" class="hm-cm" title="显示二维码">触屏版<div class="wm"><s class="arrow-top"><s></s></s><img src="img/2wm.jpg" width="145" height="145" /></div></a> | <a href="http://hemin.cn/jq_manual/downloads/jQuery1.10.3_20121215.apk" target="_blank" title="点击直接下载">安卓版</a>-->&nbsp;&nbsp;&nbsp;&nbsp;jQuery 1.10.3 速查表&nbsp;&nbsp;--</em>作者：<a href="http://hemin.cn" target="_blank">hemin</a></span><a id="fk" href='https://me.alipay.com/hemin123' target="_blank" title="捐赠点击">捐赠</a></h1>
+  <h1><a href="cheatsheet.html" title="点击在线浏览">在线手册</a> | <a href="downloads.html" title="CHM版下载" >CHM版</a> | <a href="http://hemin.cn/css/" title="CSS手册(测试)">CSS手册(测试)</a>&nbsp;&nbsp;&nbsp;&nbsp;jQuery 1.11.3 速查表&nbsp;&nbsp;--</em>作者：<a href="http://hemin.cn/blog/" target="_blank">hemin</a></span><a id="fk" href="bugandUpdate.html">反馈/更新</a></h1>
   <div class="col-1">
     <div id="core">
       <h2>核心</h2>
@@ -110,7 +60,7 @@
         <li>
           <h3>jQuery 核心函数</h3>
           <ul>
-            <li><a href="jQuery_selector_context.html">jQuery([sel,[context]])</a>
+            <li><a href="jQuery_selector_context.html">jQuery([sel,[context]])</a></li>
             <li><a href="jQuery_html_ownerDocument.html">jQuery(html,[ownerDoc])</a><sup>1.8*</sup></li>
             <li><a href="jQuery_callback.html">jQuery(callback)</a></li>
             <li><a href="jQuery.holdReady.html">jQuery.holdReady(hold)</a></li>
@@ -474,7 +424,7 @@
           <h3>事件切换</h3>
           <ul>
             <li><a href="hover.html">hover([over,]out)</a></li>
-            <li><a href="toggle.html">toggle([spe],[eas],[fn])</a><sup>1.9*</sup></li>
+            <li><del><a href="toggle.html">toggle([spe],[eas],[fn])</a></del><sup>1.9-</sup></li>
           </ul>
         </li>
         <li>
@@ -515,7 +465,6 @@
           <ul>
             <li><a href="show.html" title="show([speed,[easing],[fn]])">show([s,[e],[fn]])</a></li>
             <li><a href="hide.html" title="hide([speed,[easing],[fn]])">hide([s,[e],[fn]])</a></li>
-            <li><a href="toggle.html" title="toggle([speed],[easing],[fn])">toggle([s],[e],[fn])</a></li>
           </ul>
         </li>
         <li>
@@ -543,19 +492,19 @@
             <li><a href="delay.html" title="delay(duration,[queueName])">delay(d,[q])</a></li>
             <li><a href="finish.html" title="finish([queue])">finish([queue])</a><sup>1.9+</sup></li>
           </ul>
+        </li>
         <li>
           <h3>设置</h3>
           <ul>
             <li><a href="jQuery.fx.off.html">jQuery.fx.off</a></li>
-            <li><a 
-    href="jQuery.fx.interval.html">jQuery.fx.interval</a></li>
+            <li><a href="jQuery.fx.interval.html">jQuery.fx.interval</a></li>
           </ul>
         </li>
       </ul>
     </div>
   </div>
   <div class="col-5">
-    <div id="ajax" >
+    <div id="ajax">
       <h2>ajax</h2>
       <ul>
         <li>
@@ -591,7 +540,7 @@
         </li>
       </ul>
     </div>
-    <div id="utilities" >
+    <div id="utilities">
       <h2>工具</h2>
       <ul>
         <li>
@@ -614,7 +563,7 @@
             <li><a href="jQuery.makeArray.html">$.makeArray(obj)</a></li>
             <li><a href="jQuery.map.html">$.map(arr|obj,callback)</a></li>
             <li><a href="jQuery.inArray.html">$.inArray(val,arr,[from])</a></li>
-            <li><a href="jQuery.toarray.html">$.toArray()</a></li>
+            <li><a href="jQuery.toArray.html">$.toArray()</a></li>
             <li><a href="jQuery.merge.html">$.merge(first,second)</a></li>
             <li><a href="jQuery.unique.html">$.unique(array)</a></li>
             <li><a href="jQuery.parseJSON.html">$.parseJSON(json)</a></li>
@@ -624,9 +573,10 @@
         <li>
           <h3>函数操作</h3>
           <ul>
-            <li><a href="jQuery.noop.html">$.noop</a>
+            <li><a href="jQuery.noop.html">$.noop</a></li>
             <li><a href="jQuery.proxy.html">$.proxy(function,context)</a></li>
           </ul>
+        </li>
         <li>
           <h3>测试操作</h3>
           <ul>
@@ -663,7 +613,7 @@
     </div>
   </div>
   <div class="col-6">
-    <div id="Eventobject" >
+    <div id="Eventobject">
       <h2>事件对象</h2>
       <ul>
         <li><a href="event.currentTarget.html">eve.currentTarget</a></li>
@@ -686,7 +636,7 @@
         <li><a href="event.which.html">eve.which</a></li>
       </ul>
     </div>
-    <div id="Deferred" >
+    <div id="Deferred">
       <h2>延迟对象</h2>
       <ul>
         <li><a href="deferred.done.html" title="deferred.done(doneCallbacks[,doneCallbacks])">def.done(d,[d])</a></li>
@@ -707,7 +657,7 @@
         <li><a href="deferred.state.html">def.state()</a><sup>1.7+</sup></li>
       </ul>
     </div>
-    <div id="Callbacks" >
+    <div id="Callbacks">
       <h2>回调函数</h2>
       <ul>
         <li><a href="callbacks.add.html">cal.add(callbacks)</a><sup>1.7+</sup></li>
@@ -723,14 +673,14 @@
         <li><a href="jQuery.callbacks.html">$.callbacks(flags)</a><sup>1.7+</sup></li>
       </ul>
     </div>
-    <div id="about" >
+    <div id="about">
       <h2>关于</h2>
       <ul>
         <li><a href="about.html">关于此jQuery中文文档</a></li>
         <li><a href="bugandUpdate.html">提交bug及获取更新</a></li>
       </ul>
     </div>
-    <div id="Other" >
+    <div id="Other">
       <h2>其它</h2>
       <ul>
         <!--<li><a href="cssFormat.html">CSS压缩/格式化</a></li>
@@ -741,7 +691,15 @@
       </ul>
     </div>
   </div>
-  <p id="footer">Copyright &copy; <a href="http://hemin.cn" target="_blank">hemin</a> 2013. All right reserved.</p>
+  <p id="footer">Copyright &copy; <a href="http://hemin.cn/" target="_blank">hemin</a> 2012-2015. All right reserved.</p>
 </div>
 </body>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.autocomplete.js"></script>
+<script type="text/javascript" src="js/dtree.js"></script>
+<script>
+$(function () {
+	$("#menu").load("__left.html");
+});
+</script>
 </html>

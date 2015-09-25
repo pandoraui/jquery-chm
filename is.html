@@ -1,24 +1,24 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>is(expr|obj|ele|fn) | jQuery API 中文手册</title>
 <meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
-<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
-<link type="text/css" rel="stylesheet" href="style/style.css" tppabs="http://hemin.cn/jq/style/style.css"  />
-<script type="text/javascript" src="js/jquery.min.js" tppabs="http://hemin.cn/jq/js/jquery.min.js"></script>
-<script type="text/javascript" src="js/js.js" tppabs="http://hemin.cn/jq/js/js.js"></script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-15318881-10', 'pandoraui.github.io');
-  ga('send', 'pageview');
-</script>
+<meta name="description" content="根据选择器、DOM元素或 jQuery 对象来检测匹配元素集合，如果其中至少有一个元素符合这个给定的表达式就返回true。 - jQuery API 中文手册">
+<meta name="keywords" content="jquery,chm,手册,在线,api" />
+<link type="image/x-icon" href="img/favicon.ico" rel="shortcut icon">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
 </head>
 <body id="split">
+<div id='left' class='dtree'>
+  <p style="text-align:center">
+    <input type="text" name="query" id="query" placeholder="请输入关键字"/>
+    <!--<input type="button" id="butsoso" value="搜索" />--></p>
+  <p style="margin:7px 0; text-align:center"><a href="javascript:void(0)" id="openAll">全部展开</a> | <a href="javascript:void(0)" id="closeAll">全部折叠 </a> | <a href="index.html">速查表</a></p>
+	<div id="menu">
+    
+    </div>
+</div>
 <div id="content" class="a2">
   <div rel="is">
     <h2><span>返回值:Boolean</span>is(expr|obj|ele|fn)</h2>
@@ -56,9 +56,9 @@
       <h4>回调函数 描述:</h4>
       <p>判断点击li标签增加背景色为红色，如果点击的是第2个strong,当前的li增加背景色为绿色，</p>
       <h5>HTML 代码:</h5>
-      <pre><code>&lt;ul>
-  &lt;li>&lt;strong>list&lt;/strong> item 1 - one strong tag&lt;/li&gt;
-  &lt;li>&lt;strong&gt;list&lt;/strong&gt; item &lt;strong&gt;2&lt;/strong&gt; - two &lt;span&gt;strong tags&lt;/span&gt;&lt;/li&gt;
+      <pre><code>&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;list&lt;/strong&gt; item 1 - one strong tag&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;list&lt;/strong&gt; item &lt;strong&gt;2&lt;/strong&gt; - two &lt;span&gt;strong tags&lt;/span&gt;&lt;/li&gt;
   &lt;li&gt;list item 3&lt;/li&gt;
 &lt;/ul&gt;</code></pre>
       <h5>jQuery 代码:</h5>
@@ -85,4 +85,8 @@
   </div>
 </div>
 </body>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.autocomplete.js"></script>
+<script type="text/javascript" src="js/dtree.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
 </html>

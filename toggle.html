@@ -1,24 +1,24 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>toggle([speed],[easing],[fn]) | jQuery API 中文手册</title>
 <meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
-<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
-<link type="text/css" rel="stylesheet" href="style/style.css" tppabs="http://hemin.cn/jq/style/style.css"  />
-<script type="text/javascript" src="js/jquery.min.js" tppabs="http://hemin.cn/jq/js/jquery.min.js"></script>
-<script type="text/javascript" src="js/js.js" tppabs="http://hemin.cn/jq/js/js.js"></script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-15318881-10', 'pandoraui.github.io');
-  ga('send', 'pageview');
-</script>
+<meta name="description" content="用于绑定两个或多个事件处理器函数，以响应被选元素的轮流的 click 事件。如果元素是可见的，切换为隐藏的；如果元素是隐藏的，切换为可见的。1.9版本 .toggle()方法删除,jQuery Migrate（迁移）插件可以恢复此功能。 - jQuery API 中文手册">
+<meta name="keywords" content="jquery,chm,手册,在线,api" />
+<link type="image/x-icon" href="img/favicon.ico" rel="shortcut icon">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
 </head>
 <body id="split">
+<div id='left' class='dtree'>
+  <p style="text-align:center">
+    <input type="text" name="query" id="query" placeholder="请输入关键字"/>
+    <!--<input type="button" id="butsoso" value="搜索" />--></p>
+  <p style="margin:7px 0; text-align:center"><a href="javascript:void(0)" id="openAll">全部展开</a> | <a href="javascript:void(0)" id="closeAll">全部折叠 </a> | <a href="index.html">速查表</a></p>
+	<div id="menu">
+    
+    </div>
+</div>
 <div id="content" class="a2">
   <div rel="toggle">
     <h2><span>返回值:jQuery</span>toggle([speed],[easing],[fn])</h2>
@@ -27,15 +27,15 @@
       <p>用于绑定两个或多个事件处理器函数，以响应被选元素的轮流的 click 事件。</p>
       <div class="longdesc">
         <p>如果元素是可见的，切换为隐藏的；如果元素是隐藏的，切换为可见的。</p>
-        <p style="color:#F00">1.9版本 .toggle(function, function, … ) 方法删除,jQuery Migrate（迁移）插件可以恢复此功能。</p>
+        <p style="color:#F00">1.9版本 .toggle() 方法删除,jQuery Migrate（迁移）插件可以恢复此功能。</p>
       </div>
     </div>
     <h3>参数</h3>
     <div class="parameter">
-      <del><h4><strong>fn,fn2,[fn3,fn4,...]</strong><span>Function,....</span><em>V1.0</em></h4>
+      <h4><strong>fn,fn2,[fn3,fn4,...]</strong><span>Function,....</span><em>V1.0</em></h4>
       <p>fn:第一数次点击时要执行的函数。</p>
       <p>fn2:第二数次点击时要执行的函数。</p>
-      <p>fn3,fn4,...:更多次点击时要执行的函数。</p></del>
+      <p>fn3,fn4,...:更多次点击时要执行的函数。</p>
       <h4><strong>[speed] [,fn]</strong><span>String,Function</span><em>V1.0</em></h4>
       <p>speed: 隐藏/显示 效果的速度。默认是 &quot;0&quot;毫秒。可能的值：slow，normal，fast。&quot;</p>
       <p>fn:在动画完成时执行的函数，每个元素执行一次。</p>
@@ -89,4 +89,8 @@ if (showOrHide) {
   </div>
 </div>
 </body>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.autocomplete.js"></script>
+<script type="text/javascript" src="js/dtree.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
 </html>

@@ -1,24 +1,24 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>event.stopImmediatePropagation() | jQuery API 中文手册</title>
 <meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
-<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
-<link type="text/css" rel="stylesheet" href="style/style.css" tppabs="http://hemin.cn/jq/style/style.css"  />
-<script type="text/javascript" src="js/jquery.min.js" tppabs="http://hemin.cn/jq/js/jquery.min.js"></script>
-<script type="text/javascript" src="js/js.js" tppabs="http://hemin.cn/jq/js/js.js"></script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-15318881-10', 'pandoraui.github.io');
-  ga('send', 'pageview');
-</script>
+<meta name="description" content="阻止剩余的事件处理函数执行并且防止事件冒泡到DOM树上。 - jQuery API 中文手册">
+<meta name="keywords" content="jquery,chm,手册,在线,api" />
+<link type="image/x-icon" href="img/favicon.ico" rel="shortcut icon">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
 </head>
 <body id="split">
+<div id='left' class='dtree'>
+  <p style="text-align:center">
+    <input type="text" name="query" id="query" placeholder="请输入关键字"/>
+    <!--<input type="button" id="butsoso" value="搜索" />--></p>
+  <p style="margin:7px 0; text-align:center"><a href="javascript:void(0)" id="openAll">全部展开</a> | <a href="javascript:void(0)" id="closeAll">全部折叠 </a> | <a href="index.html">速查表</a></p>
+	<div id="menu">
+    
+    </div>
+</div>
 <div id="content" class="a2">
   <div rel="event.stopImmediatePropagation">
     <h2><span>返回值:Object</span>event.stopImmediatePropagation()</h2>
@@ -27,11 +27,11 @@
       <p>阻止剩余的事件处理函数执行并且防止事件冒泡到DOM树上。</p>
       <div class="longdesc">
         <div>
-          <p>除了阻止元素上其它的事件处理函数的执行，这个方法还会通过在内部调用&nbsp;event.stopPropagation()&nbsp;来停止事件冒泡。如果仅仅想要停止事件冒泡到前辈元素上，而让这个元素上的其它事件处理函数继续执行，我们可以使用<a href="event.stopPropagation.html" tppabs="http://hemin.cn/jq/event.stopPropagation.html">event.stopPropagation()</a>&nbsp;来代替。</p>
-          <p>使用&nbsp;<a href="event.stopPropagation.html" tppabs="http://hemin.cn/jq/event.stopPropagation.html">event.isImmediatePropagationStopped()</a>&nbsp;来确定这个方法是否(在那个事件对象上)调用过了。</p>
+          <p>除了阻止元素上其它的事件处理函数的执行，这个方法还会通过在内部调用&nbsp;event.stopPropagation()&nbsp;来停止事件冒泡。如果仅仅想要停止事件冒泡到前辈元素上，而让这个元素上的其它事件处理函数继续执行，我们可以使用<a href="event.stopPropagation.html">event.stopPropagation()</a>&nbsp;来代替。</p>
+          <p>使用&nbsp;<a href="event.stopPropagation.html">event.isImmediatePropagationStopped()</a>&nbsp;来确定这个方法是否(在那个事件对象上)调用过了。</p>
         </div>
         <h1>注意:</h1>
-        <p>自从<a href="javascript:if(confirm('http://api.jquery.com/live  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://api.jquery.com/live'" tppabs="http://api.jquery.com/live">.live()</a>方法处理事件一旦传播到文档的顶部，live事件是不可能停止传播的。同样地，<a href="javascript:if(confirm('http://api.jquery.com/delegate  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ �������·��������ʼ��ַ�����õķ�Χ��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='http://api.jquery.com/delegate'" tppabs="http://api.jquery.com/delegate">.delegate()</a>&nbsp;事件将始终传播给其中包含的被委托元素；元素上的事件将在被委托事件被调用的时候执行。 </p>
+        <p>自从<a href="http://api.jquery.com/live">.live()</a>方法处理事件一旦传播到文档的顶部，live事件是不可能停止传播的。同样地，<a href="http://api.jquery.com/delegate">.delegate()</a>&nbsp;事件将始终传播给其中包含的被委托元素；元素上的事件将在被委托事件被调用的时候执行。 </p>
       </div>
     </div>
     <div class="example">
@@ -66,4 +66,8 @@
   </div>
 </div>
 </body>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.autocomplete.js"></script>
+<script type="text/javascript" src="js/dtree.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
 </html>

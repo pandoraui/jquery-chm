@@ -1,24 +1,24 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>event.which | jQuery API 中文手册</title>
 <meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
-<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
-<link type="text/css" rel="stylesheet" href="style/style.css" tppabs="http://hemin.cn/jq/style/style.css"  />
-<script type="text/javascript" src="js/jquery.min.js" tppabs="http://hemin.cn/jq/js/jquery.min.js"></script>
-<script type="text/javascript" src="js/js.js" tppabs="http://hemin.cn/jq/js/js.js"></script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-15318881-10', 'pandoraui.github.io');
-  ga('send', 'pageview');
-</script>
+<meta name="description" content="针对键盘和鼠标事件，这个属性能确定你到底按的是哪个键或按钮。 - jQuery API 中文手册">
+<meta name="keywords" content="jquery,chm,手册,在线,api" />
+<link type="image/x-icon" href="img/favicon.ico" rel="shortcut icon">
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
 </head>
 <body id="split">
+<div id='left' class='dtree'>
+  <p style="text-align:center">
+    <input type="text" name="query" id="query" placeholder="请输入关键字"/>
+    <!--<input type="button" id="butsoso" value="搜索" />--></p>
+  <p style="margin:7px 0; text-align:center"><a href="javascript:void(0)" id="openAll">全部展开</a> | <a href="javascript:void(0)" id="closeAll">全部折叠 </a> | <a href="index.html">速查表</a></p>
+	<div id="menu">
+    
+    </div>
+</div>
 <div id="content" class="a2">
   <div rel="event.which">
     <h2><span>返回值:String</span>event.which</h2>
@@ -26,7 +26,7 @@
     <div class="desc">
       <p>针对键盘和鼠标事件，这个属性能确定你到底按的是哪个键或按钮。</p>
       <div class="longdesc">
-        <p> event.which&nbsp;将&nbsp;event.keyCode&nbsp;和&nbsp;event.charCode&nbsp;标准化了。推荐用&nbsp;event.which&nbsp;来监视键盘输入。更多细节请参阅：&nbsp;<a href="javascript:if(confirm('https://developer.mozilla.org/en/DOM/event.charCode  \n\n�ļ���δ�� Teleport Pro ȡ�أ���Ϊ ��һ��ַʹ����δ֧�ֵ�Э�� (���磬gopher)��  \n\n��Ҫ�ӷ������ϴ�����'))window.location='https://developer.mozilla.org/en/DOM/event.charCode#Notes'" tppabs="https://developer.mozilla.org/en/DOM/event.charCode#Notes">event.charCode on the MDC</a>. </p>
+        <p> event.which&nbsp;将&nbsp;event.keyCode&nbsp;和&nbsp;event.charCode&nbsp;标准化了。推荐用&nbsp;event.which&nbsp;来监视键盘输入。更多细节请参阅：&nbsp;<a href="https://developer.mozilla.org/en/DOM/event.charCode#Notes">event.charCode on the MDC</a>. </p>
       </div>
     </div>
     <div class="example">
@@ -53,4 +53,8 @@
   </div>
 </div>
 </body>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.autocomplete.js"></script>
+<script type="text/javascript" src="js/dtree.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
 </html>
