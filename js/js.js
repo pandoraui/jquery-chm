@@ -295,13 +295,13 @@ var data = {
 	"jQuery.noop":{title:"$.noop",type:"工具"},
 	"jQuery.proxy":{title:"$.proxy(fn,c)",type:"工具"},
 	"jQuery.contains":{title:"$.contains(c,c)",type:"工具"},
+	"jQuery.type":{title:"$.type(obj)",type:"工具"},
 	"jQuery.isArray":{title:"$.isArray(obj)",type:"工具"},
 	"jQuery.isFunction":{title:"$.isFunction(obj)",type:"工具"},
 	"jQuery.isEmptyObject":{title:"$.isEmptyObject(obj)",type:"工具"},
 	"jQuery.isPlainObject":{title:"$.isPlainObject(obj)",type:"工具"},
 	"jQuery.isWindow":{title:"$.isWindow(obj)",type:"工具"},
 	"jQuery.isNumeric":{title:"$.isNumeric(value)",type:"工具"},
-	"jQuery.type":{title:"$.type(obj)",type:"工具"},
 	"jQuery.trim":{title:"$.trim(str)",type:"工具"},
 	"jQuery.param":{title:"$.param(obj,[traditional])",type:"工具"},
 	"jQuery.error":{title:"$.error(message)",type:"工具"},
@@ -382,37 +382,41 @@ if(thisRelName == "jQuery_selector_context"){
 	$("#content").append("<div class='navigation'><div class='alignleft'>上一篇：<a href='"+hemin.prev.url+".html'>"+hemin.prev.title+"</a></div><div class='alignright'>下一篇：<a href='"+hemin.next.url+".html'>"+hemin.next.title+"</a></div></div>");
 }
 
-//CHM不需要回到顶部
+//CHM不需要回到顶部和菜单
 if(!/^mk:$/i.test(location.protocol)){
 	$("#content").append("<a id='go_home' title='回到首页' href='cheatsheet.html' >首页</a><div id='go_top' title='回到顶部'>顶部</div>");
 
 	var this_height = $("body").height();
-	$('#J_right',window.parent.document).height(this_height+10);
+	$('#J_right').height(this_height+10);
 	
-	$(document).on('click','#go_top',function(event){
-		event.preventDefault();
-		$('body,html',window.parent.document).animate({scrollTop:0},500);
+	$(document).on('click','#go_top',function(){
+		$('body,html').animate({scrollTop:0},500);
 	});
 
-	$(document).on('click','a',function(){
-		var t_href = $(this).attr("href");
-		window.parent.history.pushState(null, null, t_href);
-		$(".dtree li a.up",window.parent.document).removeClass("up");
-		$(".dtree ol",window.parent.document).hide();
-		$(".dtree h2",window.parent.document).removeClass("up");
+	/*$(document).on('click','a',function(){
+			var t_href = $(this).attr("href");
+			window.parent.history.pushState(null, null, t_href);
+			$(".dtree li a.up",window.parent.document).removeClass("up");
+			$(".dtree ol",window.parent.document).hide();
+			$(".dtree h2",window.parent.document).removeClass("up");
 		
-		$('.dtree li a[href="'+t_href+'"]',window.parent.document).parents("ol").show();
-		$('.dtree li a[href="'+t_href+'"]',window.parent.document).parents("ol").siblings("h2").addClass("up");
-		$('.dtree li a[href="'+t_href+'"]',window.parent.document).addClass("up");
+			$('.dtree li a[href="'+t_href+'"]',window.parent.document).parents("ol").show();
+			$('.dtree li a[href="'+t_href+'"]',window.parent.document).parents("ol").siblings("h2").addClass("up");
+			$('.dtree li a[href="'+t_href+'"]',window.parent.document).addClass("up");
 		
 		//return false;
-	});
+	});*/
 
-	if($("body",window.parent.document).attr("id") != "gdt"){
+
+
+	if($("body").attr("id") != "gdt"){
 		$(".pc,#go_home").attr("href","index.html");
 	}
-
-	$("#show_donate_list").load("http://hemin.cn/jq/downloads/index.html #J_donate_list");
+	$("#menu").load("__left.html",function(){
+		var UrlFileName=location.href.split('/');
+		var Menu=FileName=UrlFileName[UrlFileName.length-1];
+		$("#menu li a[href='"+Menu+"']").addClass("up").parent().parent().show().siblings("h2").addClass("up");
+	});
 }
 /*$(".navigation,.retRight").on('click','a', function(e) {
 	

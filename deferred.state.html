@@ -2,23 +2,31 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>deferred.state()</title>
+<title>deferred.state() | jQuery API 中文手册</title>
 <meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
-<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<meta name="description" content="确定一个Deferred对象的当前状态。 - jQuery API 中文手册">
+<meta name="keywords" content="jquery,chm,手册,在线,api" />
+<link type="image/x-icon" href="img/favicon.ico" rel="shortcut icon">
 <link type="text/css" rel="stylesheet" href="style/style.css"  />
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/js.js"></script>
-
 </head>
 <body id="split">
+<div id='left' class='dtree'>
+  <p style="text-align:center">
+    <input type="text" name="query" id="query" placeholder="请输入关键字"/>
+    <!--<input type="button" id="butsoso" value="搜索" />--></p>
+  <p style="margin:7px 0; text-align:center"><a href="javascript:void(0)" id="openAll">全部展开</a> | <a href="javascript:void(0)" id="closeAll">全部折叠 </a> | <a href="index.html">速查表</a></p>
+	<div id="menu">
+    
+    </div>
+</div>
 <div id="content" class="a2">
   <div rel="deferred.state">
     <h2><span>返回值:Deferred Object</span>deferred.state()</h2>
     <h3><em>V1.7</em>概述</h3>
     <div class="desc">
-      <p><span id="result_box" lang="zh-CN" xml:lang="zh-CN">确定一个Deferred对象的当前状态</span>。</p>
+      <p>确定一个Deferred对象的当前状态。</p>
       <div class="longdesc">
-        <p><span id="result_box2" lang="zh-CN" xml:lang="zh-CN">deferred.state（）方法返回一个字符串，代表Deferred对象的当前状态。 Deferred对象可以在三种状态之一：</span></p>
+        <p>deferred.state（）方法返回一个字符串，代表Deferred对象的当前状态。 Deferred对象可以在三种状态之一：</p>
         <ul>
           <li> <strong>pending</strong>:   Deferred对象是尚未完成状态 (不是 &quot;rejected&quot; 或 &quot;resolved&quot;). </li>
           <li> <strong>resolved</strong>:   &nbsp;Deferred对象是在解决状态，这意味着，<a href="http://api.jquery.com/deferred.resolve/">deferred.resolve()</a>&nbsp;或者&nbsp;<a href="http://api.jquery.com/deferred.resolveWith/">deferred.resolveWith()</a>被对象访问和doneCallbacks被访问（或在被调用的过程中） 。 </li>
@@ -30,4 +38,8 @@
   </div>
 </div>
 </body>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.autocomplete.js"></script>
+<script type="text/javascript" src="js/dtree.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
 </html>

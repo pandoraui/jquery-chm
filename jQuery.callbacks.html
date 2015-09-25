@@ -2,15 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>jQuery.callbacks(flags)</title>
+<title>jQuery.callbacks(flags) | jQuery API 中文手册</title>
 <meta name="author" content="jQuery 中文手册 - hemin.cn/jq/">
-<meta name="description" content="jQuery中文手册(在线版),作者:hemin,在线手册:hemin.cn/jq/,下载:hemin.cn/jq/downloads/">
+<meta name="description" content="一个多用途的回调列表对象，提供了强大的的方式来管理回调函数列表。 - jQuery API 中文手册">
+<meta name="keywords" content="jquery,chm,手册,在线,api" />
+<link type="image/x-icon" href="img/favicon.ico" rel="shortcut icon">
 <link type="text/css" rel="stylesheet" href="style/style.css"  />
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/js.js"></script>
-
 </head>
 <body id="split">
+<div id='left' class='dtree'>
+  <p style="text-align:center">
+    <input type="text" name="query" id="query" placeholder="请输入关键字"/>
+    <!--<input type="button" id="butsoso" value="搜索" />--></p>
+  <p style="margin:7px 0; text-align:center"><a href="javascript:void(0)" id="openAll">全部展开</a> | <a href="javascript:void(0)" id="closeAll">全部折叠 </a> | <a href="index.html">速查表</a></p>
+	<div id="menu">
+    
+    </div>
+</div>
 <div id="content" class="a2">
   <div rel="jQuery.callbacks">
     <h2><span>返回值:jQuery</span>jQuery.callbacks(flags)</h2>
@@ -19,7 +27,7 @@
       <p> 一个多用途的回调列表对象，提供了强大的的方式来管理回调函数列表。 </p>
       <div class="longdesc">
         <p>$.Callbacks()的内部提供了jQuery的$.ajax()&nbsp;和&nbsp;$.Deferred()&nbsp;基本功能组件。它可以用来作为类似基础定义的新组件的功能。</p>
-        <p>$.Callbacks()&nbsp;支持的方法，包括&nbsp;<a href="http://www.css88.com/callbacks.add/">callbacks.add()</a>,<a href="http://www.css88.com/callbacks.remove/">callbacks.remove()</a>,&nbsp;<a href="http://www.css88.com/callbacks.fire/">callbacks.fire()</a>&nbsp;and&nbsp;<a href="http://www.css88.com/callbacks.disable/">callbacks.disable()</a>.</p>
+        <p>$.Callbacks()&nbsp;支持的方法，包括&nbsp;<a href="callbacks.add.html">callbacks.add()</a>,<a href="callbacks.remove.html">callbacks.remove()</a>,&nbsp;<a href="callbacks.fire.html">callbacks.fire()</a>&nbsp;and&nbsp;<a href="callbacks.disable.html">callbacks.disable()</a>.</p>
       </div>
     </div>
     <h3>参数</h3>
@@ -262,4 +270,8 @@ dfd.resolve( "its been published!" );</code></pre>
   </div>
 </div>
 </body>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.autocomplete.js"></script>
+<script type="text/javascript" src="js/dtree.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
 </html>
